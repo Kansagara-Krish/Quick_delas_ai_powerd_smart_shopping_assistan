@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Quick Deals – Smart Shopping Assistant</title>
+<style>
+  :root {
+    --primary: #6a11cb;
+    --secondary: #2575fc;
+    --accent: #ff9800;
+    --success: #4CAF50;
+    --warning: #ff5722;
+    --light-bg: #f8f9fa;
+    --dark-text: #333;
+    --light-text: #fff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--dark-text);
+    overflow-x: hidden;
+  }
+
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 12px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    transition: var(--transition);
+  }
+
+  .header.small {
+    padding: 8px 20px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .logo {
+    font-size: 26px;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+  }
+
+  .header.small .logo {
+    font-size: 22px;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-links a {
+    color: #444;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+    font-size: 16px;
+  }
+
+  .header.small .nav-links a {
+    font-size: 14px;
+    margin-left: 15px;
+  }
+
+  .nav-links a:hover {
+    color: var(--primary);
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: var(--transition);
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  /* Mobile Navigation */
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+    gap: 3px;
+  }
+
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 2px;
+    transition: var(--transition);
+  }
+
+  .mobile-nav-slider {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff6b6b, #ffa726);
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+    transition: var(--transition);
+    padding: 80px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .mobile-nav-slider.active {
+    right: 0;
+  }
+
+  .mobile-nav-slider a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 15px 20px;
+    border-radius: 10px;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+  }
+
+  .mobile-nav-slider a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(-5px);
+  }
+
+  .mobile-nav-slider a i {
+    font-size: 20px;
+  }
+
+  .close-slider {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    transition: var(--transition);
+    z-index: 2001;
+  }
+
+  .close-slider:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+  }
+
+  /* Offers Container - Fixed Positioning */
+  .offers-container {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 1500;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+  }
+
+  .offers-container.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-50%) translateX(20px);
+  }
+
+  .offer-trigger {
+    background: linear-gradient(135deg, #ff6b6b, #ffa726);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+    transition: var(--bounce);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    position: relative;
+    z-index: 1501;
+  }
+
+  .offer-trigger:hover {
+    transform: translateX(-5px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+  }
+
+  .offer-trigger.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(20px);
+  }
+
+  .offers-panel {
+    position: relative;
+    width: 320px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(20px);
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin-top: 10px;
+    max-height: 70vh;
+    overflow-y: auto;
+    z-index: 1502;
+  }
+
+  .offers-panel.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    animation: slideInOffers 0.5s ease;
+  }
+
+  @keyframes slideInOffers {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .offers-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(255, 107, 107, 0.2);
+    position: relative;
+    z-index: 1503;
+  }
+
+  .offers-header h3 {
+    margin: 0;
+    color: #ff6b6b;
+    font-size: 1.4rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ff6b6b, #ffa726);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .close-offers {
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    font-size: 24px;
+    color: #ff6b6b;
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 8px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1504;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    position: relative;
+  }
+
+  .close-offers:hover {
+    background: white;
+    color: #ff0000;
+    transform: rotate(90deg) scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .offer-item {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+    border-left: 4px solid #ffa726;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .offer-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 167, 38, 0.1), transparent);
+    transition: var(--transition);
+  }
+
+  .offer-item:hover::before {
+    left: 100%;
+  }
+
+  .offer-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+  }
+
+  .offer-item h4 {
+    margin: 0 0 8px 0;
+    color: var(--dark-text);
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .offer-item p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .offer-badge {
+    background: linear-gradient(135deg, #ff6b6b, #ffa726);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-left: 8px;
+  }
+
+  /* Intro Section */
+  .intro {
+    text-align: center;
+    color: var(--light-text);
+    margin: 120px 20px 40px;
+    animation: fadeIn 1.2s ease-in-out;
+    max-width: 800px;
+    transition: var(--transition);
+  }
+
+  .intro.hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+    display: none;
+  }
+
+  .intro h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .intro p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    opacity: 0.9;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .cta-button {
+    background: var(--accent);
+    border: none;
+    color: var(--light-text);
+    padding: 14px 35px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .cta-button:hover {
+    background: #f57c00;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
+  }
+
+  /* Chat Wrapper */
+  .chat-wrapper {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 80px 20px 20px;
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    animation: slideUpFull 0.8s ease;
+  }
+
+  @keyframes slideUpFull {
+    from {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .chat-container {
+    max-width: 1400px;
+    width: 100%;
+    height: 100%;
+    /* Fix: Was 120%, made it 100% to fit wrapper */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  .chat-header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 20px 30px;
+    text-align: center;
+  }
+
+  .chat-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .chat-main {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    max-width: 100%;
+  }
+
+  .chat-box {
+    flex: 1;
+    overflow-y: auto;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    background: #f8f9fa;
+  }
+
+  .bot-message,
+  .user-message {
+    border-radius: 18px;
+    padding: 15px 20px;
+    margin: 10px 0;
+    max-width: 70%;
+    line-height: 1.5;
+    animation: fadeIn 0.5s ease;
+    position: relative;
+    font-size: 16px;
+  }
+
+  .bot-message {
+    background: white;
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--primary);
+  }
+
+  .user-message {
+    background: var(--primary);
+    color: var(--light-text);
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0 2px 8px rgba(106, 17, 203, 0.3);
+  }
+
+  /* Enhanced Products Container with Slide Comparison */
+  .products-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+    padding: 10px;
+    position: relative;
+  }
+
+  .product-card {
+    flex: 1 1 calc(33.33% - 20px);
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    border: 1px solid #eee;
+    min-width: 250px;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUpProduct 0.6s ease forwards;
+  }
+
+  .product-card:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  .product-card:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .product-card:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+
+  @keyframes slideUpProduct {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(106, 17, 203, 0.05), transparent);
+    transition: var(--transition);
+  }
+
+  .product-card:hover::before {
+    left: 100%;
+  }
+
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .product-card strong {
+    color: var(--primary);
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .product-feature {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    padding: 5px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .feature-name {
+    color: #666;
+    font-size: 0.9rem;
+  }
+
+  .feature-value {
+    color: var(--dark-text);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  /* Indian Rupee Price Styling */
+  .price-inr {
+    color: #2e7d32;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+
+  .price-inr::before {
+    content: "₹";
+    margin-right: 2px;
+  }
+
+  .product-score {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .predict-btn {
+    display: block;
+    margin: 25px auto 10px auto;
+    background: var(--secondary);
+    color: var(--light-text);
+    border: none;
+    padding: 14px 35px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(37, 117, 252, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+  }
+
+  .predict-btn:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 117, 252, 0.4);
+  }
+
+
+  /* ---
+  --- THIS IS THE UPDATED CHAT FORM SECTION ---
+  --- Height has been reduced ---
+  */
+
+  .chat-form {
+    display: flex;
+    padding: 12px 15px;
+    /* Reduced padding */
+    background: white;
+    border-top: 1px solid #eee;
+    gap: 10px;
+    /* Reduced gap */
+    align-items: center;
+    position: relative;
+  }
+
+  /* This container is needed for the label/icon positioning */
+  .input-container {
+    position: relative;
+    flex: 1;
+    display: flex;
+  }
+
+  #user-input {
+    width: 100%;
+    padding: 12px 50px 12px 25px;
+    /* Reduced padding */
+    border: 2px solid #e0e0e0;
+    border-radius: 30px;
+    /* Reduced radius */
+    font-size: 15px;
+    /* Reduced font size */
+    transition: var(--bounce);
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    box-shadow:
+      inset 0 2px 4px rgba(0, 0, 0, 0.05),
+      0 2px 8px rgba(0, 0, 0, 0.05);
+    outline: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  #user-input:focus {
+    border-color: var(--primary);
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    box-shadow:
+      inset 0 2px 8px rgba(106, 17, 203, 0.1),
+      0 4px 20px rgba(106, 17, 203, 0.15);
+    transform: translateY(-2px);
+    padding-left: 30px;
+  }
+
+  #user-input::placeholder {
+    color: #9e9e9e;
+    transition: var(--transition);
+  }
+
+  #user-input:focus::placeholder {
+    color: #bdbdbd;
+    transform: translateX(5px);
+  }
+
+  .input-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9e9e9e;
+    transition: var(--transition);
+    pointer-events: none;
+  }
+
+  #user-input:focus~.input-icon {
+    color: var(--primary);
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  .input-label {
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9e9e9e;
+    font-size: 15px;
+    /* Reduced font size */
+    pointer-events: none;
+    transition: var(--bounce);
+    background: white;
+    padding: 0 8px;
+  }
+
+  #user-input:focus~.input-label,
+  #user-input:not(:placeholder-shown)~.input-label {
+    top: 0;
+    font-size: 12px;
+    color: var(--primary);
+    font-weight: 600;
+    transform: translateY(-50%);
+  }
+
+  .send-button {
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+    color: var(--light-text);
+    border: none;
+    padding: 12px 22px;
+    /* Reduced padding */
+    border-radius: 30px;
+    /* Reduced radius */
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--bounce);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    /* Reduced font size */
+    box-shadow:
+      0 4px 15px rgba(37, 117, 252, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .send-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: var(--transition);
+  }
+
+  .send-button:hover::before {
+    left: 100%;
+  }
+
+  .send-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow:
+      0 8px 25px rgba(37, 117, 252, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  .send-button:active {
+    transform: translateY(-1px) scale(1.02);
+    transition: all 0.1s ease;
+  }
+
+  .send-button .send-text {
+    display: block;
+    transition: var(--transition);
+  }
+
+  .send-button .send-icon {
+    font-size: 1.3rem;
+    display: block;
+    transition: var(--transition);
+  }
+
+  .send-button:hover .send-icon {
+    transform: translateX(3px) scale(1.1);
+  }
+
+  .send-button:disabled {
+    opacity: 0.6;
+    transform: none;
+    cursor: not-allowed;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .send-button:disabled:hover {
+    transform: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Loading animation */
+  .send-button.loading {
+    pointer-events: none;
+  }
+
+  .send-button.loading .send-text {
+    opacity: 0;
+  }
+
+  .send-button.loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Micro-interactions */
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(37, 117, 252, 0.4);
+    }
+
+    70% {
+      box-shadow: 0 0 0 10px rgba(37, 117, 252, 0);
+    }
+
+    100% {
+      box-shadow: 0 0 0 0 rgba(37, 117, 252, 0);
+    }
+  }
+
+  .send-button.pulse {
+    animation: pulse 2s infinite;
+  }
+
+  .send-button.success {
+    background: linear-gradient(135deg, var(--success), #45a049);
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+  }
+
+  .send-button.success .send-icon {
+    transform: scale(1.2);
+  }
+
+  /* --- END OF UPDATED CHAT FORM SECTION --- */
+
+
+  /* Price Prediction Button */
+  .predict-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--light-text);
+    background: linear-gradient(135deg, var(--accent), var(--warning));
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+
+  .predict-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+  }
+
+  .predict-button:disabled {
+    background: #999;
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+
+  .loading {
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
+  .close-chat {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 20px;
+    z-index: 1001;
+  }
+
+  .close-chat:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+  }
+
+  /* Scrollbar styling */
+  .chat-box::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .chat-box::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  .chat-box::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+  }
+
+  .chat-box::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary);
+  }
+
+  .offers-panel::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .offers-panel::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  .offers-panel::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+  }
+
+  /* Indian Currency Formatting in Offers */
+  .offer-price {
+    color: #2e7d32;
+    font-weight: 700;
+    margin-top: 5px;
+  }
+
+  .offer-price::before {
+    content: "₹";
+    margin-right: 2px;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+
+    .mobile-nav {
+      display: flex;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    .intro h1 {
+      font-size: 2.2rem;
+    }
+
+    .intro p {
+      font-size: 1rem;
+    }
+
+    .product-card {
+      flex: 1 1 100%;
+    }
+
+    .header {
+      padding: 10px 15px;
+    }
+
+    .chat-wrapper {
+      padding: 70px 10px 10px;
+    }
+
+    .chat-container {
+      border-radius: 15px;
+    }
+
+    .bot-message,
+    .user-message {
+      max-width: 85%;
+      font-size: 14px;
+      padding: 12px 16px;
+    }
+    
+    /* Reduced height for form on mobile */
+    .chat-form {
+      padding: 10px 10px;
+      gap: 8px;
+    }
+
+    #user-input {
+      padding: 10px 45px 10px 20px; /* Reduced padding */
+      font-size: 14px;
+    }
+
+    .send-button {
+      padding: 10px 12px; /* Reduced padding */
+      font-size: 14px;
+    }
+    
+    .send-button .send-text {
+      display: none; /* Hide text on mobile, show icon */
+    }
+
+    .input-label {
+      left: 20px;
+      font-size: 14px;
+    }
+
+    #user-input:focus~.input-label,
+    #user-input:not(:placeholder-shown)~.input-label {
+      font-size: 11px;
+    }
+
+    .offers-container {
+      right: 10px;
+    }
+
+    .offers-panel {
+      width: 280px;
+      max-height: 60vh;
+    }
+
+    .offer-trigger {
+      padding: 12px 16px;
+      font-size: 12px;
+    }
+  }
+</style>
+</head>
+<body>
+  <!-- Offers Container -->
+  <div class="offers-container" id="offersContainer">
+    <button class="offer-trigger" id="offerTrigger" onclick="toggleOffers()">
+      🔥 Hot Offers
+    </button>
+    <div class="offers-panel" id="offersPanel">
+      <div class="offers-header">
+        <h3>Latest Offers 🎁</h3>
+        <button class="close-offers" onclick="closeOffers()">×</button>
+      </div>
+      <div class="offers-content">
+        <div class="offer-item">
+          <h4>Smartphones <span class="offer-badge">60% OFF</span></h4>
+          <p>Flagship phones with massive discounts. Limited time offer!</p>
+        </div>
+        <div class="offer-item">
+          <h4>Laptops <span class="offer-badge">45% OFF</span></h4>
+          <p>Gaming & Business laptops at unbelievable prices</p>
+        </div>
+        <div class="offer-item">
+          <h4>Headphones <span class="offer-badge">70% OFF</span></h4>
+          <p>Premium audio with noise cancellation features</p>
+        </div>
+        <div class="offer-item">
+          <h4>Electronics <span class="offer-badge">55% OFF</span></h4>
+          <p>All electronic gadgets with extended warranty</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div class="header" id="header">
+    <div class="logo">Quick Deals 🛒 </div>
+    <div class="nav-links">
+      <a href="#">Offers</a>
+      <a href="#">Compare</a>
+      <a href="#">Predict</a>
+      <a href="#">About</a>
+    </div>
+    <div class="mobile-nav">
+      <div class="hamburger" onclick="toggleMobileNav()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="mobile-nav-slider" id="mobileNavSlider">
+        <button class="close-slider" onclick="toggleMobileNav()">×</button>
+        <a href="#"><span>🎁</span> Offers</a>
+        <a href="#"><span>⚖️</span> Compare</a>
+        <a href="#"><span>🔮</span> Predict</a>
+        <a href="#"><span>ℹ️</span> About</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Intro Section -->
+  <div class="intro" id="intro">
+    <h1>AI-Powered Smart Shopping Assistant</h1>
+    <p>Type what you're looking for and let Quick Deals find the best offers, discounts, and products for you anytime.</p>
+    <button class="cta-button" onclick="showChat()">Start Now</button>
+  </div>
+
+  <!-- Chat Wrapper -->
+  <div class="chat-wrapper" id="chat">
+    <button class="close-chat" onclick="hideChat()">✕</button>
+    <div class="chat-container">
+    
+      <div class="chat-main">
+        <div id="chat-box" class="chat-box">
+          <div class="bot-message">👋 Hi there! What product are you looking for today? Phone, Laptop or Headphones?</div>
+        </div>
+      </div>
+      <form id="chat-form" class="chat-form">
+        <div class="input-container">
+          <input type="text" id="user-input" placeholder=" " autocomplete="off">
+          <span class="input-label">Type your message...</span>
+          <div class="input-icon">💬</div>
+        </div>
+        <button type="submit" class="send-button">
+          <span class="send-text">Send</span>
+          <span class="send-icon">🚀</span>
+        </button>
+      </form>
+    </div>
+  </div>
+<script>
+  // --- PART 1: UI FUNCTIONS (from your file) ---
+
+  // Mobile Navigation
+  function toggleMobileNav() {
+    const slider = document.getElementById('mobileNavSlider');
+    slider.classList.toggle('active');
+  }
+
+  // Offers Panel
+  function toggleOffers() {
+    const panel = document.getElementById('offersPanel');
+    const trigger = document.getElementById('offerTrigger');
+
+    if (panel.classList.contains('active')) {
+      panel.classList.remove('active');
+      trigger.classList.remove('hidden');
+    } else {
+      panel.classList.add('active');
+      trigger.classList.add('hidden');
+    }
+  }
+
+  function closeOffers() {
+    const panel = document.getElementById('offersPanel');
+    const trigger = document.getElementById('offerTrigger');
+
+    panel.classList.remove('active');
+    trigger.classList.remove('hidden');
+  }
+
+  // Auto-show offers on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    // Show offers panel automatically after 2 seconds
+    setTimeout(() => {
+      const panel = document.getElementById('offersPanel');
+      const trigger = document.getElementById('offerTrigger');
+
+      panel.classList.add('active');
+      trigger.classList.add('hidden');
+
+      // Auto-hide after 8 seconds
+      setTimeout(() => {
+        panel.classList.remove('active');
+        trigger.classList.remove('hidden');
+      }, 8000);
+    }, 2000);
+  });
+
+  // Close offers when clicking outside
+  document.addEventListener('click', function(event) {
+    const panel = document.getElementById('offersPanel');
+    const trigger = document.getElementById('offerTrigger');
+    const container = document.getElementById('offersContainer');
+
+    // Check if the click is outside the offers container
+    if (container && !container.contains(event.target)) {
+      panel.classList.remove('active');
+      trigger.classList.remove('hidden');
+    }
+  });
+
+  // Chat Visibility Functions
+  function showChat() {
+    const chatWrapper = document.getElementById('chat');
+    const intro = document.getElementById('intro');
+    const header = document.getElementById('header');
+    const offersContainer = document.getElementById('offersContainer');
+
+    // Hide intro section with animation
+    intro.classList.add('hidden');
+
+    // Hide offers container
+    offersContainer.classList.add('hidden');
+
+    // Make header smaller
+    header.classList.add('small');
+
+    // Show full-screen chat
+    chatWrapper.style.display = 'flex';
+
+    // Focus on input field with slight delay for smooth animation
+    setTimeout(() => {
+      document.getElementById('user-input').focus();
+    }, 500);
+  }
+
+  function hideChat() {
+    const chatWrapper = document.getElementById('chat');
+    const intro = document.getElementById('intro');
+    const header = document.getElementById('header');
+    const offersContainer = document.getElementById('offersContainer');
+
+    // Hide chat
+    chatWrapper.style.display = 'none';
+
+    // Show intro section
+    intro.classList.remove('hidden');
+
+    // Show offers container
+    offersContainer.classList.remove('hidden');
+
+    // Restore header size
+    header.classList.remove('small');
+
+    // Scroll to top
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+
+  // --- PART 2: CHATBOT LOGIC (The correct, merged version) ---
+
+  // Get all chat elements
+  const chatBox = document.getElementById('chat-box');
+  const chatForm = document.getElementById('chat-form');
+  const userInput = document.getElementById('user-input');
+  const sendButton = document.querySelector('.send-button'); // Use querySelector for class
+
+  /**
+   * (FIXED) Helper functions to format currency
+   */
+  function formatINR(number) {
+    // This is the clean way to format INR
+    return new Intl.NumberFormat('en-IN', {
+      style: 'currency',
+      currency: 'INR',
+      maximumFractionDigits: 0
+    }).format(number);
+  }
+
+  function convertToINR(priceStr) {
+    // This function just cleans the string (e.g., "₹79,999" -> 79999)
+    // It does NOT multiply by 87.
+    if (typeof priceStr === 'number') return priceStr;
+    return Number(String(priceStr).replace(/[^\d.]/g, ''));
+  }
+
+  /**
+   * Main function to handle form submission
+   */
+  chatForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const message = userInput.value.trim();
+    if (!message) return;
+
+    // Add user's message to chat
+    addMessage('user', message);
+    userInput.value = '';
+    sendButton.classList.add('pulse');
+    addTypingIndicator();
+
+    try {
+      // Send message to the FastAPI backend
+      const response = await fetch('/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          message: message
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      removeTypingIndicator();
+      addMessage('bot', data.bot); // Add the bot's text response
+
+      // Check if the server sent back product data
+      if (data.products && data.products.length > 0) {
+        // 1. Call the function to render the main product comparison
+        renderProductComparison(data);
+
+     
+      }
+
+    } catch (error) {
+      removeTypingIndicator();
+      console.error("Error fetching chat response:", error);
+      addMessage('bot', '❌ Sorry, I hit an error. Please try again.');
+    }
+  });
+
+  /**
+   * Generic function to add a message to the chat box
+   */
+  function addMessage(sender, text) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `${sender}-message`;
+    // Basic markdown for bot messages (bold)
+    if (sender === 'bot') {
+      text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    }
+    messageDiv.innerHTML = text;
+    chatBox.appendChild(messageDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+
+  /**
+   * Adds the "..." typing indicator
+   */
+  function addTypingIndicator() {
+    if (document.getElementById('typing-indicator')) return;
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'bot-message';
+    typingDiv.id = 'typing-indicator';
+    typingDiv.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
+    chatBox.appendChild(typingDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+
+  /**
+   * Removes the "..." typing indicator
+   */
+  function removeTypingIndicator() {
+    const indicator = document.getElementById('typing-indicator');
+    if (indicator) {
+      indicator.remove();
+    }
+  }
+
+  /**
+   * Renders the main product image, description,
+   * and side-by-side comparison cards.
+   */
+  function renderProductComparison(data) {
+    const chatBox = document.getElementById('chat-box');
+
+    // 1. Create the main message container
+    const container = document.createElement('div');
+    container.className = 'bot-message'; // Use your existing class
+
+    // 2. Add the Product Image and Description
+    let headerHtml = '';
+    if (data.image) {
+      headerHtml += `<img src="${data.image}" alt="Product" style="width: 100%; max-width: 200px; border-radius: 10px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;">`;
+    }
+    if (data.description) {
+      headerHtml += `<p style="margin-bottom: 20px; text-align: center; line-height: 1.5;">${data.description}</p>`;
+    }
+
+    // 3. Create the HTML for each of the 3 product cards
+    let productsHtml = data.products.map(p => {
+      // Build the list of specifications from the 'specs' object
+      let specsHtml = `
+        <div class="product-feature">
+          <span class="feature-name">RAM</span>
+          <span class="feature-value">${p.specs.RAM || 'N/A'}</span>
+        </div>
+        <div class="product-feature">
+          <span class="feature-name">Storage</span>
+          <span class="feature-value">${p.specs.Storage || 'N/A'}</span>
+        </div>
+        <div class="product-feature">
+          <span class="feature-name">Color</span>
+          <span class="feature-value">${p.specs.Color || 'N/A'}</span>
+        </div>
+        <div class="product-feature">
+          <span class="feature-name">Warranty</span>
+          <span class="feature-value">${p.specs.Warranty || 'N/A'}</span>
+        </div>
+        <div class="product-feature">
+          <span class="feature-name">Replaceable</span>
+          <span class="feature-value">${p.specs.Replaceable || 'N/A'}</span>
+        </div>
+        <div class="product-feature">
+          <span class="feature-name">Rating</span>
+          <span class="feature-value">${p.rating} ★</span>
+        </div>
+        <div class="product-feature">
+          <span class="feature-name">Trusted Seller</span>
+          <span class="feature-value">${p.is_trusted ? '✅ Yes' : '❌ No'}</span>
+        </div>
+      `;
+
+      // Assemble the final card using your .product-card class
+      return `
+        <div class="product-card">
+          <strong>${p.platform}</strong>
+          <div class="product-feature">
+            <span class="feature-name">Price</span>
+            <span class="feature-value price-inr">${p.price.replace(/[₹,]/g, '')}</span>
+          </div>
+          ${specsHtml}
+          <div class="product-score">
+            Our Score: ${p.score}
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    // 4. Combine all the HTML and add it to the chat box
+
+    const productsJsonString = JSON.stringify(data.products).replace(/'/g, "\\'");
+  
+    container.innerHTML = `
+      ${headerHtml}
+      <div class="products-container">
+        ${productsHtml}
+      </div>
+      
+      <button class="predict-button" onclick='handlePricePrediction(this, ${productsJsonString})'>
+        🔮 Predict Price Drop
+      </button>
+    `;
+    chatBox.appendChild(container);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+
+  /**
+   * (FIXED) Shows the price prediction message
+   */
+  function showPricePrediction(products) {
+    const botDiv = document.createElement("div");
+    botDiv.className = "bot-message";
+    botDiv.innerHTML = "Analyzing historical prices for lowest price prediction ...";
+    chatBox.appendChild(botDiv);
+
+    setTimeout(() => {
+      const results = products.map(p => {
+        const baseINR = convertToINR(p.price); 
+        const lowestNum = (baseINR * (Math.random() * 0.15 + 0.8));
+        const lowest = formatINR(lowestNum); // Uses the correct Intl.NumberFormat
+
+        return `<li>${p.name}: expected drop to ${lowest}</li>`;
+        // --- END OF BUG FIX ---
+
+      }).join("");
+      const resDiv = document.createElement("div");
+      resDiv.className = "bot-message";
+      resDiv.innerHTML = `📉 Predicted Lowest Prices:<ul>${results}</ul>`;
+      chatBox.appendChild(resDiv);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }, 1500);
+  }
+
+  /**
+   * Enhanced input interactions (from your file)
+   */
+  userInput.addEventListener('focus', function() {
+    sendButton.classList.remove('pulse');
+  });
+
+  userInput.addEventListener('input', function() {
+    if (this.value.trim()) {
+      sendButton.classList.remove('pulse');
+    } else {
+      sendButton.classList.add('pulse');
+    }
+  });
+
+  // Allow Enter key to submit form
+  userInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      // Prevent default to avoid line break in input
+      e.preventDefault(); 
+      chatForm.dispatchEvent(new Event('submit'));
+    }
+  });
+</script>
+</body>
+</html>

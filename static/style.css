@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.chat-container {
+    width: 600px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.chat-box {
+    max-height: 500px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.user-message, .bot-message {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    max-width: 80%;
+}
+
+.user-message {
+    background-color: #DCF8C6;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.bot-message {
+    background-color: #ECECEC;
+    align-self: flex-start;
+    margin-right: auto;
+}
+
+#chat-form {
+    display: flex;
+}
+
+#user-input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#chat-form button {
+    padding: 10px 15px;
+    margin-left: 5px;
+    border: none;
+    background-color: #0084FF;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.products-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.product-card {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 8px;
+    width: 32%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
