@@ -1,66 +1,195 @@
 {
+  "product_categories": {
+    "phones": {
+      "default_comparison": "iphone_14_256",
+      "suggestions": [
+        "iPhone 14", "iPhone 15", "iPhone 16", "iPhone 17", 
+        "Samsung Galaxy S24", "Google Pixel 8", "OnePlus 12"
+      ]
+    },
+    "laptops": {
+      "default_comparison": "macbook_air_m2_8_256",
+      "suggestions": [
+        "MacBook Air M2", "Dell XPS 15", "Microsoft Surface Laptop 5"
+      ]
+    },
+    "headphones": {
+      "default_comparison": "sony_wh_1000xm5",
+      "suggestions": [
+        "Sony WH-1000XM5", "Bose QuietComfort Ultra Earbuds", 
+        "boAt Airdopes 141", "Nothing Ear (2)"
+      ]
+    },
+    "headphone": {
+      "default_comparison": "sony_wh_1000xm5",
+      "suggestions": [
+        "Sony WH-1000XM5", "Bose QuietComfort Ultra Earbuds", 
+        "boAt Airdopes 141", "Nothing Ear (2)"
+      ]
+    },
+    "watches": {
+      "default_comparison": "apple_watch_9",
+      "suggestions": [
+        "Apple Watch Series 9", "Samsung Galaxy Watch 6"
+      ]
+    },
+    "tablets": {
+      "default_comparison": "ipad_air_5_64",
+      "suggestions": [
+        "iPad Air (5th Gen)", "Samsung Galaxy Tab S9"
+      ]
+    },
+    "gaming": {
+      "default_comparison": "sony_ps5",
+      "suggestions": [
+        "Sony PlayStation 5", "Xbox Series X", "Nintendo Switch OLED"
+      ]
+    },
+    "cameras": {
+      "default_comparison": "canon_eos_r6_mark_ii",
+      "suggestions": [
+        "Canon EOS R6 Mark II", "GoPro HERO12", "DJI Mini 4 Pro"
+      ]
+    },
+    "accessories": {
+      "default_comparison": "logitech_mx_master_3s",
+      "suggestions": [
+        "Logitech MX Master 3S Mouse", "Keychron K2 Mechanical Keyboard",
+        "Anker PowerCore 10000", "Logitech C920 Webcam"
+      ]
+    },
+    "tv": {
+      "default_comparison": "lg_c3_55_oled",
+      "suggestions": [
+        "LG C3 55-inch OLED TV", "Samsung 27\" Odyssey G7 Monitor"
+      ]
+    },
+    "smart_home": {
+      "default_comparison": "amazon_echo_dot_5",
+      "suggestions": [
+        "Amazon Echo Dot (5th Gen)", "Philips Hue Starter Kit"
+      ]
+    }
+  },
   "products": [
     {
-      "product_id": "samsung_galaxy_s24",
-      "product_name": "Samsung Galaxy S24",
-      "brand": "Samsung",
-      "base_image_url": "https://images.samsung.com/is/image/samsung/p6pim/in/2301/gallery/in-galaxy-s24-5g-sm-s921bzwdinu-thumb-538088646?$650_519_PNG$",
-      "description": "The latest flagship from Samsung with AI-powered features, a stunning Dynamic AMOLED 2X display, and a pro-grade camera system.",
+      "product_id": "iphone_14",
+      "product_name": "iPhone 14",
+      "category": "phones",
+      "brand": "Apple",
+      "base_image_url": "https://m.media-amazon.com/images/I/61bK6PMOC3L._SL1500_.jpg",
+      "description": "A total powerhouse. Features the A15 Bionic chip, an advanced dual-camera system for incredible photos in low light, and all-day battery life.",
       "variants": [
         {
-          "variant_id": "s24_8_256",
+          "variant_id": "ip14_128_mid",
           "specifications": {
-            "Configuration": "8GB|256GB",
-            "RAM_GB": 8,
-            "Storage_GB": 256,
-            "Color": "Amber Yellow",
+            "Storage": "128GB",
+            "Color": "Midnight",
+            "Configuration": "6GB|128GB",
+            "RAM_GB": 6,
+            "Storage_GB": 128,
             "warranty_months": 12,
             "is_replaceable": true
           },
           "offers": [
             {
               "seller_name": "Amazon",
-              "price": 79999.0,
-              "rating": 4.8,
-              "rating_count": 1250,
-              "delivery_in_days": 2,
+              "price": 58999.0,
+              "rating": 4.7,
+              "rating_count": 8500,
+              "delivery_in_days": 1,
               "is_trusted_seller": true
             },
             {
               "seller_name": "Flipkart",
-              "price": 79990.0,
+              "price": 57999.0,
               "rating": 4.7,
-              "rating_count": 890,
-              "delivery_in_days": 3,
+              "rating_count": 9200,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Croma",
+              "price": 59499.0,
+              "rating": 4.8,
+              "rating_count": 4500,
+              "delivery_in_days": 1,
               "is_trusted_seller": true
             }
           ]
         },
         {
-          "variant_id": "s24_12_512",
+          "variant_id": "iphone_14_256",
           "specifications": {
-            "Configuration": "12GB|512GB",
-            "RAM_GB": 12,
-            "Storage_GB": 512,
-            "Color": "Cobalt Violet",
+            "Storage": "256GB",
+            "Color": "Blue",
+            "Configuration": "6GB|256GB",
+            "RAM_GB": 6,
+            "Storage_GB": 256,
             "warranty_months": 12,
             "is_replaceable": true
           },
           "offers": [
             {
               "seller_name": "Croma",
-              "price": 92499.0,
+              "price": 69900.0,
+              "rating": 4.8,
+              "rating_count": 1200,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Unicorn Store",
+              "price": 68990.0,
               "rating": 4.9,
-              "rating_count": 2100,
+              "rating_count": 850,
               "delivery_in_days": 1,
               "is_trusted_seller": true
             },
             {
-              "seller_name": "Samsung Store",
-              "price": 92999.0,
-              "rating": 4.9,
-              "rating_count": 1950,
+              "seller_name": "Amazon",
+              "price": 69500.0,
+              "rating": 4.7,
+              "rating_count": 3800,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            }
+          ]
+        },
+        {
+          "variant_id": "ip14_512_red",
+          "specifications": {
+            "Storage": "512GB",
+            "Color": "(PRODUCT)RED",
+            "Configuration": "6GB|512GB",
+            "RAM_GB": 6,
+            "Storage_GB": 512,
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "Amazon",
+              "price": 88900.0,
+              "rating": 4.8,
+              "rating_count": 750,
+              "delivery_in_days": 3,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Flipkart",
+              "price": 87900.0,
+              "rating": 4.7,
+              "rating_count": 600,
               "delivery_in_days": 2,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Apple Store",
+              "price": 89900.0,
+              "rating": 5.0,
+              "rating_count": 1200,
+              "delivery_in_days": 1,
               "is_trusted_seller": true
             }
           ]
@@ -68,17 +197,180 @@
       ]
     },
     {
-      "product_id": "iphone_15_pro",
-      "product_name": "iPhone 15 Pro",
+      "product_id": "iphone_15",
+      "product_name": "iPhone 15",
+      "category": "phones",
       "brand": "Apple",
-      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch-blue-titanium?wid=5120&hei=2880&fmt=png-alpha&.v=1692828188396",
-      "description": "Features the powerful A17 Pro chip, a customizable Action button, and the most advanced Pro camera system ever on an iPhone.",
+      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-15-finish-select-202309-6-1inch-pink?wid=5120&hei=2880&fmt=p-jpg&qlt=95&.v=1692923777972",
+      "description": "The ultimate iPhone experience with Dynamic Island, 48MP Main camera, and USB-C connectivity. Features the powerful A16 Bionic chip.",
       "variants": [
         {
-          "variant_id": "ip15p_256_blu",
+          "variant_id": "ip15_128_black",
+          "specifications": {
+            "Storage": "128GB",
+            "Color": "Black",
+            "Configuration": "6GB|128GB",
+            "RAM_GB": 6,
+            "Storage_GB": 128,
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "Amazon",
+              "price": 79900.0,
+              "rating": 4.8,
+              "rating_count": 12500,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Flipkart",
+              "price": 78900.0,
+              "rating": 4.7,
+              "rating_count": 9800,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Croma",
+              "price": 79990.0,
+              "rating": 4.8,
+              "rating_count": 6500,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            }
+          ]
+        },
+        {
+          "variant_id": "ip15_256_blue",
           "specifications": {
             "Storage": "256GB",
-            "Color": "Blue Titanium",
+            "Color": "Blue",
+            "Configuration": "6GB|256GB",
+            "RAM_GB": 6,
+            "Storage_GB": 256,
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "Apple Store",
+              "price": 89900.0,
+              "rating": 5.0,
+              "rating_count": 8500,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Amazon",
+              "price": 88900.0,
+              "rating": 4.8,
+              "rating_count": 7200,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 88500.0,
+              "rating": 4.8,
+              "rating_count": 4500,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true
+            }
+          ]
+        },
+        {
+          "variant_id": "ip15_512_pink",
+          "specifications": {
+            "Storage": "512GB",
+            "Color": "Pink",
+            "Configuration": "6GB|512GB",
+            "RAM_GB": 6,
+            "Storage_GB": 512,
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "Flipkart",
+              "price": 108900.0,
+              "rating": 4.7,
+              "rating_count": 3200,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Amazon",
+              "price": 109900.0,
+              "rating": 4.8,
+              "rating_count": 2800,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Croma",
+              "price": 108500.0,
+              "rating": 4.8,
+              "rating_count": 1900,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": "iphone_16",
+      "product_name": "iPhone 16",
+      "category": "phones",
+      "brand": "Apple",
+      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?wid=5120&hei=2880&fmt=p-jpg&qlt=95&.v=1726423576248",
+      "description": "The next generation iPhone with advanced AI capabilities, improved camera system, and revolutionary battery life. Powered by A18 Bionic chip.",
+      "variants": [
+        {
+          "variant_id": "ip16_128_silver",
+          "specifications": {
+            "Storage": "128GB",
+            "Color": "Silver",
+            "Configuration": "8GB|128GB",
+            "RAM_GB": 8,
+            "Storage_GB": 128,
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "Apple Store",
+              "price": 89900.0,
+              "rating": 5.0,
+              "rating_count": 9800,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Amazon",
+              "price": 88900.0,
+              "rating": 4.8,
+              "rating_count": 8500,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Flipkart",
+              "price": 87900.0,
+              "rating": 4.7,
+              "rating_count": 7200,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true
+            }
+          ]
+        },
+        {
+          "variant_id": "ip16_256_gold",
+          "specifications": {
+            "Storage": "256GB",
+            "Color": "Gold",
             "Configuration": "8GB|256GB",
             "RAM_GB": 8,
             "Storage_GB": 256,
@@ -87,28 +379,36 @@
           },
           "offers": [
             {
-              "seller_name": "Appario Retail",
-              "price": 134900.0,
-              "rating": 4.9,
-              "rating_count": 3400,
+              "seller_name": "Amazon",
+              "price": 99900.0,
+              "rating": 4.8,
+              "rating_count": 6500,
               "delivery_in_days": 1,
               "is_trusted_seller": true
             },
             {
-              "seller_name": "Unicorn Store",
-              "price": 135000.0,
-              "rating": 4.8,
-              "rating_count": 950,
-              "delivery_in_days": 2,
+              "seller_name": "Croma",
+              "price": 100900.0,
+              "rating": 4.9,
+              "rating_count": 4200,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Apple Store",
+              "price": 99900.0,
+              "rating": 5.0,
+              "rating_count": 7800,
+              "delivery_in_days": 1,
               "is_trusted_seller": true
             }
           ]
         },
         {
-          "variant_id": "ip15p_512_wht",
+          "variant_id": "ip16_512_black",
           "specifications": {
             "Storage": "512GB",
-            "Color": "White Titanium",
+            "Color": "Space Black",
             "Configuration": "8GB|512GB",
             "RAM_GB": 8,
             "Storage_GB": 512,
@@ -118,18 +418,26 @@
           "offers": [
             {
               "seller_name": "Flipkart",
-              "price": 154500.0,
-              "rating": 4.8,
-              "rating_count": 1100,
+              "price": 119900.0,
+              "rating": 4.7,
+              "rating_count": 3800,
               "delivery_in_days": 2,
               "is_trusted_seller": true
             },
             {
               "seller_name": "Amazon",
-              "price": 155500.0,
-              "rating": 4.7,
-              "rating_count": 2500,
-              "delivery_in_days": 3,
+              "price": 120900.0,
+              "rating": 4.8,
+              "rating_count": 4500,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 119500.0,
+              "rating": 4.8,
+              "rating_count": 2900,
+              "delivery_in_days": 2,
               "is_trusted_seller": true
             }
           ]
@@ -137,106 +445,123 @@
       ]
     },
     {
-      "product_id": "google_pixel_8",
-      "product_name": "Google Pixel 8",
-      "brand": "Google",
-      "base_image_url": "https://lh3.googleusercontent.com/S1b4xZtSMZyTxFtjqcZnNdnJ7oEfI9Ai0K4k2e-ozj5h5gJ00JQ5qklHrWbDkt7Qndg=w960",
-      "description": "The helpful phone by Google, with an amazing camera that uses AI to create perfect photos and a clean Android experience.",
+      "product_id": "iphone_17",
+      "product_name": "iPhone 17",
+      "category": "phones",
+      "brand": "Apple",
+      "base_image_url": "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=400&h=400&fit=crop",
+      "description": "The future of iPhone with revolutionary AI features, under-display camera technology, and all-day battery life. Powered by A19 Bionic chip.",
       "variants": [
         {
-          "variant_id": "px8_128",
+          "variant_id": "ip17_128_purple",
           "specifications": {
             "Storage": "128GB",
+            "Color": "Deep Purple",
             "Configuration": "8GB|128GB",
             "RAM_GB": 8,
             "Storage_GB": 128,
-            "Color": "Obsidian",
             "warranty_months": 12,
             "is_replaceable": true
           },
           "offers": [
             {
-              "seller_name": "Flipkart",
-              "price": 69999.0,
-              "rating": 4.6,
-              "rating_count": 1100,
-              "delivery_in_days": 2,
+              "seller_name": "Apple Store",
+              "price": 99900.0,
+              "rating": 5.0,
+              "rating_count": 5200,
+              "delivery_in_days": 1,
               "is_trusted_seller": true
             },
             {
-              "seller_name": "Reliance Digital",
-              "price": 71999.0,
+              "seller_name": "Amazon",
+              "price": 98900.0,
+              "rating": 4.8,
+              "rating_count": 3800,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Flipkart",
+              "price": 97900.0,
               "rating": 4.7,
-              "rating_count": 1800,
+              "rating_count": 2900,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true
+            }
+          ]
+        },
+        {
+          "variant_id": "ip17_256_blue",
+          "specifications": {
+            "Storage": "256GB",
+            "Color": "Ocean Blue",
+            "Configuration": "8GB|256GB",
+            "RAM_GB": 8,
+            "Storage_GB": 256,
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "Amazon",
+              "price": 112900.0,
+              "rating": 4.8,
+              "rating_count": 3200,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Croma",
+              "price": 113900.0,
+              "rating": 4.9,
+              "rating_count": 2100,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Apple Store",
+              "price": 112900.0,
+              "rating": 5.0,
+              "rating_count": 4500,
               "delivery_in_days": 1,
               "is_trusted_seller": true
             }
           ]
         },
         {
-          "variant_id": "px8_256",
+          "variant_id": "ip17_512_green",
           "specifications": {
-            "Storage": "256GB",
-            "Configuration": "8GB|256GB",
+            "Storage": "512GB",
+            "Color": "Alpine Green",
+            "Configuration": "8GB|512GB",
             "RAM_GB": 8,
-            "Storage_GB": 256,
-            "Color": "Hazel",
+            "Storage_GB": 512,
             "warranty_months": 12,
             "is_replaceable": true
           },
           "offers": [
             {
-              "seller_name": "GadgetGalaxy",
-              "price": 78500.0,
-              "rating": 4.5,
-              "rating_count": 900,
-              "delivery_in_days": 3,
+              "seller_name": "Flipkart",
+              "price": 129900.0,
+              "rating": 4.7,
+              "rating_count": 1800,
+              "delivery_in_days": 2,
               "is_trusted_seller": true
             },
             {
               "seller_name": "Amazon",
-              "price": 77500.0,
-              "rating": 4.6,
-              "rating_count": 1300,
-              "delivery_in_days": 2,
-              "is_trusted_seller": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "product_id": "oneplus_12",
-      "product_name": "OnePlus 12",
-      "brand": "OnePlus",
-      "base_image_url": "https://image01.oneplus.net/ebp/202310/13/1-m00-20-7a-rb8bwl-ql8aacurpqaaflpuajrzr0.jpg",
-      "description": "A performance flagship with a Snapdragon 8 Gen 3 processor, Hasselblad camera, and super-fast 100W SUPERVOOC charging.",
-      "variants": [
-        {
-          "variant_id": "op12_default",
-          "specifications": {
-            "Configuration": "12GB|256GB",
-            "RAM_GB": 12,
-            "Storage_GB": 256,
-            "Color": "Flowy Emerald",
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "OnePlus Official",
-              "price": 64999.0,
+              "price": 130900.0,
               "rating": 4.8,
               "rating_count": 2200,
-              "delivery_in_days": 2,
+              "delivery_in_days": 1,
               "is_trusted_seller": true
             },
             {
-              "seller_name": "Amazon",
-              "price": 64999.0,
-              "rating": 4.7,
-              "rating_count": 3500,
-              "delivery_in_days": 1,
+              "seller_name": "Reliance Digital",
+              "price": 129500.0,
+              "rating": 4.8,
+              "rating_count": 1500,
+              "delivery_in_days": 2,
               "is_trusted_seller": true
             }
           ]
@@ -246,12 +571,13 @@
     {
       "product_id": "macbook_air_m2",
       "product_name": "MacBook Air M2",
+      "category": "laptops",
       "brand": "Apple",
       "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/macbook-air-m2-midnight-gallery1-202306?wid=2000&hei=1536&fmt=jpeg&qlt=90&.v=1683844527075",
       "description": "Incredibly thin and light, the MacBook Air is now supercharged by the M2 chip, delivering exceptional performance and up to 18 hours of battery life.",
       "variants": [
         {
-          "variant_id": "mba_m2_8_256",
+          "variant_id": "macbook_air_m2_8_256",
           "specifications": {
             "Configuration": "8GB|256GBSSD",
             "RAM_GB": 8,
@@ -275,6 +601,14 @@
               "rating": 4.7,
               "rating_count": 1200,
               "delivery_in_days": 2,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Apple Store",
+              "price": 99900.0,
+              "rating": 5.0,
+              "rating_count": 3200,
+              "delivery_in_days": 1,
               "is_trusted_seller": true
             }
           ]
@@ -305,42 +639,12 @@
               "rating_count": 850,
               "delivery_in_days": 2,
               "is_trusted_seller": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "product_id": "dell_xps_15",
-      "product_name": "Dell XPS 15",
-      "brand": "Dell",
-      "base_image_url": "https://i.dell.com/sites/csimages/App-Merchandizing_Images/all/xps-15-9530-laptop-pdp-gallery-504x350.jpg",
-      "description": "A premium Windows laptop with a stunning 4K OLED display, powerful Intel Core i7 processor, and NVIDIA RTX graphics for creative professionals.",
-      "variants": [
-        {
-          "variant_id": "xps15_default",
-          "specifications": {
-            "Configuration": "16GB|512GBSSD",
-            "RAM_GB": 16,
-            "Storage_GB": 512,
-            "Color": "Platinum Silver",
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Dell India",
-              "price": 189990.0,
-              "rating": 4.7,
-              "rating_count": 450,
-              "delivery_in_days": 3,
-              "is_trusted_seller": true
             },
             {
               "seller_name": "Amazon",
-              "price": 185000.0,
+              "price": 123500.0,
               "rating": 4.8,
-              "rating_count": 980,
+              "rating_count": 1100,
               "delivery_in_days": 2,
               "is_trusted_seller": true
             }
@@ -351,8 +655,9 @@
     {
       "product_id": "sony_wh_1000xm5",
       "product_name": "Sony WH-1000XM5 Headphones",
+      "category": "headphones",
       "brand": "Sony",
-      "base_image_url": "https://m.media-amazon.com/images/I/61+dQkA8GZL._SL1500_.jpg",
+      "base_image_url": "https://www.sony.co.in/image/5d6f6e9a8a0d3b1e8e0b0c0d0e0f0a0?fmt=pjpeg&wid=600&hei=600",
       "description": "Industry-leading noise-canceling headphones with exceptional sound quality, a lightweight design, and crystal-clear hands-free calling.",
       "variants": [
         {
@@ -389,1148 +694,6 @@
               "rating": 4.9,
               "rating_count": 5500,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "product_id": "apple_watch_9",
-      "product_name": "Apple Watch Series 9",
-      "brand": "Apple",
-      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MKU73_VW_34FR+watch-case-45-alum-starlight-nc-9s_VW_34FR_WF_CO_GEO_IN?wid=4000&hei=4000&fmt=p-jpg&qlt=95&.v=1693525449812",
-      "description": "Your essential companion for a healthy life is now even more powerful. Features a new S9 SiP, a brighter display, and a magical new way to interact.",
-      "variants": [
-        {
-          "variant_id": "aw9_default",
-          "specifications": {
-            "Size": "45mm",
-            "Configuration": "Standard",
-            "RAM_GB": 1,
-            "Storage_GB": 64,
-            "Color": "Starlight",
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Appario Retail",
-              "price": 41900.0,
-              "rating": 4.8,
-              "rating_count": 800,
-              "delivery_in_days": 2,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Imagine Store",
-              "price": 42500.0,
-              "rating": 4.9,
-              "rating_count": 550,
-              "delivery_in_days": 2,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Flipkart",
-              "price": 41990.0,
-              "rating": 4.8,
-              "rating_count": 600,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "product_id": "samsung_galaxy_watch_6",
-      "product_name": "Samsung Galaxy Watch 6",
-      "brand": "Samsung",
-      "base_image_url": "https://images.samsung.com/is/image/samsung/p6pim/in/sm-r940nzsainu/gallery/in-galaxy-watch6-classic-sm-r940nzsainu-thumb-538367653?$650_519_PNG$",
-      "description": "Track your wellness with our biggest screen yet. Features advanced sleep coaching, heart rate monitoring, and a sleek, durable design.",
-      "variants": [
-        {
-          "variant_id": "gw6_default",
-          "specifications": {
-            "Size": "44mm",
-            "Configuration": "Standard",
-            "RAM_GB": 2,
-            "Storage_GB": 16,
-            "Color": "Graphite",
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Samsung Store",
-              "price": 29999.0,
-              "rating": 4.6,
-              "rating_count": 650,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Amazon",
-              "price": 29500.0,
-              "rating": 4.7,
-              "rating_count": 1200,
-              "delivery_in_days": 2,
-              "is_trusted_seller": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "product_id": "logitech_mx_master_3s",
-      "product_name": "Logitech MX Master 3S Mouse",
-      "brand": "Logitech",
-      "base_image_url": "https://resource.logitech.com/content/dam/logitech/en/products/mice/mx-master-3s/gallery/mx-master-3s-gallery-1-graphite.png",
-      "description": "An iconic mouse, remastered. Experience ultimate comfort and performance with quiet clicks and an 8K DPI sensor for precision on any surface.",
-      "variants": [
-        {
-          "variant_id": "mx3s_default",
-          "specifications": {
-            "Type": "Wireless Mouse",
-            "Configuration": "Standard",
-            "RAM_GB": null,
-            "Storage_GB": null,
-            "Color": "Graphite",
-            "warranty_months": 24,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Appario Retail",
-              "price": 9499.0,
-              "rating": 4.9,
-              "rating_count": 3200,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "MDComputers",
-              "price": 9200.0,
-              "rating": 4.8,
-              "rating_count": 800,
-              "delivery_in_days": 3,
-              "is_trusted_seller": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "product_id": "anker_powercore_10000",
-      "product_name": "Anker PowerCore 10000",
-      "brand": "Anker",
-      "base_image_url": "https://m.media-amazon.com/images/I/61tSxNkYbYL._SL1500_.jpg",
-      "description": "One of the smallest and lightest 10,000mAh portable chargers. Provides almost three-and-a-half iPhone charges or two-and-a-half Galaxy S8 charges.",
-      "variants": [
-        {
-          "variant_id": "anker_pc_10k_default",
-          "specifications": {
-            "Capacity": "10000mAh",
-            "Configuration": "Standard",
-            "RAM_GB": null,
-            "Storage_GB": null,
-            "Color": "Black",
-            "warranty_months": 18,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "AnkerDirect",
-              "price": 2199.0,
-              "rating": 4.8,
-              "rating_count": 15000,
-              "delivery_in_days": 3,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Amazon",
-              "price": 2099.0,
-              "rating": 4.7,
-              "rating_count": 25000,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "product_id": "keychron_k2",
-      "product_name": "Keychron K2 Mechanical Keyboard",
-      "brand": "Keychron",
-      "base_image_url": "https://keychron.in/cdn/shop/files/KeychronK2Pro-QMK-VIAWirelessMechanicalKeyboardforMacWindows-GateronGProSwitches_2.jpg",
-      "description": "A popular 75% layout wireless mechanical keyboard with Mac and Windows compatibility. Features Gateron G Pro switches and customizable RGB backlighting.",
-      "variants": [
-        {
-          "variant_id": "k2_default",
-          "specifications": {
-            "Layout": "75%",
-            "Configuration": "Standard",
-            "RAM_GB": null,
-            "Storage_GB": null,
-            "Color": "Grey",
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "MechaKeys",
-              "price": 7899.0,
-              "rating": 4.9,
-              "rating_count": 500,
-              "delivery_in_days": 4,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Keychron India",
-              "price": 8299.0,
-              "rating": 4.9,
-              "rating_count": 700,
-              "delivery_in_days": 3,
-              "is_trusted_seller": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "product_id": "lg_c3_55_oled",
-      "product_name": "LG C3 55-inch OLED TV",
-      "brand": "LG",
-      "base_image_url": "https://www.lg.com/content/dam/channel/wcms/in/images/tvs/oled55c3psa_atv_eain_c/gallery/OLED55C3PSA-1.jpg",
-      "description": "Experience perfect blacks and infinite contrast with the LG OLED C3. The a9 AI Processor Gen6 provides stunning picture and sound quality.",
-      "variants": [
-        {
-          "variant_id": "lg_c3_55_default",
-          "specifications": {
-            "Size": "55-inch",
-            "Configuration": "Standard",
-            "RAM_GB": null,
-            "Storage_GB": null,
-            "Color": "Black",
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "LG India",
-              "price": 149990.0,
-              "rating": 4.9,
-              "rating_count": 250,
-              "delivery_in_days": 3,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Reliance Digital",
-              "price": 152000.0,
-              "rating": 4.8,
-              "rating_count": 400,
-              "delivery_in_days": 2,
-              "is_trusted_seller": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "product_id": "gopro_hero12",
-      "product_name": "GoPro HERO12 Black",
-      "brand": "GoPro",
-      "base_image_url": "https://m.media-amazon.com/images/I/61UAbM7cLBL._SL1500_.jpg",
-      "description": "The most versatile camera in the world, now with incredible image quality, even better HyperSmooth video stabilization and a huge boost in battery life.",
-      "variants": [
-        {
-          "variant_id": "hero12_default",
-          "specifications": {
-            "Type": "Action Camera",
-            "Configuration": "Standard",
-            "RAM_GB": null,
-            "Storage_GB": null,
-            "Color": "Black",
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Appario Retail",
-              "price": 45000.0,
-              "rating": 4.7,
-              "rating_count": 300,
-              "delivery_in_days": 2,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "GoPro India",
-              "price": 46500.0,
-              "rating": 4.8,
-              "rating_count": 250,
-              "delivery_in_days": 3,
-              "is_trusted_seller": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "product_id": "kindle_paperwhite_16gb",
-      "product_name": "Kindle Paperwhite (16 GB)",
-      "brand": "Amazon",
-      "base_image_url": "https://m.media-amazon.com/images/I/61m+ZrzM2oL._SL1000_.jpg",
-      "description": "Now with a 6.8\" display and thinner borders, adjustable warm light, up to 10 weeks of battery life, and 20% faster page turns.",
-      "variants": [
-        {
-          "variant_id": "kindle_pw_16gb_default",
-          "specifications": {
-            "Storage": "16 GB",
-            "Configuration": "Standard",
-            "RAM_GB": null,
-            "Storage_GB": 16,
-            "Color": "Black",
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Amazon",
-              "price": 13999.0,
-              "rating": 4.8,
-              "rating_count": 25000,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Appario Retail",
-              "price": 13899.0,
-              "rating": 4.8,
-              "rating_count": 18000,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "product_id": "sony_ps5",
-      "product_name": "Sony PlayStation 5",
-      "brand": "Sony",
-      "base_image_url": "https://m.media-amazon.com/images/I/61I+2njHJhL._SL1500_.jpg",
-      "description": "Experience lightning-fast loading with an ultra-high-speed SSD, deeper immersion with support for haptic feedback, adaptive triggers, and 3D Audio.",
-      "variants": [
-        {
-          "variant_id": "ps5_default",
-          "specifications": {
-            "Edition": "Standard",
-            "Configuration": "Standard",
-            "RAM_GB": 16,
-            "Storage_GB": 825,
-            "Color": "White",
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Sony Center",
-              "price": 54990.0,
-              "rating": 4.9,
-              "rating_count": 5000,
-              "delivery_in_days": 2,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Games The Shop",
-              "price": 54500.0,
-              "rating": 4.8,
-              "rating_count": 1200,
-              "delivery_in_days": 3,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Amazon",
-              "price": 54990.0,
-              "rating": 4.9,
-              "rating_count": 7000,
-              "delivery_in_days": 2,
-              "is_trusted_seller": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "product_id": "nintendo_switch_oled",
-      "product_name": "Nintendo Switch OLED",
-      "brand": "Nintendo",
-      "base_image_url": "https://m.media-amazon.com/images/I/61-PblYntsL._SL1500_.jpg",
-      "description": "Features a vibrant 7-inch OLED screen, a wide adjustable stand, a dock with a wired LAN port, 64 GB of internal storage, and enhanced audio.",
-      "variants": [
-        {
-          "variant_id": "switch_oled_default",
-          "specifications": {
-            "Model": "OLED",
-            "Configuration": "Standard",
-            "RAM_GB": 4,
-            "Storage_GB": 64,
-            "Color": "White",
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "MX2Games",
-              "price": 29499.0,
-              "rating": 4.7,
-              "rating_count": 850,
-              "delivery_in_days": 5,
-              "is_trusted_seller": false
-            },
-            {
-              "seller_name": "Games The Shop",
-              "price": 30500.0,
-              "rating": 4.8,
-              "rating_count": 600,
-              "delivery_in_days": 3,
-              "is_trusted_seller": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "product_id": "bose_qc_ultra_earbuds",
-      "product_name": "Bose QuietComfort Ultra Earbuds",
-      "brand": "Bose",
-      "base_image_url": "https://assets.bose.com/content/dam/Bose_DAM/Web/consumer_electronics/global/products/headphones/quietcomfort_ultra_earbuds/product_silo_images/earbuds_black_EC_hero.psd/_jcr_content/renditions/cq5dam.web.1280.1280.png",
-      "description": "World-class noise cancellation, now with Immersive Audio for sound that feels more real. CustomTune technology personalizes the sound to your ears.",
-      "variants": [
-        {
-          "variant_id": "bose_qc_ultra_default",
-          "specifications": {
-            "Type": "In-Ear",
-            "Configuration": "Standard",
-            "RAM_GB": null,
-            "Storage_GB": null,
-            "Color": "Black",
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Bose India",
-              "price": 25900.0,
-              "rating": 4.7,
-              "rating_count": 1100,
-              "delivery_in_days": 2,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Amazon",
-              "price": 24990.0,
-              "rating": 4.8,
-              "rating_count": 1500,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "product_id": "samsung_odyssey_g7_monitor",
-      "product_name": "Samsung 27\" Odyssey G7 Monitor",
-      "brand": "Samsung",
-      "base_image_url": "https://images.samsung.com/is/image/samsung/p6pim/in/ls27bg700ewxxl/gallery/in-odyssey-g7-g70b-ls27bg700ewxxl-thumb-534763142?$650_519_PNG$",
-      "description": "A 240Hz, 1ms gaming monitor with a 1000R curved QLED screen, providing ultimate immersion and picture quality for serious gamers.",
-      "variants": [
-        {
-          "variant_id": "odyssey_g7_default",
-          "specifications": {
-            "Size": "27-inch",
-            "Configuration": "Standard",
-            "RAM_GB": null,
-            "Storage_GB": null,
-            "Color": "Black",
-            "warranty_months": 36,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Samsung Store",
-              "price": 45000.0,
-              "rating": 4.6,
-              "rating_count": 450,
-              "delivery_in_days": 3,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Amazon",
-              "price": 44500.0,
-              "rating": 4.8,
-              "rating_count": 800,
-              "delivery_in_days": 2,
-              "is_trusted_seller": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "product_id": "dji_mini_4_pro",
-      "product_name": "DJI Mini 4 Pro Drone",
-      "brand": "DJI",
-      "base_image_url": "https://m.media-amazon.com/images/I/71a9zvRkKHL._SL1500_.jpg",
-      "description": "Mini to the max. An advanced mini camera drone featuring powerful imaging capabilities, omnidirectional obstacle sensing, and a lightweight, foldable design.",
-      "variants": [
-        {
-          "variant_id": "dji_mini_4_pro_default",
-          "specifications": {
-            "Type": "Drone",
-            "Configuration": "Standard",
-            "RAM_GB": null,
-            "Storage_GB": null,
-            "Color": "Grey",
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Appario Retail",
-              "price": 109990.0,
-              "rating": 4.9,
-              "rating_count": 150,
-              "delivery_in_days": 2,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "DJI Official",
-              "price": 112000.0,
-              "rating": 4.9,
-              "rating_count": 100,
-              "delivery_in_days": 4,
-              "is_trusted_seller": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "product_id": "boat_airdopes_141",
-      "product_name": "boAt Airdopes 141",
-      "brand": "boAt",
-      "base_image_url": "https://m.media-amazon.com/images/I/61KNJav3S9L._SL1500_.jpg",
-      "description": "Enjoy an extended break on weekends with your favourite episodes on stream, virtue of a playback time of up to 42 hours including the 6 hours nonstop playtime for earbuds.",
-      "variants": [
-        {
-          "variant_id": "airdopes_141_default",
-          "specifications": {
-            "Type": "In-Ear",
-            "Configuration": "Standard",
-            "RAM_GB": null,
-            "Storage_GB": null,
-            "Color": "Bold Black",
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Amazon",
-              "price": 1299.0,
-              "rating": 4.1,
-              "rating_count": 150000,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "boAt Official",
-              "price": 1499.0,
-              "rating": 4.2,
-              "rating_count": 80000,
-              "delivery_in_days": 2,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Flipkart",
-              "price": 1349.0,
-              "rating": 4.1,
-              "rating_count": 120000,
-              "delivery_in_days": 2,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Myntra",
-              "price": 1499.0,
-              "rating": 4.2,
-              "rating_count": 95000,
-              "delivery_in_days": 3,
-              "is_trusted_seller": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "product_id": "msft_surface_laptop_5",
-      "product_name": "Microsoft Surface Laptop 5",
-      "brand": "Microsoft",
-      "base_image_url": "https://m.media-amazon.com/images/I/61Zjs9PEf+L._SL1500_.jpg",
-      "description": "Blazing-fast performance and sleek portability in a premium laptop with a vibrant PixelSense touchscreen and an exceptional typing experience.",
-      "variants": [
-        {
-          "variant_id": "surface_laptop_5_default",
-          "specifications": {
-            "Configuration": "8GB|256GBSSD",
-            "RAM_GB": 8,
-            "Storage_GB": 256,
-            "Color": "Platinum",
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Microsoft Store",
-              "price": 104999.0,
-              "rating": 4.8,
-              "rating_count": 350,
-              "delivery_in_days": 3,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Amazon",
-              "price": 102999.0,
-              "rating": 4.8,
-              "rating_count": 600,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "product_id": "amazon_echo_dot_5",
-      "product_name": "Amazon Echo Dot (5th Gen)",
-      "brand": "Amazon",
-      "base_image_url": "https://m.media-amazon.com/images/I/61+Q6Rh3OQL._SL1500_.jpg",
-      "description": "Our most popular smart speaker with Alexa. The sleek, compact design delivers crisp vocals and balanced bass for full sound.",
-      "variants": [
-        {
-          "variant_id": "echo_dot_5_default",
-          "specifications": {
-            "Generation": "5th",
-            "Configuration": "Standard",
-            "RAM_GB": null,
-            "Storage_GB": null,
-            "Color": "Charcoal",
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Amazon",
-              "price": 4499.0,
-              "rating": 4.6,
-              "rating_count": 85000,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Appario Retail",
-              "price": 4399.0,
-              "rating": 4.7,
-              "rating_count": 65000,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "product_id": "samsung_galaxy_tab_s9",
-      "product_name": "Samsung Galaxy Tab S9",
-      "brand": "Samsung",
-      "base_image_url": "https://images.samsung.com/is/image/samsung/p6pim/in/sm-x710nzaainu/gallery/in-galaxy-tab-s9-sm-x710nzaainu-thumb-538528449?$650_519_PNG$",
-      "description": "The ultimate tablet for work and play, featuring a stunning Dynamic AMOLED 2X display, S Pen included, and powerful performance.",
-      "variants": [
-        {
-          "variant_id": "tab_s9_default",
-          "specifications": {
-            "Configuration": "8GB|128GB",
-            "RAM_GB": 8,
-            "Storage_GB": 128,
-            "Color": "Graphite",
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Samsung Store",
-              "price": 72999.0,
-              "rating": 4.8,
-              "rating_count": 800,
-              "delivery_in_days": 2,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Amazon",
-              "price": 71999.0,
-              "rating": 4.9,
-              "rating_count": 1100,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "product_id": "xbox_series_x",
-      "product_name": "Xbox Series X",
-      "brand": "Microsoft",
-      "base_image_url": "https://m.media-amazon.com/images/I/61JGKhqxHxL._SL1500_.jpg",
-      "description": "The fastest, most powerful Xbox ever. Explore rich new worlds with 12 teraflops of raw graphic processing power, DirectX ray tracing, and a custom SSD.",
-      "variants": [
-        {
-          "variant_id": "xbox_series_x_default",
-          "specifications": {
-            "Edition": "Standard",
-            "Configuration": "Standard",
-            "RAM_GB": 16,
-            "Storage_GB": 1000,
-            "Color": "Black",
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Amazon",
-              "price": 49990.0,
-              "rating": 4.9,
-              "rating_count": 4500,
-              "delivery_in_days": 2,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Games The Shop",
-              "price": 49500.0,
-              "rating": 4.8,
-              "rating_count": 900,
-              "delivery_in_days": 3,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Flipkart",
-              "price": 50990.0,
-              "rating": 4.7,
-              "rating_count": 3500,
-              "delivery_in_days": 2,
-              "is_trusted_seller": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "product_id": "fitbit_charge_6",
-      "product_name": "Fitbit Charge 6",
-      "brand": "Fitbit",
-      "base_image_url": "https://m.media-amazon.com/images/I/61X3+I0RgaL._SL1500_.jpg",
-      "description": "The essential fitness tracker with Google apps, heart rate on equipment, and 7 days of battery life to help you stay on track.",
-      "variants": [
-        {
-          "variant_id": "charge_6_default",
-          "specifications": {
-            "Type": "Fitness Tracker",
-            "Configuration": "Standard",
-            "RAM_GB": null,
-            "Storage_GB": null,
-            "Color": "Obsidian",
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Amazon",
-              "price": 14999.0,
-              "rating": 4.6,
-              "rating_count": 1200,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Fitbit India",
-              "price": 15499.0,
-              "rating": 4.7,
-              "rating_count": 800,
-              "delivery_in_days": 3,
-              "is_trusted_seller": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "product_id": "logitech_c920_webcam",
-      "product_name": "Logitech C920 Webcam",
-      "brand": "Logitech",
-      "base_image_url": "https://m.media-amazon.com/images/I/71iNwni9TsL._SL1500_.jpg",
-      "description": "Full HD 1080p video calling and recording with stereo audio. The perfect webcam for Skype, FaceTime, and YouTube.",
-      "variants": [
-        {
-          "variant_id": "c920_default",
-          "specifications": {
-            "Resolution": "1080p",
-            "Configuration": "Standard",
-            "RAM_GB": null,
-            "Storage_GB": null,
-            "Color": "Black",
-            "warranty_months": 24,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Appario Retail",
-              "price": 7995.0,
-              "rating": 4.8,
-              "rating_count": 25000,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "MDComputers",
-              "price": 7800.0,
-              "rating": 4.7,
-              "rating_count": 5000,
-              "delivery_in_days": 3,
-              "is_trusted_seller": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "product_id": "philips_hue_starter_kit",
-      "product_name": "Philips Hue Starter Kit",
-      "brand": "Philips",
-      "base_image_url": "https://m.media-amazon.com/images/I/61L7zMWZNsL._SL1500_.jpg",
-      "description": "Smart lighting made easy. Includes 4 smart bulbs with white and color ambiance and the Hue Bridge to control your lights from anywhere.",
-      "variants": [
-        {
-          "variant_id": "hue_starter_kit_default",
-          "specifications": {
-            "Type": "Smart Lighting",
-            "Configuration": "Standard",
-            "RAM_GB": null,
-            "Storage_GB": null,
-            "Color": "White and Color Ambiance",
-            "warranty_months": 24,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Amazon",
-              "price": 14999.0,
-              "rating": 4.9,
-              "rating_count": 4000,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Philips Store",
-              "price": 15999.0,
-              "rating": 4.8,
-              "rating_count": 2500,
-              "delivery_in_days": 3,
-              "is_trusted_seller": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "product_id": "canon_eos_r6_mark_ii",
-      "product_name": "Canon EOS R6 Mark II Camera",
-      "brand": "Canon",
-      "base_image_url": "https://m.media-amazon.com/images/I/81hYvLKk8LL._SL1500_.jpg",
-      "description": "A full-frame mirrorless camera for hybrid shooters. Delivers stunning photos and 4K 60p video with advanced subject tracking and in-body image stabilization.",
-      "variants": [
-        {
-          "variant_id": "r6_mark_ii_default",
-          "specifications": {
-            "Type": "Mirrorless Camera",
-            "Configuration": "Standard",
-            "RAM_GB": null,
-            "Storage_GB": null,
-            "Color": "Black",
-            "warranty_months": 24,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Appario Retail",
-              "price": 243990.0,
-              "rating": 4.9,
-              "rating_count": 150,
-              "delivery_in_days": 2,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Canon India",
-              "price": 249990.0,
-              "rating": 5.0,
-              "rating_count": 100,
-              "delivery_in_days": 4,
-              "is_trusted_seller": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "product_id": "irobot_roomba_j7_plus",
-      "product_name": "iRobot Roomba j7+",
-      "brand": "iRobot",
-      "base_image_url": "https://m.media-amazon.com/images/I/71I9UrbM1jL._SL1500_.jpg",
-      "description": "The robot vacuum that identifies and avoids obstacles like pet waste and charging cords. It empties itself into an enclosed bag, so you don't have to think about vacuuming for months.",
-      "variants": [
-        {
-          "variant_id": "roomba_j7_plus_default",
-          "specifications": {
-            "Type": "Robot Vacuum",
-            "Configuration": "Standard",
-            "RAM_GB": null,
-            "Storage_GB": null,
-            "Color": "Graphite",
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "iRobot India",
-              "price": 69900.0,
-              "rating": 4.7,
-              "rating_count": 500,
-              "delivery_in_days": 3,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Amazon",
-              "price": 68500.0,
-              "rating": 4.8,
-              "rating_count": 800,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "product_id": "iphone_14",
-      "product_name": "iPhone 14",
-      "brand": "Apple",
-      "base_image_url": "https://m.media-amazon.com/images/I/61bK6PMOC3L._SL1500_.jpg",
-      "description": "A total powerhouse. Features the A15 Bionic chip, an advanced dual-camera system for incredible photos in low light, and all-day battery life.",
-      "variants": [
-        {
-          "variant_id": "ip14_128_mid",
-          "specifications": {
-            "Storage": "128GB",
-            "Color": "Midnight",
-            "Configuration": "6GB|128GB",
-            "RAM_GB": 6,
-            "Storage_GB": 128,
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Amazon",
-              "price": 58999.0,
-              "rating": 4.7,
-              "rating_count": 8500,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Flipkart",
-              "price": 57999.0,
-              "rating": 4.7,
-              "rating_count": 9200,
-              "delivery_in_days": 2,
-              "is_trusted_seller": true
-            }
-          ]
-        },
-        {
-          "variant_id": "ip14_256_blu",
-          "specifications": {
-            "Storage": "256GB",
-            "Color": "Blue",
-            "Configuration": "6GB|256GB",
-            "RAM_GB": 6,
-            "Storage_GB": 256,
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Croma",
-              "price": 69900.0,
-              "rating": 4.8,
-              "rating_count": 1200,
-              "delivery_in_days": 2,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Unicorn Store",
-              "price": 68990.0,
-              "rating": 4.9,
-              "rating_count": 850,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            }
-          ]
-        },
-        {
-          "variant_id": "ip14_512_red",
-          "specifications": {
-            "Storage": "512GB",
-            "Color": "(PRODUCT)RED",
-            "Configuration": "6GB|512GB",
-            "RAM_GB": 6,
-            "Storage_GB": 512,
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Amazon",
-              "price": 88900.0,
-              "rating": 4.8,
-              "rating_count": 750,
-              "delivery_in_days": 3,
-              "is_trusted_seller": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "product_id": "ipad_air_5",
-      "product_name": "iPad Air (5th Gen)",
-      "brand": "Apple",
-      "base_image_url": "https://m.media-amazon.com/images/I/61XZQX6NGoL._SL1500_.jpg",
-      "description": "Serious performance in a thin and light design. Powered by the Apple M1 chip, with a 10.9-inch Liquid Retina display and support for Apple Pencil 2.",
-      "variants": [
-        {
-          "variant_id": "ipad_air_5_64",
-          "specifications": {
-            "Storage": "64GB",
-            "Color": "Space Grey",
-            "Configuration": "8GB|64GB",
-            "RAM_GB": 8,
-            "Storage_GB": 64,
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Amazon",
-              "price": 54900.0,
-              "rating": 4.8,
-              "rating_count": 4500,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Flipkart",
-              "price": 55900.0,
-              "rating": 4.7,
-              "rating_count": 3200,
-              "delivery_in_days": 2,
-              "is_trusted_seller": true
-            }
-          ]
-        },
-        {
-          "variant_id": "ipad_air_5_256",
-          "specifications": {
-            "Storage": "256GB",
-            "Color": "Starlight",
-            "Configuration": "8GB|256GB",
-            "RAM_GB": 8,
-            "Storage_GB": 256,
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Imagine Store",
-              "price": 72500.0,
-              "rating": 4.9,
-              "rating_count": 1100,
-              "delivery_in_days": 2,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Croma",
-              "price": 71990.0,
-              "rating": 4.8,
-              "rating_count": 900,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "product_id": "nothing_ear_2",
-      "product_name": "Nothing Ear (2)",
-      "brand": "Nothing",
-      "base_image_url": "https://m.media-amazon.com/images/I/61QeJkS-jIL._SL1500_.jpg",
-      "description": "Iconic transparent design with next-level noise cancellation and a custom 11.6 mm driver for rich sound. Features Personal Sound Profile.",
-      "variants": [
-        {
-          "variant_id": "nothing_ear_2_default",
-          "specifications": {
-            "Type": "In-Ear",
-            "Color": "White",
-            "Configuration": "Standard",
-            "RAM_GB": null,
-            "Storage_GB": null,
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Flipkart",
-              "price": 8999.0,
-              "rating": 4.6,
-              "rating_count": 7500,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Myntra",
-              "price": 9999.0,
-              "rating": 4.7,
-              "rating_count": 4200,
-              "delivery_in_days": 3,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Croma",
-              "price": 9499.0,
-              "rating": 4.5,
-              "rating_count": 2100,
-              "delivery_in_days": 2,
               "is_trusted_seller": true
             }
           ]
