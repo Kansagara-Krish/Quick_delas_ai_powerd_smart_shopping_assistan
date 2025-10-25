@@ -111,6 +111,17 @@ def home(request: Request):
         return templates.TemplateResponse("index.html", {"request": request})
     return HTMLResponse("<h1>Error: 'templates' directory not found.</h1>", status_code=500)
 
+@app.get("/compare.html", response_class=HTMLResponse)
+def compare_page(request: Request):
+    if templates:
+        return templates.TemplateResponse("compare.html", {"request": request})
+    return HTMLResponse("<h1>Error: 'templates' directory not found.</h1>", status_code=500)
+
+@app.get("/index.html", response_class=HTMLResponse)
+def index_page(request: Request):
+    if templates:
+        return templates.TemplateResponse("index.html", {"request": request})
+    return HTMLResponse("<h1>Error: 'templates' directory not found.</h1>", status_code=500)
 
 @app.post("/chat", response_class=JSONResponse)
 async def chat(request: Request):

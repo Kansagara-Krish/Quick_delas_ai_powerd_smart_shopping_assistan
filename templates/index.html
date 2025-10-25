@@ -116,6 +116,24 @@
         width: 100%;
       }
 
+      .nav-links a.highlight {
+        color: var(--primary);
+        font-weight: 700;
+        animation: pulseHighlight 2s infinite;
+      }
+
+      @keyframes pulseHighlight {
+        0% {
+          box-shadow: 0 0 0 0 rgba(106, 17, 203, 0.4);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(106, 17, 203, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(106, 17, 203, 0);
+        }
+      }
+
       .cart-count {
         background: var(--accent);
         color: white;
@@ -482,7 +500,7 @@
         box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
       }
 
-      /* Chat Wrapper */
+      /* Chat Wrapper - WIDER FOR LAPTOPS */
       .chat-wrapper {
         width: 100%;
         height: 100vh;
@@ -510,7 +528,7 @@
       }
 
       .chat-container {
-        max-width: 1400px;
+        max-width: 95vw; /* Increased from 1400px for wider layout */
         width: 100%;
         height: 100%;
         margin: 0 auto;
@@ -556,7 +574,7 @@
         border-radius: 18px;
         padding: 15px 20px;
         margin: 10px 0;
-        max-width: 70%;
+        max-width: 70%; /* Increased from 70% for wider messages */
         line-height: 1.5;
         animation: fadeIn 0.5s ease;
         position: relative;
@@ -579,25 +597,35 @@
         box-shadow: 0 2px 8px rgba(106, 17, 203, 0.3);
       }
 
-      /* Enhanced Products Container with Slide Comparison */
+      /* Enhanced Products Container with Slide Comparison - WIDER */
       .products-container {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         gap: 20px;
-        margin: 20px 0;
-        padding: 10px;
-        position: relative;
+        padding: 20px;
+      }
+
+      .product-card li {
+        padding: 8px 0;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 16px;
+        color: #555;
+      }
+
+      /* Highlight important information */
+      .product-card li strong {
+        color: #333;
+        font-weight: 600;
       }
 
       .product-card {
-        flex: 1 1 calc(33.33% - 20px);
+        flex: 1 1 calc(33.33% - 25px); /* Adjusted for wider gap */
         background: white;
-        padding: 20px;
+        padding: 20px; /* Increased padding */
         border-radius: 15px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         transition: var(--transition);
         border: 1px solid #eee;
-        min-width: 250px;
         position: relative;
         overflow: hidden;
         opacity: 0;
@@ -651,35 +679,54 @@
 
       .product-card strong {
         color: var(--primary);
-        font-size: 1.1rem;
+        font-size: 1.2rem; /* Slightly larger */
         display: block;
-        margin-bottom: 10px;
+        margin-bottom: 15px; /* Increased margin */
+      }
+
+      .product-card h1 {
+        color: #333;
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+
+      /* Style list items for better readability */
+      .product-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .product-card li {
+        padding: 8px 0;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 16px;
+        color: #555;
       }
 
       .product-feature {
         display: flex;
         justify-content: space-between;
-        margin: 8px 0;
-        padding: 5px 0;
+        margin: 10px 0; /* Increased margin */
+        padding: 6px 0; /* Increased padding */
         border-bottom: 1px solid #f0f0f0;
       }
 
       .feature-name {
         color: #666;
-        font-size: 0.9rem;
+        font-size: 0.95rem; /* Slightly larger */
       }
 
       .feature-value {
         color: var(--dark-text);
         font-weight: 600;
-        font-size: 0.9rem;
+        font-size: 0.95rem; /* Slightly larger */
       }
 
       /* Indian Rupee Price Styling */
       .price-inr {
         color: #2e7d32;
         font-weight: 700;
-        font-size: 0.95rem;
+        font-size: 1rem; /* Slightly larger */
       }
 
       .price-inr::before {
@@ -687,65 +734,17 @@
         margin-right: 2px;
       }
 
-      .product-score {
-        background: linear-gradient(135deg, var(--primary), var(--secondary));
-        color: white;
-        padding: 8px 12px;
-        border-radius: 20px;
-        font-size: 0.8rem;
-        font-weight: 600;
-        text-align: center;
-        margin-top: 10px;
-      }
-
-      .score-best {
-        background: linear-gradient(135deg, #2196f3, #1976d2);
-      }
-
-      .score-good {
-        background: linear-gradient(135deg, #4caf50, #45a049);
-      }
-
-      .score-average {
-        background: linear-gradient(135deg, #ff9800, #f57c00);
-      }
-
-      .predict-btn {
-        display: block;
-        margin: 25px auto 10px auto;
-        background: var(--secondary);
-        color: var(--light-text);
-        border: none;
-        padding: 14px 35px;
-        border-radius: 25px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: var(--transition);
-        box-shadow: 0 4px 15px rgba(37, 117, 252, 0.3);
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 16px;
-      }
-
-      .predict-btn:hover {
-        background: var(--primary);
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(37, 117, 252, 0.4);
-      }
-
       /* Add to Cart Button */
       .add-to-cart-btn {
         background: linear-gradient(135deg, #ec4899, #8b5cf6);
-        /* Pink to purple gradient */
         color: white;
         border: none;
-        padding: 12px 15px;
+        padding: 14px 15px; /* Increased padding */
         border-radius: 8px;
         font-weight: 600;
         cursor: pointer;
         transition: var(--transition);
-        margin-top: 15px;
+        margin-top: 20px; /* Increased margin */
         width: 100%;
         display: flex;
         align-items: center;
@@ -754,6 +753,7 @@
         box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
         position: relative;
         overflow: hidden;
+        font-size: 1rem; /* Slightly larger */
       }
 
       .add-to-cart-btn::before {
@@ -785,6 +785,231 @@
         transform: translateY(0);
       }
 
+      /* Show More/Less Button Styling */
+      .show-more-btn {
+        background: linear-gradient(135deg, #21b4f3ff, #1976d2);
+        color: white;
+        border: none;
+        padding: 12px 15px; /* Increased padding */
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        margin-top: 20px; /* Increased margin */
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+        position: relative;
+        overflow: hidden;
+        font-size: 1rem; /* Slightly larger */
+      }
+
+      .show-more-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: var(--transition);
+      }
+
+      .show-more-btn:hover::before {
+        left: 100%;
+      }
+
+      .show-more-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(33, 150, 243, 0.4);
+      }
+
+      .show-more-btn:active {
+        transform: translateY(0);
+      }
+
+      /* Product Details Panel - Premium Blue Theme - WIDER */
+      .product-details-panel {
+        background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+        border-radius: 12px;
+        padding: 0px; /* Increased padding */
+        margin-top: 20px; /* Increased margin */
+        box-shadow: 0 4px 15px rgba(33, 150, 243, 0.15);
+        border-left: 4px solid #2196f3;
+        display: none;
+        animation: fadeInDetails 0.5s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .product-details-panel::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          rgba(33, 150, 243, 0.05),
+          transparent
+        );
+        z-index: 0;
+      }
+
+      @keyframes fadeInDetails {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .details-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px; /* Increased margin */
+        position: relative;
+        z-index: 1;
+      }
+
+      .details-header h4 {
+        margin: 0;
+        color: #1565c0;
+        font-size: 1.3rem; /* Slightly larger */
+        font-weight: 700;
+      }
+
+      .details-badge {
+        background: linear-gradient(135deg, #2196f3, #1976d2);
+        color: white;
+        padding: 5px 12px; /* Increased padding */
+        border-radius: 20px;
+        font-size: 0.85rem; /* Slightly larger */
+        font-weight: 600;
+      }
+
+      .details-content {
+        display: grid;
+        grid-template-columns: repeat(
+          auto-fill,
+          minmax(280px, 1fr)
+        ); /* Wider columns */
+        gap: 20px; /* Increased gap */
+        position: relative;
+        z-index: 1;
+      }
+
+      .detail-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.7);
+        padding: 15px; /* Increased padding */
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        transition: var(--transition);
+      }
+
+      .detail-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        background: rgba(255, 255, 255, 0.9);
+      }
+
+      .detail-label {
+        font-weight: 600;
+        color: #1565c0;
+        font-size: 0.9rem; /* Slightly larger */
+        margin-bottom: 0;
+        flex-shrink: 0;
+        min-width: 120px; /* Increased min-width */
+      }
+
+      .detail-value {
+        color: #333;
+        font-size: 0.95rem; /* Slightly larger */
+        line-height: 1.4;
+        text-align: center;
+        word-wrap: break-word;
+        white-space: normal;
+        max-width: 65%; /* Increased max-width */
+      }
+
+      .highlight-detail {
+        flex-direction: column;
+        align-items: flex-start;
+        grid-column: 1 / -1;
+        background: rgba(33, 150, 243, 0.1);
+        border: 1px solid rgba(33, 150, 243, 0.2);
+      }
+
+      .highlight-detail .detail-label {
+        color: #0d47a1;
+        margin-bottom: 10px; /* Increased margin */
+      }
+
+      .highlight-detail .detail-value {
+        text-align: left;
+        max-width: 100%;
+        width: 100%;
+      }
+
+      /* Fix for specifications grid */
+      .specs-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px; /* Increased gap */
+        width: 100%;
+      }
+
+      .spec-line {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0; /* Increased padding */
+        border-bottom: 1px solid rgba(33, 150, 243, 0.1);
+      }
+
+      .spec-name {
+        font-weight: 600;
+        color: #1565c0;
+        font-size: 0.9rem; /* Slightly larger */
+        min-width: 100px; /* Increased min-width */
+        flex-shrink: 0;
+      }
+
+      .spec-value {
+        color: #333;
+        font-size: 0.9rem; /* Slightly larger */
+        font-weight: 500;
+        text-align: right;
+        flex: 1;
+        margin-left: 15px; /* Increased margin */
+        word-wrap: break-word;
+        white-space: normal;
+        line-height: 1.3;
+      }
+
+      /* Description text styling */
+      .description-text {
+        text-align: left !important;
+        line-height: 1.5;
+        max-width: 100% !important;
+      }
+
       /* Cart Notification */
       .cart-notification {
         position: fixed;
@@ -812,7 +1037,7 @@
       /* Cart Page */
       .cart-page {
         width: 100%;
-        max-width: 1200px;
+        max-width: 1400px; /* Increased max-width */
         margin: 100px auto 40px;
         padding: 0 20px;
         display: none;
@@ -1277,7 +1502,81 @@
         justify-content: center;
         gap: 8px;
       }
+      /* Compare Button with Message */
+      /* Compare Button with Message */
+      .compare-link {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+      }
 
+      .compare-notification {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        white-space: nowrap;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        margin-top: 5px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .compare-link.has-products .compare-notification {
+        opacity: 1;
+        visibility: visible;
+        animation: pulse-gentle 2s infinite;
+      }
+
+      .compare-notification::before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid #667eea;
+      }
+
+      @keyframes pulse-gentle {
+        0%,
+        100% {
+          transform: translateX(-50%) scale(1);
+        }
+        50% {
+          transform: translateX(-50%) scale(1.05);
+        }
+      }
+
+      /* Highlight effect for compare button */
+      .compare-link.highlight .compare-notification {
+        background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+        animation: highlight-pulse 1s infinite;
+      }
+
+      @keyframes highlight-pulse {
+        0%,
+        100% {
+          transform: translateX(-50%) scale(1);
+          background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+        }
+        50% {
+          transform: translateX(-50%) scale(1.1);
+          background: linear-gradient(135deg, #ff8e8e 0%, #ff7b3a 100%);
+        }
+      }
       .pay-now-btn:hover {
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(37, 117, 252, 0.4);
@@ -1653,6 +1952,8 @@
 
         .product-card {
           flex: 1 1 100%;
+          min-width: 280px;
+          max-width: 80%;
         }
 
         .header {
@@ -1665,13 +1966,19 @@
 
         .chat-container {
           border-radius: 15px;
+          max-width: 100%;
         }
 
         .bot-message,
         .user-message {
-          max-width: 85%;
-          font-size: 14px;
-          padding: 12px 16px;
+          border-radius: 18px;
+          padding: 15px 20px;
+          margin: 10px 0;
+          max-width: 105%; /* Increased from 70% */
+          line-height: 1.5;
+          animation: fadeIn 0.5s ease;
+          position: relative;
+          font-size: 16px;
         }
 
         /* Reduced height for form on mobile */
@@ -1750,6 +2057,70 @@
         .payment-container {
           padding: 20px;
           margin: 20px;
+        }
+
+        .details-content {
+          grid-template-columns: 1fr;
+        }
+
+        .highlight-detail {
+          grid-column: 1;
+        }
+
+        .detail-label {
+          min-width: 100px;
+          font-size: 0.85rem;
+        }
+
+        .detail-value {
+          max-width: 55%;
+          font-size: 0.85rem;
+        }
+
+        .spec-name {
+          min-width: 80px;
+          font-size: 0.85rem;
+        }
+
+        .spec-value {
+          font-size: 0.85rem;
+          margin-left: 10px;
+        }
+      }
+
+      /* Large screen optimizations */
+      @media (min-width: 1200px) {
+        .chat-container {
+          max-width: 92vw;
+        }
+
+        .product-card {
+          min-width: 350px;
+          max-width: 500px;
+        }
+
+        .products-container {
+          gap: 35px;
+        }
+
+        .details-content {
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+
+        .bot-message,
+        .user-message {
+          max-width: 100%;
+        }
+      }
+
+      @media (min-width: 1600px) {
+        .chat-container {
+          max-width: 90vw;
+        }
+
+        .product-card {
+          min-width: 310px;
+          max-width: 500px;
         }
       }
     </style>
@@ -1901,7 +2272,10 @@
       <div class="logo">Quick Deals 🛒</div>
       <div class="nav-links">
         <a href="#">Offers</a>
-        <a href="#">Compare</a>
+        <a href="/compare.html" class="nav-link compare-link" id="compareLink">
+          Compare
+          <div class="compare-notification">⚡ Find best one</div>
+        </a>
         <a href="#">Predict</a>
         <a href="#">About</a>
         <a href="#" id="cartLink" onclick="showCartPage()">
@@ -1918,7 +2292,11 @@
         <div class="mobile-nav-slider" id="mobileNavSlider">
           <button class="close-slider" onclick="toggleMobileNav()">×</button>
           <a href="#"><span>🎁</span> Offers</a>
-          <a href="#"><span>⚖️</span> Compare</a>
+          <a href="#" class="nav-link compare-link" id="mobileCompareLink">
+            <span class="nav-icon"></span>
+            Compare
+            <div class="compare-notification">⚡ Find best one</div>
+          </a>
           <a href="#"><span>🔮</span> Predict</a>
           <a href="#"><span>ℹ️</span> About</a>
           <a href="#" onclick="showCartPage()">
@@ -1946,8 +2324,18 @@
         <div class="chat-main">
           <div id="chat-box" class="chat-box">
             <div class="bot-message">
-              👋 Hi there! What product are you looking for today? Phone, Laptop
-              or Headphones?
+              🔍 <strong>Product Discovery Assistant</strong><br /><br />
+
+              I help you discover different products in each category. Tell me
+              what type of product you're interested in!<br /><br />
+
+              <strong>How it works:</strong><br />
+              1. Tell me a category (phones, laptops, headphones,
+              Smart-Watches)<br />
+              2. I'll show you 3 different products in that category<br />
+              3. Choose any product to see detailed price comparison<br /><br />
+
+              <em>What type of product are you looking for?</em>
             </div>
           </div>
         </div>
@@ -2028,6 +2416,46 @@
         }, 2000);
       }
 
+      // Function to highlight compare button in navigation
+      // Function to highlight compare button in navigation (show notification)
+      function highlightCompareButton() {
+        const compareLink = document.getElementById("compareLink");
+        const mobileCompareLink = document.getElementById("mobileCompareLink");
+
+        if (compareLink) {
+          compareLink.classList.add("highlight");
+          compareLink.classList.add("has-products");
+        }
+        if (mobileCompareLink) {
+          mobileCompareLink.classList.add("highlight");
+          mobileCompareLink.classList.add("has-products");
+        }
+
+        // Remove highlight after 8 seconds (keep it visible longer)
+        setTimeout(() => {
+          if (compareLink) {
+            compareLink.classList.remove("highlight");
+          }
+          if (mobileCompareLink) {
+            mobileCompareLink.classList.remove("highlight");
+          }
+        }, 8000);
+      }
+
+      // Function to hide compare notification
+      function hideCompareNotification() {
+        const compareLink = document.getElementById("compareLink");
+        const mobileCompareLink = document.getElementById("mobileCompareLink");
+
+        if (compareLink) {
+          compareLink.classList.remove("has-products");
+          compareLink.classList.remove("highlight");
+        }
+        if (mobileCompareLink) {
+          mobileCompareLink.classList.remove("has-products");
+          mobileCompareLink.classList.remove("highlight");
+        }
+      }
       // Function to convert score to text rating (NO FLOAT VALUES)
       function getScoreRating(score) {
         // Simple rating system - only Best, Good, or Average
@@ -2037,7 +2465,6 @@
       }
 
       // Function to add product to cart
-
       function addToCart(product) {
         // Check if product already exists in cart
         const existingProductIndex = cart.findIndex(
@@ -2103,7 +2530,6 @@
       }
 
       // Function to render cart items
-      // Function to render cart items
       function renderCartItems() {
         const cartItems = document.getElementById("cartItems");
         const emptyCart = document.getElementById("emptyCart");
@@ -2136,7 +2562,9 @@
 
           itemsHTML += `
       <div class="cart-item">
-<img src="${productImage}" alt="${item.name}" class="cart-item-image" onerror="this.src='https://via.placeholder.com/120'">
+<img src="${productImage}" alt="${
+            item.name
+          }" class="cart-item-image" onerror="this.src='https://via.placeholder.com/120'">
         <div class="cart-item-details">
           <h3>${item.name}</h3>
           <div class="cart-item-platform">${item.platform}</div>
@@ -2380,7 +2808,7 @@
         updateCartCount();
       });
 
-      // --- PART 2: UI FUNCTIONS (from your file) ---
+      // --- PART 2: UI FUNCTIONS ---
 
       // Mobile Navigation
       function toggleMobileNav() {
@@ -2495,19 +2923,18 @@
         });
       }
 
-      // --- PART 3: CHATBOT LOGIC (The correct, merged version) ---
+      // --- PART 3: ENHANCED CHATBOT LOGIC WITH 4 CATEGORIES ---
 
       // Get all chat elements
       const chatBox = document.getElementById("chat-box");
       const chatForm = document.getElementById("chat-form");
       const userInput = document.getElementById("user-input");
-      const sendButton = document.querySelector(".send-button"); // Use querySelector for class
+      const sendButton = document.querySelector(".send-button");
 
       /**
-       * (FIXED) Helper functions to format currency
+       * Helper functions to format currency
        */
       function formatINR(number) {
-        // This is the clean way to format INR
         return new Intl.NumberFormat("en-IN", {
           style: "currency",
           currency: "INR",
@@ -2516,15 +2943,528 @@
       }
 
       function convertToINR(priceStr) {
-        // This function just cleans the string (e.g., "₹79,999" -> 79999)
-        // It does NOT multiply by 87.
         if (typeof priceStr === "number") return priceStr;
         return Number(String(priceStr).replace(/[^\d.]/g, ""));
       }
 
       /**
-       * Main function to handle form submission
+       * Enhanced product database for all 4 categories
        */
+      const productDatabase = {
+        laptops: {
+          name: "Laptops",
+          image:
+            "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wfGVufDB8fDB8fHww&w=1000&q=80",
+          description:
+            "Premium Laptops - Find the perfect laptop for your needs",
+          products: [
+            {
+              platform: "Apple Store",
+              name: "MacBook Pro 16-inch",
+              price: "₹2,39,900",
+              specs: {
+                RAM: "16GB",
+                Storage: "1TB SSD",
+                Color: "Space Gray",
+                Warranty: "1 Year",
+                Display: "16.2-inch Retina",
+                Processor: "Apple M2 Pro",
+                Graphics: "19-core GPU",
+                Battery: "Up to 22 hours",
+              },
+              rating: "4.9",
+              is_trusted: true,
+              description:
+                "The most powerful MacBook Pro ever with the M2 Pro chip for extreme performance.",
+              warranty_info:
+                "1-year limited warranty and up to 90 days of complimentary technical support.",
+              delivery_info: "Free delivery within 3-5 business days",
+              return_policy: "14-day return policy",
+            },
+            {
+              platform: "Amazon",
+              name: "Dell XPS 15",
+              price: "₹1,89,990",
+              specs: {
+                RAM: "32GB",
+                Storage: "1TB SSD",
+                Color: "Platinum Silver",
+                Warranty: "2 Years",
+                Display: "15.6-inch 4K UHD+",
+                Processor: "Intel Core i9-13900H",
+                Graphics: "NVIDIA GeForce RTX 4070",
+                Battery: "Up to 14 hours",
+              },
+              rating: "4.7",
+              is_trusted: true,
+              description:
+                "Dell XPS 15 with stunning 4K display and powerful performance for creative professionals.",
+              warranty_info:
+                "2-year premium support with onsite service after remote diagnosis",
+              delivery_info: "Free delivery within 2-4 business days",
+              return_policy: "30-day return policy",
+            },
+            {
+              platform: "Flipkart",
+              name: "HP Spectre x360",
+              price: "₹1,54,999",
+              specs: {
+                RAM: "16GB",
+                Storage: "512GB SSD",
+                Color: "Nightfall Black",
+                Warranty: "1 Year",
+                Display: "13.5-inch OLED Touch",
+                Processor: "Intel Core i7-1355U",
+                Graphics: "Intel Iris Xe",
+                Battery: "Up to 17 hours",
+              },
+              rating: "4.6",
+              is_trusted: true,
+              description:
+                "HP Spectre x360 2-in-1 laptop with stunning OLED display and versatile design.",
+              warranty_info: "1-year limited hardware warranty",
+              delivery_info: "Free delivery within 3-6 business days",
+              return_policy: "15-day return policy",
+            },
+          ],
+        },
+
+        phones: {
+          name: "Smartphones",
+          image:
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGhvbmV8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
+          description:
+            "Latest Smartphones - Find the perfect phone for your needs",
+          products: [
+            {
+              platform: "Apple Store",
+              name: "iPhone 14 Pro",
+              price: "₹1,29,900",
+              specs: {
+                RAM: "6GB",
+                Storage: "128GB",
+                Color: "Deep Purple",
+                Warranty: "1 Year",
+                Display: "6.1-inch Super Retina XDR",
+                Processor: "A16 Bionic",
+                Camera: "48MP Main, 12MP Ultra Wide, 12MP Telephoto",
+                Battery: "Up to 23 hours video playback",
+              },
+              rating: "4.8",
+              is_trusted: true,
+              description:
+                "iPhone 14 Pro with Dynamic Island, Always-On display, and pro camera system.",
+              warranty_info: "1-year limited warranty",
+              delivery_info: "Free delivery within 2-4 business days",
+              return_policy: "14-day return policy",
+            },
+            {
+              platform: "Amazon",
+              name: "iPhone 15",
+              price: "₹79,900",
+              specs: {
+                RAM: "6GB",
+                Storage: "128GB",
+                Color: "Black",
+                Warranty: "1 Year",
+                Display: "6.1-inch Super Retina XDR",
+                Processor: "A16 Bionic",
+                Camera: "48MP Main, 12MP Ultra Wide",
+                Battery: "Up to 20 hours video playback",
+              },
+              rating: "4.7",
+              is_trusted: true,
+              description:
+                "iPhone 15 with advanced dual-camera system and USB-C connectivity.",
+              warranty_info: "1-year limited warranty",
+              delivery_info: "Free delivery within 1-3 business days",
+              return_policy: "7-day return policy",
+            },
+            {
+              platform: "Flipkart",
+              name: "iPhone 16 Pro",
+              price: "₹1,49,900",
+              specs: {
+                RAM: "8GB",
+                Storage: "256GB",
+                Color: "Titanium Gray",
+                Warranty: "1 Year",
+                Display: "6.3-inch Super Retina XDR",
+                Processor: "A18 Pro",
+                Camera: "48MP Main, 12MP Ultra Wide, 12MP Telephoto",
+                Battery: "Up to 28 hours video playback",
+              },
+              rating: "4.9",
+              is_trusted: true,
+              description:
+                "iPhone 16 Pro with advanced camera system and titanium design.",
+              warranty_info: "1-year limited warranty",
+              delivery_info: "Free delivery within 3-5 business days",
+              return_policy: "14-day return policy",
+            },
+          ],
+        },
+
+        headphones: {
+          name: "Headphones",
+          image:
+            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGVhZHBob25lc3xlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80",
+          description: "Premium Headphones - Find the perfect audio experience",
+          products: [
+            {
+              platform: "Amazon",
+              name: "Sony WH-1000XM5",
+              price: "₹29,990",
+              specs: {
+                Type: "Over-ear",
+                Color: "Black",
+                Warranty: "1 Year",
+                "Noise Cancellation": "Industry-leading",
+                "Battery Life": "Up to 30 hours",
+                Connectivity: "Bluetooth 5.2",
+                "Charging Time": "3 hours",
+              },
+              rating: "4.8",
+              is_trusted: true,
+              description:
+                "Sony WH-1000XM5 with industry-leading noise cancellation and exceptional sound quality.",
+              warranty_info: "1-year manufacturer warranty",
+              delivery_info: "Free delivery within 2-4 business days",
+              return_policy: "10-day return policy",
+            },
+            {
+              platform: "Flipkart",
+              name: "Bose QuietComfort 45",
+              price: "₹24,999",
+              specs: {
+                Type: "Over-ear",
+                Color: "White",
+                Warranty: "1 Year",
+                "Noise Cancellation": "Advanced",
+                "Battery Life": "Up to 24 hours",
+                Connectivity: "Bluetooth 5.1",
+                "Charging Time": "2.5 hours",
+              },
+              rating: "4.7",
+              is_trusted: true,
+              description:
+                "Bose QuietComfort 45 with advanced noise cancellation and balanced audio performance.",
+              warranty_info: "1-year limited warranty",
+              delivery_info: "Free delivery within 3-5 business days",
+              return_policy: "15-day return policy",
+            },
+            {
+              platform: "Apple Store",
+              name: "AirPods Max",
+              price: "₹59,900",
+              specs: {
+                Type: "Over-ear",
+                Color: "Space Gray",
+                Warranty: "1 Year",
+                "Noise Cancellation": "Active",
+                "Battery Life": "Up to 20 hours",
+                Connectivity: "Bluetooth 5.0",
+                "Charging Time": "2 hours",
+              },
+              rating: "4.6",
+              is_trusted: true,
+              description:
+                "AirPods Max with high-fidelity audio and seamless Apple ecosystem integration.",
+              warranty_info: "1-year limited warranty",
+              delivery_info: "Free delivery within 1-3 business days",
+              return_policy: "14-day return policy",
+            },
+          ],
+        },
+
+        smartwatches: {
+          name: "Smart Watches",
+          image:
+            "https://images.unsplash.com/photo-1544117519-31a4b719223d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c21hcnR3YXRjaHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80",
+          description: "Smart Watches - Stay connected and track your fitness",
+          products: [
+            {
+              platform: "Apple Store",
+              name: "Apple Watch Series 9",
+              price: "₹41,900",
+              specs: {
+                Display: "Always-On Retina",
+                Size: "45mm",
+                Color: "Midnight",
+                Warranty: "1 Year",
+                "Battery Life": "Up to 18 hours",
+                Connectivity: "GPS + Cellular",
+                "Water Resistance": "50 meters",
+                Features: "ECG, Blood Oxygen, Fall Detection",
+              },
+              rating: "4.8",
+              is_trusted: true,
+              description:
+                "Apple Watch Series 9 with advanced health features and seamless iPhone integration.",
+              warranty_info: "1-year limited warranty",
+              delivery_info: "Free delivery within 1-3 business days",
+              return_policy: "14-day return policy",
+            },
+            {
+              platform: "Amazon",
+              name: "Samsung Galaxy Watch 6",
+              price: "₹29,999",
+              specs: {
+                Display: "Super AMOLED",
+                Size: "44mm",
+                Color: "Graphite",
+                Warranty: "2 Years",
+                "Battery Life": "Up to 40 hours",
+                Connectivity: "Bluetooth",
+                "Water Resistance": "5ATM + IP68",
+                Features: "Sleep Coaching, Body Composition",
+              },
+              rating: "4.6",
+              is_trusted: true,
+              description:
+                "Samsung Galaxy Watch 6 with advanced health monitoring and stylish design.",
+              warranty_info: "2-year manufacturer warranty",
+              delivery_info: "Free delivery within 2-4 business days",
+              return_policy: "10-day return policy",
+            },
+            {
+              platform: "Flipkart",
+              name: "Fitbit Versa 4",
+              price: "₹22,999",
+              specs: {
+                Display: "AMOLED",
+                Size: "40mm",
+                Color: "Black",
+                Warranty: "1 Year",
+                "Battery Life": "Up to 6 days",
+                Connectivity: "Bluetooth",
+                "Water Resistance": "50 meters",
+                Features: "Active Zone Minutes, Sleep Score",
+              },
+              rating: "4.4",
+              is_trusted: true,
+              description:
+                "Fitbit Versa 4 with comprehensive fitness tracking and long battery life.",
+              warranty_info: "1-year limited warranty",
+              delivery_info: "Free delivery within 3-5 business days",
+              return_policy: "7-day return policy",
+            },
+          ],
+        },
+      };
+
+      /**
+       * Enhanced search function to detect product categories
+       */
+      /**
+       * Enhanced search function to detect product categories with exact matching
+       */
+      function detectProductCategory(message) {
+        const lowerMessage = message.toLowerCase();
+
+        // Define exact match patterns for each category
+        const categoryPatterns = {
+          laptops:
+            /\b(laptop|macbook|notebook|ultrabook|dell xps|hp spectre|lenovo thinkpad)\b/,
+          phones:
+            /\b(phone|smartphone|mobile|iphone|android phone|samsung galaxy)\b/,
+          headphones:
+            /\b(headphone|headset|earphone|earbud|airpod|airpods|sony wh|bose qc|noise cancellation)\b/,
+          smartwatches:
+            /\b(smartwatch|smart watch|watch|apple watch|galaxy watch|fitbit|wearable|fitness tracker)\b/,
+        };
+
+        // Check for exact matches in order of priority
+        if (categoryPatterns.headphones.test(lowerMessage)) {
+          return "headphones";
+        }
+        if (categoryPatterns.phones.test(lowerMessage)) {
+          return "phones";
+        }
+        if (categoryPatterns.laptops.test(lowerMessage)) {
+          return "laptops";
+        }
+        if (categoryPatterns.smartwatches.test(lowerMessage)) {
+          return "smartwatches";
+        }
+
+        // Additional keyword-based fallback with better logic
+        const categoryKeywords = {
+          laptops: [
+            "laptop",
+            "macbook",
+            "notebook",
+            "ultrabook",
+            "dell",
+            "hp",
+            "lenovo",
+          ],
+          phones: [
+            "iphone",
+            "smartphone",
+            "mobile",
+            "samsung galaxy",
+            "android",
+          ],
+          headphones: [
+            "headphone",
+            "headset",
+            "earphone",
+            "earbud",
+            "airpod",
+            "sony",
+            "bose",
+            "audio",
+          ],
+          smartwatches: [
+            "smartwatch",
+            "apple watch",
+            "galaxy watch",
+            "fitbit",
+            "wearable",
+          ],
+        };
+
+        // Count matches for each category with word boundary awareness
+        const categoryScores = {};
+
+        for (const [category, keywords] of Object.entries(categoryKeywords)) {
+          categoryScores[category] = keywords.reduce((score, keyword) => {
+            // Use word boundaries to avoid partial matches
+            const pattern = new RegExp(`\\b${keyword}\\b`, "i");
+            return score + (pattern.test(lowerMessage) ? 1 : 0);
+          }, 0);
+        }
+
+        // Find the category with highest score
+        const bestMatch = Object.entries(categoryScores).reduce(
+          (best, [category, score]) => {
+            return score > best.score ? { category, score } : best;
+          },
+          { category: null, score: 0 }
+        );
+
+        // Return the best matching category if score is at least 1
+        return bestMatch.score > 0 ? bestMatch.category : null;
+      }
+
+      /**
+       * Function to toggle product details
+       */
+      function toggleProductDetails(button) {
+        const productCard = button.closest(".product-card");
+        const detailsPanel = productCard.querySelector(
+          ".product-details-panel"
+        );
+        const buttonText = button.querySelector(".btn-text");
+
+        if (detailsPanel.style.display === "block") {
+          // Hide details
+          detailsPanel.style.display = "none";
+          buttonText.textContent = "Show More";
+          button.classList.remove("active");
+        } else {
+          // Show details
+          detailsPanel.style.display = "block";
+          buttonText.textContent = "Show Less";
+          button.classList.add("active");
+
+          // Scroll to the details panel if needed
+          detailsPanel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+      }
+
+      /**
+       * Function to create detailed product information HTML
+       */
+      function createProductDetailsHTML(product) {
+        return `
+          <div class="product-details-panel">
+            <div class="details-content">
+              <div class="detail-item">
+                <div class="detail-label">Platform</div>
+                <div class="detail-value">${product.platform}</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-label">Price</div>
+                <div class="detail-value">${product.price}</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-label">Rating</div>
+                <div class="detail-value">${product.rating} ★</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-label">Trusted Seller</div>
+                <div class="detail-value">${
+                  product.is_trusted ? "✅ Yes" : "❌ No"
+                }</div>
+              </div>
+              
+              <div class="detail-item highlight-detail">
+                <div class="detail-label">Specifications</div>
+                <div class="detail-value">
+                  <div class="specs-grid">
+                    ${Object.entries(product.specs || {})
+                      .map(
+                        ([key, value]) =>
+                          `<div class="spec-line">
+                         <span class="spec-name">${key}</span>
+                         <span class="spec-value">${value}</span>
+                       </div>`
+                      )
+                      .join("")}
+                  </div>
+                </div>
+              </div>
+              
+              ${
+                product.description
+                  ? `
+              <div class="detail-item">
+                <div class="detail-label">Description</div>
+                <div class="detail-value description-text">${product.description}</div>
+              </div>
+              `
+                  : ""
+              }
+              
+              ${
+                product.warranty_info
+                  ? `
+              <div class="detail-item">
+                <div class="detail-label">Warranty</div>
+                <div class="detail-value">${product.warranty_info}</div>
+              </div>
+              `
+                  : ""
+              }
+              
+              ${
+                product.delivery_info
+                  ? `
+              <div class="detail-item">
+                <div class="detail-label">Delivery</div>
+                <div class="detail-value">${product.delivery_info}</div>
+              </div>
+              `
+                  : ""
+              }
+              
+              ${
+                product.return_policy
+                  ? `
+              <div class="detail-item">
+                <div class="detail-label">Returns</div>
+                <div class="detail-value">${product.return_policy}</div>
+              </div>
+              `
+                  : ""
+              }
+            </div>
+          </div>
+        `;
+      }
+
       /**
        * Main function to handle form submission
        */
@@ -2533,6 +3473,9 @@
         const message = userInput.value.trim().toLowerCase();
         if (!message) return;
 
+
+         hideCompareNotification();
+
         // Add user's message to chat
         addMessage("user", message);
         userInput.value = "";
@@ -2540,71 +3483,24 @@
         addTypingIndicator();
 
         try {
-          // Check if the message contains "laptop" and show MacBook comparison
-          if (message.includes("laptop")) {
+          // Detect product category from user message
+          const detectedCategory = detectProductCategory(message);
+
+          if (detectedCategory && productDatabase[detectedCategory]) {
             removeTypingIndicator();
 
-            // Create mock MacBook data
-            const macBookData = {
-              image:
-                "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-spacegray-select-20220606?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1653084303665",
-              description:
-                "Apple MacBook Air with M2 chip - Powerful performance in a lightweight design",
-              products: [
-                {
-                  platform: "Apple Store",
-                  price: "₹1,14,900",
-                  specs: {
-                    RAM: "8GB",
-                    Storage: "256GB SSD",
-                    Color: "Space Gray",
-                    Warranty: "1 Year",
-                    Replaceable: "No",
-                    Display: "13.6-inch Liquid Retina",
-                  },
-                  rating: "4.8",
-                  is_trusted: true,
-                },
-                {
-                  platform: "Amazon",
-                  price: "₹1,12,999",
-                  specs: {
-                    RAM: "8GB",
-                    Storage: "256GB SSD",
-                    Color: "Silver",
-                    Warranty: "1 Year",
-                    Replaceable: "No",
-                    Display: "13.6-inch Liquid Retina",
-                  },
-                  rating: "4.7",
-                  is_trusted: true,
-                },
-                {
-                  platform: "Flipkart",
-                  price: "₹1,13,499",
-                  specs: {
-                    RAM: "8GB",
-                    Storage: "256GB SSD",
-                    Color: "Starlight",
-                    Warranty: "1 Year",
-                    Replaceable: "No",
-                    Display: "13.6-inch Liquid Retina",
-                  },
-                  rating: "4.6",
-                  is_trusted: true,
-                },
-              ],
-            };
+            const categoryData = productDatabase[detectedCategory];
 
             addMessage(
               "bot",
-              "Here are the best MacBook options I found for you:"
+              `Here are the best ${categoryData.name.toLowerCase()} options I found for you:`
             );
-            renderProductComparison(macBookData);
+            renderProductComparison(categoryData);
+            highlightCompareButton();
             return;
           }
 
-          // Send message to the FastAPI backend for other queries
+          // If no specific category detected, send to backend
           const response = await fetch("/chat", {
             method: "POST",
             headers: {
@@ -2622,12 +3518,12 @@
           const data = await response.json();
 
           removeTypingIndicator();
-          addMessage("bot", data.bot); // Add the bot's text response
+          addMessage("bot", data.bot);
 
           // Check if the server sent back product data
           if (data.products && data.products.length > 0) {
-            // 1. Call the function to render the main product comparison
             renderProductComparison(data);
+            highlightCompareButton();
           }
         } catch (error) {
           removeTypingIndicator();
@@ -2635,13 +3531,13 @@
           addMessage("bot", "❌ Sorry, I hit an error. Please try again.");
         }
       });
+
       /**
        * Generic function to add a message to the chat box
        */
       function addMessage(sender, text) {
         const messageDiv = document.createElement("div");
         messageDiv.className = `${sender}-message`;
-        // Basic markdown for bot messages (bold)
         if (sender === "bot") {
           text = text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
         }
@@ -2681,11 +3577,9 @@
       function renderProductComparison(data) {
         const chatBox = document.getElementById("chat-box");
 
-        // 1. Create the main message container
         const container = document.createElement("div");
         container.className = "bot-message";
 
-        // 2. Add the Product Image and Description with fallback
         let headerHtml = "";
 
         if (data.image) {
@@ -2696,82 +3590,23 @@
           headerHtml += `<p style="margin-bottom: 20px; text-align: center; line-height: 1.5;">${data.description}</p>`;
         }
 
-        // 3. Create the HTML for each of the 3 product cards
         let productsHtml = data.products
           .map((p) => {
-            // Generate scores and convert to text ratings (NO FLOAT VALUES)
-            const randomScore = Math.random() * 3 + 7; // Scores between 7.0 and 10.0
-            const scoreRating = getScoreRating(randomScore);
-
-            // Build the list of specifications from the 'specs' object
-            let specsHtml = `
-      <div class="product-feature">
-        <span class="feature-name">RAM</span>
-        <span class="feature-value">${p.specs.RAM || "N/A"}</span>
-      </div>
-      <div class="product-feature">
-        <span class="feature-name">Storage</span>
-        <span class="feature-value">${p.specs.Storage || "N/A"}</span>
-      </div>
-      <div class="product-feature">
-        <span class="feature-name">Color</span>
-        <span class="feature-value">${p.specs.Color || "N/A"}</span>
-      </div>
-      <div class="product-feature">
-        <span class="feature-name">Warranty</span>
-        <span class="feature-value">${p.specs.Warranty || "N/A"}</span>
-      </div>
-    `;
-
-            // Add additional specs if available
-            if (p.specs.Display) {
-              specsHtml += `
-        <div class="product-feature">
-          <span class="feature-name">Display</span>
-          <span class="feature-value">${p.specs.Display}</span>
-        </div>
-      `;
-            }
-            if (p.specs.Camera) {
-              specsHtml += `
-        <div class="product-feature">
-          <span class="feature-name">Camera</span>
-          <span class="feature-value">${p.specs.Camera}</span>
-        </div>
-      `;
-            }
-            if (p.specs.Battery) {
-              specsHtml += `
-        <div class="product-feature">
-          <span class="feature-name">Battery</span>
-          <span class="feature-value">${p.specs.Battery}</span>
-        </div>
-      `;
-            }
-
-            specsHtml += `
-      <div class="product-feature">
-        <span class="feature-name">Rating</span>
-        <span class="feature-value">${p.rating} ★</span>
-      </div>
-      <div class="product-feature">
-        <span class="feature-name">Trusted Seller</span>
-        <span class="feature-value">${p.is_trusted ? "✅ Yes" : "❌ No"}</span>
-      </div>
-    `;
-
-            // Prepare product data for cart with image
             const cartProductData = {
               ...p,
-              score: randomScore,
-              image: data.image, // Store the main product image
-              name: data.description || p.platform + " Product",
+              image: data.image,
+              name: p.name || data.description || p.platform + " Product",
             };
 
-            // Assemble the final card using your .product-card class
+            const detailsPanelHTML = createProductDetailsHTML(p);
+
             return `
       <div class="product-card">
-        <strong>${p.platform}</strong>
+        <strong>${p.name || p.platform}</strong>
+        <div class="product-feature">
+          <span class="feature-name">Platform</span>
+          <span class="feature-value">${p.platform}</span>
+        </div>
         <div class="product-feature">
           <span class="feature-name">Price</span>
           <span class="feature-value price-inr">${p.price.replace(
@@ -2779,10 +3614,11 @@
             ""
           )}</span>
         </div>
-        ${specsHtml}
-        <div class="product-score ${scoreRating.class}">
-          Our Score: ${scoreRating.text}
-        </div>
+        <button class="show-more-btn" onclick="toggleProductDetails(this)">
+          <span class="btn-text">Show More</span>
+          <span>🔍</span>
+        </button>
+        ${detailsPanelHTML}
         <button class="add-to-cart-btn" onclick="addToCart(${JSON.stringify(
           cartProductData
         ).replace(/"/g, "&quot;")})">
@@ -2793,23 +3629,18 @@
           })
           .join("");
 
-        // 4. Combine all the HTML and add it to the chat box
         container.innerHTML = `
     ${headerHtml}
     <div class="products-container">
       ${productsHtml}
     </div>
-    
-    <button class="predict-button" onclick='showComingSoon()'>
-      🔮 Predict Price Drop
-    </button>
   `;
         chatBox.appendChild(container);
         chatBox.scrollTop = chatBox.scrollHeight;
       }
 
       /**
-       * Enhanced input interactions (from your file)
+       * Enhanced input interactions
        */
       userInput.addEventListener("focus", function () {
         sendButton.classList.remove("pulse");
@@ -2826,7 +3657,6 @@
       // Allow Enter key to submit form
       userInput.addEventListener("keypress", function (e) {
         if (e.key === "Enter") {
-          // Prevent default to avoid line break in input
           e.preventDefault();
           chatForm.dispatchEvent(new Event("submit"));
         }

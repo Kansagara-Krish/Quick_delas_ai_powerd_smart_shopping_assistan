@@ -1,73 +1,27 @@
 {
   "product_categories": {
     "phones": {
-      "default_comparison": "iphone_14_256",
+      "default_comparison": "iphone_15_256",
       "suggestions": [
-        "iPhone 14", "iPhone 15", "iPhone 16", "iPhone 17", 
-        "Samsung Galaxy S24", "Google Pixel 8", "OnePlus 12"
+        "iPhone 14", "iPhone 15", "iPhone 16", "iPhone 17", "Samsung Galaxy S24", "Google Pixel 8", "OnePlus 12"
       ]
     },
     "laptops": {
-      "default_comparison": "macbook_air_m2_8_256",
+      "default_comparison": "macbook_pro_14",
       "suggestions": [
-        "MacBook Air M2", "Dell XPS 15", "Microsoft Surface Laptop 5"
+        "MacBook Pro", "Dell XPS", "HP Spectre"
       ]
     },
     "headphones": {
       "default_comparison": "sony_wh_1000xm5",
       "suggestions": [
-        "Sony WH-1000XM5", "Bose QuietComfort Ultra Earbuds", 
-        "boAt Airdopes 141", "Nothing Ear (2)"
-      ]
-    },
-    "headphone": {
-      "default_comparison": "sony_wh_1000xm5",
-      "suggestions": [
-        "Sony WH-1000XM5", "Bose QuietComfort Ultra Earbuds", 
-        "boAt Airdopes 141", "Nothing Ear (2)"
+        "Sony WH-1000XM5", "AirPods Pro", "Bose QC45"
       ]
     },
     "watches": {
       "default_comparison": "apple_watch_9",
       "suggestions": [
         "Apple Watch Series 9", "Samsung Galaxy Watch 6"
-      ]
-    },
-    "tablets": {
-      "default_comparison": "ipad_air_5_64",
-      "suggestions": [
-        "iPad Air (5th Gen)", "Samsung Galaxy Tab S9"
-      ]
-    },
-    "gaming": {
-      "default_comparison": "sony_ps5",
-      "suggestions": [
-        "Sony PlayStation 5", "Xbox Series X", "Nintendo Switch OLED"
-      ]
-    },
-    "cameras": {
-      "default_comparison": "canon_eos_r6_mark_ii",
-      "suggestions": [
-        "Canon EOS R6 Mark II", "GoPro HERO12", "DJI Mini 4 Pro"
-      ]
-    },
-    "accessories": {
-      "default_comparison": "logitech_mx_master_3s",
-      "suggestions": [
-        "Logitech MX Master 3S Mouse", "Keychron K2 Mechanical Keyboard",
-        "Anker PowerCore 10000", "Logitech C920 Webcam"
-      ]
-    },
-    "tv": {
-      "default_comparison": "lg_c3_55_oled",
-      "suggestions": [
-        "LG C3 55-inch OLED TV", "Samsung 27\" Odyssey G7 Monitor"
-      ]
-    },
-    "smart_home": {
-      "default_comparison": "amazon_echo_dot_5",
-      "suggestions": [
-        "Amazon Echo Dot (5th Gen)", "Philips Hue Starter Kit"
       ]
     }
   },
@@ -77,119 +31,99 @@
       "product_name": "iPhone 14",
       "category": "phones",
       "brand": "Apple",
-      "base_image_url": "https://m.media-amazon.com/images/I/61bK6PMOC3L._SL1500_.jpg",
-      "description": "A total powerhouse. Features the A15 Bionic chip, an advanced dual-camera system for incredible photos in low light, and all-day battery life.",
+      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-product-red?wid=5120&hei=2880&fmt=p-jpg&qlt=95&.v=1661026582322",
+      "description": "iPhone 14 with advanced dual-camera system, A15 Bionic chip, and all-day battery life. Features Crash Detection and Emergency SOS via satellite.",
       "variants": [
         {
-          "variant_id": "ip14_128_mid",
+          "variant_id": "iphone_14_128",
           "specifications": {
             "Storage": "128GB",
-            "Color": "Midnight",
+            "Color": "Product Red",
             "Configuration": "6GB|128GB",
             "RAM_GB": 6,
             "Storage_GB": 128,
+            "Display": "6.1-inch Super Retina XDR",
+            "Processor": "A15 Bionic",
+            "Camera": "12MP Dual Camera",
+            "Battery": "Up to 20 hours video playback",
             "warranty_months": 12,
             "is_replaceable": true
           },
           "offers": [
             {
+              "seller_name": "Apple Store",
+              "price": 69900.0,
+              "rating": 4.8,
+              "rating_count": 12500,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
               "seller_name": "Amazon",
-              "price": 58999.0,
+              "price": 67900.0,
               "rating": 4.7,
-              "rating_count": 8500,
+              "rating_count": 9800,
               "delivery_in_days": 1,
               "is_trusted_seller": true
             },
             {
               "seller_name": "Flipkart",
-              "price": 57999.0,
-              "rating": 4.7,
-              "rating_count": 9200,
+              "price": 66900.0,
+              "rating": 4.6,
+              "rating_count": 8500,
               "delivery_in_days": 2,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Croma",
-              "price": 59499.0,
-              "rating": 4.8,
-              "rating_count": 4500,
-              "delivery_in_days": 1,
               "is_trusted_seller": true
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "product_id": "iphone_14_pro",
+      "product_name": "iPhone 14 Pro",
+      "category": "phones",
+      "brand": "Apple",
+      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-1inch-deeppurple?wid=5120&hei=2880&fmt=p-jpg&qlt=95&.v=1661026582322",
+      "description": "iPhone 14 Pro with Dynamic Island, Always-On display, and pro camera system. Features the powerful A16 Bionic chip and 48MP Main camera.",
+      "variants": [
         {
-          "variant_id": "iphone_14_256",
+          "variant_id": "iphone_14_pro_256",
           "specifications": {
             "Storage": "256GB",
-            "Color": "Blue",
+            "Color": "Deep Purple",
             "Configuration": "6GB|256GB",
             "RAM_GB": 6,
             "Storage_GB": 256,
+            "Display": "6.1-inch Super Retina XDR",
+            "Processor": "A16 Bionic",
+            "Camera": "48MP Main, 12MP Ultra Wide, 12MP Telephoto",
+            "Battery": "Up to 23 hours video playback",
             "warranty_months": 12,
             "is_replaceable": true
           },
           "offers": [
-            {
-              "seller_name": "Croma",
-              "price": 69900.0,
-              "rating": 4.8,
-              "rating_count": 1200,
-              "delivery_in_days": 2,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Unicorn Store",
-              "price": 68990.0,
-              "rating": 4.9,
-              "rating_count": 850,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Amazon",
-              "price": 69500.0,
-              "rating": 4.7,
-              "rating_count": 3800,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            }
-          ]
-        },
-        {
-          "variant_id": "ip14_512_red",
-          "specifications": {
-            "Storage": "512GB",
-            "Color": "(PRODUCT)RED",
-            "Configuration": "6GB|512GB",
-            "RAM_GB": 6,
-            "Storage_GB": 512,
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Amazon",
-              "price": 88900.0,
-              "rating": 4.8,
-              "rating_count": 750,
-              "delivery_in_days": 3,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Flipkart",
-              "price": 87900.0,
-              "rating": 4.7,
-              "rating_count": 600,
-              "delivery_in_days": 2,
-              "is_trusted_seller": true
-            },
             {
               "seller_name": "Apple Store",
-              "price": 89900.0,
-              "rating": 5.0,
-              "rating_count": 1200,
+              "price": 129900.0,
+              "rating": 4.9,
+              "rating_count": 9200,
               "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Amazon",
+              "price": 127900.0,
+              "rating": 4.8,
+              "rating_count": 7800,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Croma",
+              "price": 128500.0,
+              "rating": 4.8,
+              "rating_count": 5200,
+              "delivery_in_days": 2,
               "is_trusted_seller": true
             }
           ]
@@ -205,51 +139,17 @@
       "description": "The ultimate iPhone experience with Dynamic Island, 48MP Main camera, and USB-C connectivity. Features the powerful A16 Bionic chip.",
       "variants": [
         {
-          "variant_id": "ip15_128_black",
-          "specifications": {
-            "Storage": "128GB",
-            "Color": "Black",
-            "Configuration": "6GB|128GB",
-            "RAM_GB": 6,
-            "Storage_GB": 128,
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Amazon",
-              "price": 79900.0,
-              "rating": 4.8,
-              "rating_count": 12500,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Flipkart",
-              "price": 78900.0,
-              "rating": 4.7,
-              "rating_count": 9800,
-              "delivery_in_days": 2,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Croma",
-              "price": 79990.0,
-              "rating": 4.8,
-              "rating_count": 6500,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            }
-          ]
-        },
-        {
-          "variant_id": "ip15_256_blue",
+          "variant_id": "iphone_15_256",
           "specifications": {
             "Storage": "256GB",
-            "Color": "Blue",
+            "Color": "Black",
             "Configuration": "6GB|256GB",
             "RAM_GB": 6,
             "Storage_GB": 256,
+            "Display": "6.1-inch Super Retina XDR",
+            "Processor": "A16 Bionic",
+            "Camera": "48MP Main, 12MP Ultra Wide",
+            "Battery": "Up to 20 hours video playback",
             "warranty_months": 12,
             "is_replaceable": true
           },
@@ -279,41 +179,55 @@
               "is_trusted_seller": true
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "product_id": "iphone_15_pro",
+      "product_name": "iPhone 15 Pro",
+      "category": "phones",
+      "brand": "Apple",
+      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium?wid=5120&hei=2880&fmt=p-jpg&qlt=95&.v=1692923777972",
+      "description": "iPhone 15 Pro with titanium design, A17 Pro chip, and pro camera system. Features customizable Action button and advanced gaming capabilities.",
+      "variants": [
         {
-          "variant_id": "ip15_512_pink",
+          "variant_id": "iphone_15_pro_256",
           "specifications": {
-            "Storage": "512GB",
-            "Color": "Pink",
-            "Configuration": "6GB|512GB",
-            "RAM_GB": 6,
-            "Storage_GB": 512,
+            "Storage": "256GB",
+            "Color": "Natural Titanium",
+            "Configuration": "8GB|256GB",
+            "RAM_GB": 8,
+            "Storage_GB": 256,
+            "Display": "6.1-inch Super Retina XDR",
+            "Processor": "A17 Pro",
+            "Camera": "48MP Main, 12MP Ultra Wide, 12MP Telephoto",
+            "Battery": "Up to 23 hours video playback",
             "warranty_months": 12,
             "is_replaceable": true
           },
           "offers": [
             {
-              "seller_name": "Flipkart",
-              "price": 108900.0,
-              "rating": 4.7,
-              "rating_count": 3200,
-              "delivery_in_days": 2,
+              "seller_name": "Apple Store",
+              "price": 134900.0,
+              "rating": 5.0,
+              "rating_count": 6800,
+              "delivery_in_days": 1,
               "is_trusted_seller": true
             },
             {
               "seller_name": "Amazon",
-              "price": 109900.0,
-              "rating": 4.8,
-              "rating_count": 2800,
+              "price": 132900.0,
+              "rating": 4.9,
+              "rating_count": 5500,
               "delivery_in_days": 1,
               "is_trusted_seller": true
             },
             {
               "seller_name": "Croma",
-              "price": 108500.0,
+              "price": 133500.0,
               "rating": 4.8,
-              "rating_count": 1900,
-              "delivery_in_days": 1,
+              "rating_count": 3800,
+              "delivery_in_days": 2,
               "is_trusted_seller": true
             }
           ]
@@ -329,71 +243,21 @@
       "description": "The next generation iPhone with advanced AI capabilities, improved camera system, and revolutionary battery life. Powered by A18 Bionic chip.",
       "variants": [
         {
-          "variant_id": "ip16_128_silver",
-          "specifications": {
-            "Storage": "128GB",
-            "Color": "Silver",
-            "Configuration": "8GB|128GB",
-            "RAM_GB": 8,
-            "Storage_GB": 128,
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Apple Store",
-              "price": 89900.0,
-              "rating": 5.0,
-              "rating_count": 9800,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Amazon",
-              "price": 88900.0,
-              "rating": 4.8,
-              "rating_count": 8500,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Flipkart",
-              "price": 87900.0,
-              "rating": 4.7,
-              "rating_count": 7200,
-              "delivery_in_days": 2,
-              "is_trusted_seller": true
-            }
-          ]
-        },
-        {
-          "variant_id": "ip16_256_gold",
+          "variant_id": "iphone_16_256",
           "specifications": {
             "Storage": "256GB",
-            "Color": "Gold",
+            "Color": "Silver",
             "Configuration": "8GB|256GB",
             "RAM_GB": 8,
             "Storage_GB": 256,
+            "Display": "6.3-inch Super Retina XDR",
+            "Processor": "A18 Bionic",
+            "Camera": "48MP Main, 12MP Ultra Wide, 12MP Telephoto",
+            "Battery": "Up to 28 hours video playback",
             "warranty_months": 12,
             "is_replaceable": true
           },
           "offers": [
-            {
-              "seller_name": "Amazon",
-              "price": 99900.0,
-              "rating": 4.8,
-              "rating_count": 6500,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Croma",
-              "price": 100900.0,
-              "rating": 4.9,
-              "rating_count": 4200,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            },
             {
               "seller_name": "Apple Store",
               "price": 99900.0,
@@ -401,42 +265,72 @@
               "rating_count": 7800,
               "delivery_in_days": 1,
               "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Amazon",
+              "price": 98900.0,
+              "rating": 4.8,
+              "rating_count": 6500,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Croma",
+              "price": 99500.0,
+              "rating": 4.9,
+              "rating_count": 4200,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "product_id": "iphone_16_pro",
+      "product_name": "iPhone 16 Pro",
+      "category": "phones",
+      "brand": "Apple",
+      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-1inch-desert-titanium?wid=5120&hei=2880&fmt=p-jpg&qlt=95&.v=1726423576248",
+      "description": "iPhone 16 Pro with advanced camera system, A18 Pro chip, and titanium design. Features enhanced AI capabilities and professional photography tools.",
+      "variants": [
         {
-          "variant_id": "ip16_512_black",
+          "variant_id": "iphone_16_pro_256",
           "specifications": {
-            "Storage": "512GB",
-            "Color": "Space Black",
-            "Configuration": "8GB|512GB",
+            "Storage": "256GB",
+            "Color": "Desert Titanium",
+            "Configuration": "8GB|256GB",
             "RAM_GB": 8,
-            "Storage_GB": 512,
+            "Storage_GB": 256,
+            "Display": "6.3-inch Super Retina XDR",
+            "Processor": "A18 Pro",
+            "Camera": "48MP Main, 12MP Ultra Wide, 12MP Telephoto 5x",
+            "Battery": "Up to 29 hours video playback",
             "warranty_months": 12,
             "is_replaceable": true
           },
           "offers": [
             {
-              "seller_name": "Flipkart",
-              "price": 119900.0,
-              "rating": 4.7,
-              "rating_count": 3800,
-              "delivery_in_days": 2,
+              "seller_name": "Apple Store",
+              "price": 149900.0,
+              "rating": 5.0,
+              "rating_count": 6200,
+              "delivery_in_days": 1,
               "is_trusted_seller": true
             },
             {
               "seller_name": "Amazon",
-              "price": 120900.0,
-              "rating": 4.8,
-              "rating_count": 4500,
+              "price": 147900.0,
+              "rating": 4.9,
+              "rating_count": 4800,
               "delivery_in_days": 1,
               "is_trusted_seller": true
             },
             {
               "seller_name": "Reliance Digital",
-              "price": 119500.0,
+              "price": 148500.0,
               "rating": 4.8,
-              "rating_count": 2900,
+              "rating_count": 3500,
               "delivery_in_days": 2,
               "is_trusted_seller": true
             }
@@ -449,118 +343,46 @@
       "product_name": "iPhone 17",
       "category": "phones",
       "brand": "Apple",
-      "base_image_url": "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=400&h=400&fit=crop",
-      "description": "The future of iPhone with revolutionary AI features, under-display camera technology, and all-day battery life. Powered by A19 Bionic chip.",
+      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-17-finish-select-202509-6-1inch-space-black?wid=5120&hei=2880&fmt=p-jpg&qlt=95&.v=1736423576248",
+      "description": "The future of iPhone with revolutionary AI features, foldable display technology, and breakthrough battery performance. Powered by A19 Bionic chip.",
       "variants": [
         {
-          "variant_id": "ip17_128_purple",
+          "variant_id": "iphone_17_256",
           "specifications": {
-            "Storage": "128GB",
-            "Color": "Deep Purple",
-            "Configuration": "8GB|128GB",
-            "RAM_GB": 8,
-            "Storage_GB": 128,
+            "Storage": "256GB",
+            "Color": "Space Black",
+            "Configuration": "12GB|256GB",
+            "RAM_GB": 12,
+            "Storage_GB": 256,
+            "Display": "6.5-inch Foldable Super Retina XDR",
+            "Processor": "A19 Bionic",
+            "Camera": "64MP Main, 12MP Ultra Wide, 12MP Telephoto 10x",
+            "Battery": "Up to 36 hours video playback",
             "warranty_months": 12,
             "is_replaceable": true
           },
           "offers": [
             {
               "seller_name": "Apple Store",
-              "price": 99900.0,
+              "price": 119900.0,
               "rating": 5.0,
-              "rating_count": 5200,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Amazon",
-              "price": 98900.0,
-              "rating": 4.8,
-              "rating_count": 3800,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Flipkart",
-              "price": 97900.0,
-              "rating": 4.7,
-              "rating_count": 2900,
-              "delivery_in_days": 2,
-              "is_trusted_seller": true
-            }
-          ]
-        },
-        {
-          "variant_id": "ip17_256_blue",
-          "specifications": {
-            "Storage": "256GB",
-            "Color": "Ocean Blue",
-            "Configuration": "8GB|256GB",
-            "RAM_GB": 8,
-            "Storage_GB": 256,
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
-            {
-              "seller_name": "Amazon",
-              "price": 112900.0,
-              "rating": 4.8,
               "rating_count": 3200,
               "delivery_in_days": 1,
               "is_trusted_seller": true
             },
             {
-              "seller_name": "Croma",
-              "price": 113900.0,
+              "seller_name": "Amazon",
+              "price": 117900.0,
               "rating": 4.9,
-              "rating_count": 2100,
+              "rating_count": 2800,
               "delivery_in_days": 1,
               "is_trusted_seller": true
             },
-            {
-              "seller_name": "Apple Store",
-              "price": 112900.0,
-              "rating": 5.0,
-              "rating_count": 4500,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            }
-          ]
-        },
-        {
-          "variant_id": "ip17_512_green",
-          "specifications": {
-            "Storage": "512GB",
-            "Color": "Alpine Green",
-            "Configuration": "8GB|512GB",
-            "RAM_GB": 8,
-            "Storage_GB": 512,
-            "warranty_months": 12,
-            "is_replaceable": true
-          },
-          "offers": [
             {
               "seller_name": "Flipkart",
-              "price": 129900.0,
-              "rating": 4.7,
-              "rating_count": 1800,
-              "delivery_in_days": 2,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Amazon",
-              "price": 130900.0,
+              "price": 116500.0,
               "rating": 4.8,
-              "rating_count": 2200,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Reliance Digital",
-              "price": 129500.0,
-              "rating": 4.8,
-              "rating_count": 1500,
+              "rating_count": 1900,
               "delivery_in_days": 2,
               "is_trusted_seller": true
             }
@@ -569,82 +391,245 @@
       ]
     },
     {
-      "product_id": "macbook_air_m2",
-      "product_name": "MacBook Air M2",
-      "category": "laptops",
+      "product_id": "iphone_17_pro",
+      "product_name": "iPhone 17 Pro",
+      "category": "phones",
       "brand": "Apple",
-      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/macbook-air-m2-midnight-gallery1-202306?wid=2000&hei=1536&fmt=jpeg&qlt=90&.v=1683844527075",
-      "description": "Incredibly thin and light, the MacBook Air is now supercharged by the M2 chip, delivering exceptional performance and up to 18 hours of battery life.",
+      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-17-pro-finish-select-202509-6-1inch-cosmic-titanium?wid=5120&hei=2880&fmt=p-jpg&qlt=95&.v=1736423576248",
+      "description": "iPhone 17 Pro with revolutionary foldable design, A19 Pro chip, and professional-grade camera system. Features advanced AI capabilities and holographic display.",
       "variants": [
         {
-          "variant_id": "macbook_air_m2_8_256",
+          "variant_id": "iphone_17_pro_512",
           "specifications": {
-            "Configuration": "8GB|256GBSSD",
-            "RAM_GB": 8,
-            "Storage_GB": 256,
-            "Color": "Midnight",
+            "Storage": "512GB",
+            "Color": "Cosmic Titanium",
+            "Configuration": "16GB|512GB",
+            "RAM_GB": 16,
+            "Storage_GB": 512,
+            "Display": "7.2-inch Foldable Super Retina XDR",
+            "Processor": "A19 Pro",
+            "Camera": "64MP Main, 12MP Ultra Wide, 12MP Telephoto 10x, LiDAR Scanner",
+            "Battery": "Up to 40 hours video playback",
             "warranty_months": 12,
             "is_replaceable": true
           },
           "offers": [
             {
-              "seller_name": "Appario Retail",
-              "price": 99900.0,
+              "seller_name": "Apple Store",
+              "price": 169900.0,
+              "rating": 5.0,
+              "rating_count": 1800,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Amazon",
+              "price": 167900.0,
               "rating": 4.9,
               "rating_count": 1500,
               "delivery_in_days": 1,
               "is_trusted_seller": true
             },
             {
-              "seller_name": "Flipkart",
-              "price": 99500.0,
-              "rating": 4.7,
+              "seller_name": "Croma",
+              "price": 168500.0,
+              "rating": 4.8,
               "rating_count": 1200,
               "delivery_in_days": 2,
               "is_trusted_seller": true
-            },
-            {
-              "seller_name": "Apple Store",
-              "price": 99900.0,
-              "rating": 5.0,
-              "rating_count": 3200,
-              "delivery_in_days": 1,
-              "is_trusted_seller": true
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "product_id": "samsung_galaxy_s24",
+      "product_name": "Samsung Galaxy S24",
+      "category": "phones",
+      "brand": "Samsung",
+      "base_image_url": "https://images.samsung.com/is/image/samsung/p6pim/in/2401/gallery/in-galaxy-s24-s928-471360-sm-s928bzghins-thumb-534866717",
+      "description": "Next-level AI phone with Galaxy AI features, powerful camera system, and stunning Dynamic AMOLED 2X display.",
+      "variants": [
         {
-          "variant_id": "mba_m2_16_512",
+          "variant_id": "s24_256",
           "specifications": {
-            "Configuration": "16GB|512GBSSD",
-            "RAM_GB": 16,
-            "Storage_GB": 512,
-            "Color": "Starlight",
+            "Storage": "256GB",
+            "Color": "Onyx Black",
+            "Configuration": "8GB|256GB",
+            "RAM_GB": 8,
+            "Storage_GB": 256,
             "warranty_months": 12,
             "is_replaceable": true
           },
           "offers": [
             {
-              "seller_name": "Imagine Store",
-              "price": 122900.0,
-              "rating": 4.8,
-              "rating_count": 600,
-              "delivery_in_days": 3,
+              "seller_name": "Samsung Store",
+              "price": 79999.0,
+              "rating": 4.9,
+              "rating_count": 6200,
+              "delivery_in_days": 1,
               "is_trusted_seller": true
             },
             {
-              "seller_name": "Croma",
-              "price": 121900.0,
+              "seller_name": "Amazon",
+              "price": 78999.0,
+              "rating": 4.8,
+              "rating_count": 8500,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Flipkart",
+              "price": 77999.0,
+              "rating": 4.7,
+              "rating_count": 7200,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": "macbook_pro_14",
+      "product_name": "MacBook Pro 14-inch",
+      "category": "laptops",
+      "brand": "Apple",
+      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/macbook-pro-14-202310?wid=2000&hei=1536&fmt=jpeg&qlt=90&.v=1697318393662",
+      "description": "Supercharged by M3 Pro or M3 Max chips, MacBook Pro takes its power and efficiency further than ever.",
+      "variants": [
+        {
+          "variant_id": "mbp_14_m3",
+          "specifications": {
+            "Configuration": "16GB|512GB SSD",
+            "RAM_GB": 16,
+            "Storage_GB": 512,
+            "Color": "Space Black",
+            "Display": "14.2-inch Liquid Retina XDR",
+            "Processor": "Apple M3",
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "Apple Store",
+              "price": 199900.0,
+              "rating": 5.0,
+              "rating_count": 3200,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Amazon",
+              "price": 194900.0,
+              "rating": 4.8,
+              "rating_count": 1800,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 196500.0,
               "rating": 4.9,
-              "rating_count": 850,
+              "rating_count": 1200,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": "dell_xps_15",
+      "product_name": "Dell XPS 15",
+      "category": "laptops",
+      "brand": "Dell",
+      "base_image_url": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-15-9530/media-gallery/notebook-xps-15-9530-nt-blue-gallery-1.psd?fmt=pjpg&pscan=auto&scl=1&wid=2000&hei=2000&qlt=100%2C0&resMode=sharp2&size=2000%2C2000",
+      "description": "The world's most powerful 15-inch laptop with stunning OLED display, latest processors, and premium design.",
+      "variants": [
+        {
+          "variant_id": "xps_15_i7",
+          "specifications": {
+            "Configuration": "16GB|1TB SSD",
+            "RAM_GB": 16,
+            "Storage_GB": 1024,
+            "Color": "Platinum Silver",
+            "Display": "15.6-inch 3.5K OLED",
+            "Processor": "Intel Core i7-13700H",
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "Dell Store",
+              "price": 189990.0,
+              "rating": 4.9,
+              "rating_count": 2800,
               "delivery_in_days": 2,
               "is_trusted_seller": true
             },
             {
               "seller_name": "Amazon",
-              "price": 123500.0,
+              "price": 184990.0,
               "rating": 4.8,
+              "rating_count": 1500,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Flipkart",
+              "price": 182999.0,
+              "rating": 4.7,
               "rating_count": 1100,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": "hp_spectre_x360",
+      "product_name": "HP Spectre x360",
+      "category": "laptops",
+      "brand": "HP",
+      "base_image_url": "https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c08586650.png",
+      "description": "Premium 2-in-1 laptop with stunning design, powerful performance, and all-day battery life. Perfect for work and creativity.",
+      "variants": [
+        {
+          "variant_id": "spectre_i7",
+          "specifications": {
+            "Configuration": "16GB|1TB SSD",
+            "RAM_GB": 16,
+            "Storage_GB": 1024,
+            "Color": "Nightfall Black",
+            "Display": "13.5-inch OLED Touch",
+            "Processor": "Intel Core i7-1355U",
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "HP Store",
+              "price": 154990.0,
+              "rating": 4.8,
+              "rating_count": 1900,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Amazon",
+              "price": 149990.0,
+              "rating": 4.7,
+              "rating_count": 2200,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 151999.0,
+              "rating": 4.8,
+              "rating_count": 1400,
               "delivery_in_days": 2,
               "is_trusted_seller": true
             }
@@ -661,12 +646,12 @@
       "description": "Industry-leading noise-canceling headphones with exceptional sound quality, a lightweight design, and crystal-clear hands-free calling.",
       "variants": [
         {
-          "variant_id": "sony_xm5_default",
+          "variant_id": "sony_xm5_black",
           "specifications": {
             "Type": "Over-Ear",
-            "Configuration": "Standard",
-            "RAM_GB": null,
-            "Storage_GB": null,
+            "Configuration": "Wireless",
+            "Battery Life": "30 hours",
+            "Noise Cancellation": "Industry Leading",
             "Color": "Black",
             "warranty_months": 12,
             "is_replaceable": true
@@ -681,19 +666,211 @@
               "is_trusted_seller": true
             },
             {
-              "seller_name": "Headphone Zone",
+              "seller_name": "Amazon",
               "price": 28990.0,
               "rating": 4.8,
-              "rating_count": 1200,
+              "rating_count": 8500,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Headphone Zone",
+              "price": 29490.0,
+              "rating": 4.9,
+              "rating_count": 3200,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": "airpods_pro_2",
+      "product_name": "AirPods Pro (2nd Generation)",
+      "category": "headphones",
+      "brand": "Apple",
+      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MQD83?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1660803972361",
+      "description": "Active Noise Cancellation, Adaptive Transparency, and Personalised Spatial Audio for immersive sound experience.",
+      "variants": [
+        {
+          "variant_id": "airpods_pro_2",
+          "specifications": {
+            "Type": "In-Ear",
+            "Configuration": "Wireless",
+            "Battery Life": "6 hours (ANC on)",
+            "Noise Cancellation": "Active",
+            "Color": "White",
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "Apple Store",
+              "price": 24900.0,
+              "rating": 4.9,
+              "rating_count": 12800,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Amazon",
+              "price": 23900.0,
+              "rating": 4.8,
+              "rating_count": 9500,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Flipkart",
+              "price": 23500.0,
+              "rating": 4.7,
+              "rating_count": 8200,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": "bose_qc45",
+      "product_name": "Bose QuietComfort 45",
+      "category": "headphones",
+      "brand": "Bose",
+      "base_image_url": "https://assets.bose.com/content/dam/Bose_DAM/Web/consumer_electronics/global/products/headphones/qc45/product_silo_images/qc45_black_EC_01.psd/jcr:content/renditions/cq5dam.web.1000.1000.png",
+      "description": "World-class noise cancellation, balanced audio performance, and all-day comfort with up to 24 hours of battery life.",
+      "variants": [
+        {
+          "variant_id": "bose_qc45_black",
+          "specifications": {
+            "Type": "Over-Ear",
+            "Configuration": "Wireless",
+            "Battery Life": "24 hours",
+            "Noise Cancellation": "World-class",
+            "Color": "Black",
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "Bose Store",
+              "price": 26990.0,
+              "rating": 4.8,
+              "rating_count": 3800,
               "delivery_in_days": 2,
               "is_trusted_seller": true
             },
             {
               "seller_name": "Amazon",
-              "price": 29490.0,
-              "rating": 4.9,
-              "rating_count": 5500,
+              "price": 25990.0,
+              "rating": 4.7,
+              "rating_count": 5200,
               "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 26490.0,
+              "rating": 4.8,
+              "rating_count": 2900,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": "apple_watch_9",
+      "product_name": "Apple Watch Series 9",
+      "category": "watches",
+      "brand": "Apple",
+      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MU653ref?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1692846359318",
+      "description": "The most powerful Apple Watch yet with new Double Tap gesture, brighter display, and on-device Siri.",
+      "variants": [
+        {
+          "variant_id": "apple_watch_9_45",
+          "specifications": {
+            "Size": "45mm",
+            "Configuration": "GPS + Cellular",
+            "Color": "Midnight",
+            "Display": "Always-On Retina",
+            "Battery Life": "18 hours",
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "Apple Store",
+              "price": 49900.0,
+              "rating": 4.9,
+              "rating_count": 9200,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Amazon",
+              "price": 47900.0,
+              "rating": 4.8,
+              "rating_count": 7500,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Flipkart",
+              "price": 46900.0,
+              "rating": 4.7,
+              "rating_count": 6200,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": "samsung_galaxy_watch6",
+      "product_name": "Samsung Galaxy Watch 6",
+      "category": "watches",
+      "brand": "Samsung",
+      "base_image_url": "https://images.samsung.com/is/image/samsung/p6pim/in/2307/gallery/in-galaxy-watch6-468854-sm-r930fzkains-thumb-534866717",
+      "description": "Advanced health monitoring, premium design, and seamless connectivity with enhanced fitness tracking features.",
+      "variants": [
+        {
+          "variant_id": "galaxy_watch6_44",
+          "specifications": {
+            "Size": "44mm",
+            "Configuration": "Bluetooth",
+            "Color": "Graphite",
+            "Display": "Super AMOLED",
+            "Battery Life": "40 hours",
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "Samsung Store",
+              "price": 29999.0,
+              "rating": 4.8,
+              "rating_count": 5800,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Amazon",
+              "price": 27999.0,
+              "rating": 4.7,
+              "rating_count": 4200,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true
+            },
+            {
+              "seller_name": "Flipkart",
+              "price": 26999.0,
+              "rating": 4.6,
+              "rating_count": 3800,
+              "delivery_in_days": 2,
               "is_trusted_seller": true
             }
           ]
