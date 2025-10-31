@@ -3,25 +3,49 @@
     "phones": {
       "default_comparison": "iphone_15_256",
       "suggestions": [
-        "iPhone 14", "iPhone 15", "iPhone 16", "iPhone 17", "Samsung Galaxy S24", "Google Pixel 8", "OnePlus 12"
+        "iPhone 14", "iPhone 15", "iPhone 16", "iPhone 17", "Samsung Galaxy S24", "Google Pixel 8", "OnePlus 12", "Samsung Galaxy S24 Ultra", "Google Pixel 8 Pro"
       ]
     },
     "laptops": {
       "default_comparison": "macbook_pro_14",
       "suggestions": [
-        "MacBook Pro", "Dell XPS", "HP Spectre"
+        "MacBook Pro", "Dell XPS", "HP Spectre", "MacBook Air", "Lenovo ThinkPad", "Asus ROG"
       ]
     },
     "headphones": {
       "default_comparison": "sony_wh_1000xm5",
       "suggestions": [
-        "Sony WH-1000XM5", "AirPods Pro", "Bose QC45"
+        "Sony WH-1000XM5", "AirPods Pro", "Bose QC45", "AirPods Max"
       ]
     },
     "watches": {
       "default_comparison": "apple_watch_9",
       "suggestions": [
-        "Apple Watch Series 9", "Samsung Galaxy Watch 6"
+        "Apple Watch Series 9", "Samsung Galaxy Watch 6", "Apple Watch Ultra", "Samsung Galaxy Watch 6 Classic"
+      ]
+    },
+    "earbuds": {
+      "default_comparison": "airpods_pro_2",
+      "suggestions": [
+        "AirPods Pro", "Samsung Galaxy Buds"
+      ]
+    },
+    "smart_tv": {
+      "default_comparison": "samsung_qled_55",
+      "suggestions": [
+        "Samsung QLED", "LG OLED"
+      ]
+    },
+    "gaming_consoles": {
+      "default_comparison": "playstation_5",
+      "suggestions": [
+        "PlayStation 5", "Xbox Series X"
+      ]
+    },
+    "smart_home": {
+      "default_comparison": "google_nest_hub",
+      "suggestions": [
+        "Google Nest Hub", "Amazon Echo Show"
       ]
     }
   },
@@ -31,7 +55,7 @@
       "product_name": "iPhone 14",
       "category": "phones",
       "brand": "Apple",
-      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-product-red?wid=5120&hei=2880&fmt=p-jpg&qlt=95&.v=1661026582322",
+      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-14-finish-select-202209-6-1inch-product-red",
       "description": "iPhone 14 with advanced dual-camera system, A15 Bionic chip, and all-day battery life. Features Crash Detection and Emergency SOS via satellite.",
       "variants": [
         {
@@ -46,6 +70,10 @@
             "Processor": "A15 Bionic",
             "Camera": "12MP Dual Camera",
             "Battery": "Up to 20 hours video playback",
+            "Connectivity": "5G",
+            "Water_Resistance": "IP68",
+            "Refresh_Rate_Hz": 60,
+            "Charging": "MagSafe, Qi wireless",
             "warranty_months": 12,
             "is_replaceable": true
           },
@@ -56,7 +84,9 @@
               "rating": 4.8,
               "rating_count": 12500,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 14
             },
             {
               "seller_name": "Amazon",
@@ -64,7 +94,9 @@
               "rating": 4.7,
               "rating_count": 9800,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 10
             },
             {
               "seller_name": "Flipkart",
@@ -72,7 +104,29 @@
               "rating": 4.6,
               "rating_count": 8500,
               "delivery_in_days": 2,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 4,
+              "return_policy_days": 7
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 68500.0,
+              "rating": 4.7,
+              "rating_count": 4200,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 67500.0,
+              "rating": 4.6,
+              "rating_count": 3800,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 10
             }
           ]
         }
@@ -83,7 +137,7 @@
       "product_name": "iPhone 14 Pro",
       "category": "phones",
       "brand": "Apple",
-      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-1inch-deeppurple?wid=5120&hei=2880&fmt=p-jpg&qlt=95&.v=1661026582322",
+      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-14-pro-finish-select-202209-6-1inch-deeppurple",
       "description": "iPhone 14 Pro with Dynamic Island, Always-On display, and pro camera system. Features the powerful A16 Bionic chip and 48MP Main camera.",
       "variants": [
         {
@@ -98,6 +152,10 @@
             "Processor": "A16 Bionic",
             "Camera": "48MP Main, 12MP Ultra Wide, 12MP Telephoto",
             "Battery": "Up to 23 hours video playback",
+            "Connectivity": "5G",
+            "Water_Resistance": "IP68",
+            "Refresh_Rate_Hz": 120,
+            "Charging": "MagSafe, Qi wireless",
             "warranty_months": 12,
             "is_replaceable": true
           },
@@ -108,7 +166,9 @@
               "rating": 4.9,
               "rating_count": 9200,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 14
             },
             {
               "seller_name": "Amazon",
@@ -116,7 +176,9 @@
               "rating": 4.8,
               "rating_count": 7800,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
             },
             {
               "seller_name": "Croma",
@@ -124,7 +186,29 @@
               "rating": 4.8,
               "rating_count": 5200,
               "delivery_in_days": 2,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 1,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 127500.0,
+              "rating": 4.7,
+              "rating_count": 3500,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Vijay Sales",
+              "price": 128900.0,
+              "rating": 4.6,
+              "rating_count": 2800,
+              "delivery_in_days": 3,
+              "is_trusted_seller": true,
+              "discount_percent": 1,
+              "return_policy_days": 7
             }
           ]
         }
@@ -135,7 +219,7 @@
       "product_name": "iPhone 15",
       "category": "phones",
       "brand": "Apple",
-      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-15-finish-select-202309-6-1inch-pink?wid=5120&hei=2880&fmt=p-jpg&qlt=95&.v=1692923777972",
+      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-15-finish-select-202309-6-1inch-pink",
       "description": "The ultimate iPhone experience with Dynamic Island, 48MP Main camera, and USB-C connectivity. Features the powerful A16 Bionic chip.",
       "variants": [
         {
@@ -150,6 +234,10 @@
             "Processor": "A16 Bionic",
             "Camera": "48MP Main, 12MP Ultra Wide",
             "Battery": "Up to 20 hours video playback",
+            "Connectivity": "5G, USB-C",
+            "Water_Resistance": "IP68",
+            "Refresh_Rate_Hz": 60,
+            "Charging": "USB-C, MagSafe, Qi wireless",
             "warranty_months": 12,
             "is_replaceable": true
           },
@@ -160,7 +248,9 @@
               "rating": 5.0,
               "rating_count": 8500,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 14
             },
             {
               "seller_name": "Amazon",
@@ -168,7 +258,9 @@
               "rating": 4.8,
               "rating_count": 7200,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 1,
+              "return_policy_days": 10
             },
             {
               "seller_name": "Reliance Digital",
@@ -176,7 +268,29 @@
               "rating": 4.8,
               "rating_count": 4500,
               "delivery_in_days": 2,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 87900.0,
+              "rating": 4.7,
+              "rating_count": 3800,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Flipkart",
+              "price": 87400.0,
+              "rating": 4.6,
+              "rating_count": 5200,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 7
             }
           ]
         }
@@ -187,7 +301,7 @@
       "product_name": "iPhone 15 Pro",
       "category": "phones",
       "brand": "Apple",
-      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium?wid=5120&hei=2880&fmt=p-jpg&qlt=95&.v=1692923777972",
+      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-1inch-naturaltitanium",
       "description": "iPhone 15 Pro with titanium design, A17 Pro chip, and pro camera system. Features customizable Action button and advanced gaming capabilities.",
       "variants": [
         {
@@ -202,6 +316,10 @@
             "Processor": "A17 Pro",
             "Camera": "48MP Main, 12MP Ultra Wide, 12MP Telephoto",
             "Battery": "Up to 23 hours video playback",
+            "Connectivity": "5G, USB-C 3.0",
+            "Water_Resistance": "IP68",
+            "Refresh_Rate_Hz": 120,
+            "Charging": "USB-C, MagSafe, Qi wireless",
             "warranty_months": 12,
             "is_replaceable": true
           },
@@ -212,7 +330,9 @@
               "rating": 5.0,
               "rating_count": 6800,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 14
             },
             {
               "seller_name": "Amazon",
@@ -220,7 +340,9 @@
               "rating": 4.9,
               "rating_count": 5500,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 1,
+              "return_policy_days": 10
             },
             {
               "seller_name": "Croma",
@@ -228,7 +350,29 @@
               "rating": 4.8,
               "rating_count": 3800,
               "delivery_in_days": 2,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 1,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 132000.0,
+              "rating": 4.7,
+              "rating_count": 2900,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Vijay Sales",
+              "price": 133800.0,
+              "rating": 4.6,
+              "rating_count": 2200,
+              "delivery_in_days": 3,
+              "is_trusted_seller": true,
+              "discount_percent": 1,
+              "return_policy_days": 7
             }
           ]
         }
@@ -239,7 +383,7 @@
       "product_name": "iPhone 16",
       "category": "phones",
       "brand": "Apple",
-      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black?wid=5120&hei=2880&fmt=p-jpg&qlt=95&.v=1726423576248",
+      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-finish-select-202409-6-1inch-black",
       "description": "The next generation iPhone with advanced AI capabilities, improved camera system, and revolutionary battery life. Powered by A18 Bionic chip.",
       "variants": [
         {
@@ -254,6 +398,10 @@
             "Processor": "A18 Bionic",
             "Camera": "48MP Main, 12MP Ultra Wide, 12MP Telephoto",
             "Battery": "Up to 28 hours video playback",
+            "Connectivity": "5G, USB-C 3.2",
+            "Water_Resistance": "IP68",
+            "Refresh_Rate_Hz": 120,
+            "Charging": "USB-C, MagSafe, Qi wireless",
             "warranty_months": 12,
             "is_replaceable": true
           },
@@ -264,7 +412,9 @@
               "rating": 5.0,
               "rating_count": 7800,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 14
             },
             {
               "seller_name": "Amazon",
@@ -272,7 +422,9 @@
               "rating": 4.8,
               "rating_count": 6500,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 1,
+              "return_policy_days": 10
             },
             {
               "seller_name": "Croma",
@@ -280,7 +432,29 @@
               "rating": 4.9,
               "rating_count": 4200,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 97900.0,
+              "rating": 4.7,
+              "rating_count": 3200,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Flipkart",
+              "price": 97400.0,
+              "rating": 4.6,
+              "rating_count": 4800,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 7
             }
           ]
         }
@@ -291,7 +465,7 @@
       "product_name": "iPhone 16 Pro",
       "category": "phones",
       "brand": "Apple",
-      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-1inch-desert-titanium?wid=5120&hei=2880&fmt=p-jpg&qlt=95&.v=1726423576248",
+      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-1inch-desert-titanium",
       "description": "iPhone 16 Pro with advanced camera system, A18 Pro chip, and titanium design. Features enhanced AI capabilities and professional photography tools.",
       "variants": [
         {
@@ -306,6 +480,10 @@
             "Processor": "A18 Pro",
             "Camera": "48MP Main, 12MP Ultra Wide, 12MP Telephoto 5x",
             "Battery": "Up to 29 hours video playback",
+            "Connectivity": "5G, USB-C 3.2",
+            "Water_Resistance": "IP68",
+            "Refresh_Rate_Hz": 120,
+            "Charging": "USB-C, MagSafe, Qi wireless",
             "warranty_months": 12,
             "is_replaceable": true
           },
@@ -316,7 +494,9 @@
               "rating": 5.0,
               "rating_count": 6200,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 14
             },
             {
               "seller_name": "Amazon",
@@ -324,7 +504,9 @@
               "rating": 4.9,
               "rating_count": 4800,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 1,
+              "return_policy_days": 10
             },
             {
               "seller_name": "Reliance Digital",
@@ -332,7 +514,29 @@
               "rating": 4.8,
               "rating_count": 3500,
               "delivery_in_days": 2,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 1,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 147000.0,
+              "rating": 4.7,
+              "rating_count": 2800,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Vijay Sales",
+              "price": 148800.0,
+              "rating": 4.6,
+              "rating_count": 1900,
+              "delivery_in_days": 3,
+              "is_trusted_seller": true,
+              "discount_percent": 1,
+              "return_policy_days": 7
             }
           ]
         }
@@ -343,7 +547,7 @@
       "product_name": "iPhone 17",
       "category": "phones",
       "brand": "Apple",
-      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-17-finish-select-202509-6-1inch-space-black?wid=5120&hei=2880&fmt=p-jpg&qlt=95&.v=1736423576248",
+      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-17-finish-select-202509-6-1inch-space-black",
       "description": "The future of iPhone with revolutionary AI features, foldable display technology, and breakthrough battery performance. Powered by A19 Bionic chip.",
       "variants": [
         {
@@ -358,6 +562,10 @@
             "Processor": "A19 Bionic",
             "Camera": "64MP Main, 12MP Ultra Wide, 12MP Telephoto 10x",
             "Battery": "Up to 36 hours video playback",
+            "Connectivity": "5G, USB-C 4.0",
+            "Water_Resistance": "IP68",
+            "Refresh_Rate_Hz": 120,
+            "Charging": "USB-C, MagSafe, Qi wireless",
             "warranty_months": 12,
             "is_replaceable": true
           },
@@ -368,7 +576,9 @@
               "rating": 5.0,
               "rating_count": 3200,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 14
             },
             {
               "seller_name": "Amazon",
@@ -376,7 +586,9 @@
               "rating": 4.9,
               "rating_count": 2800,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
             },
             {
               "seller_name": "Flipkart",
@@ -384,7 +596,29 @@
               "rating": 4.8,
               "rating_count": 1900,
               "delivery_in_days": 2,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 7
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 118000.0,
+              "rating": 4.7,
+              "rating_count": 1500,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 117200.0,
+              "rating": 4.6,
+              "rating_count": 1200,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
             }
           ]
         }
@@ -395,7 +629,7 @@
       "product_name": "iPhone 17 Pro",
       "category": "phones",
       "brand": "Apple",
-      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-17-pro-finish-select-202509-6-1inch-cosmic-titanium?wid=5120&hei=2880&fmt=p-jpg&qlt=95&.v=1736423576248",
+      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-17-pro-finish-select-202509-6-1inch-cosmic-titanium",
       "description": "iPhone 17 Pro with revolutionary foldable design, A19 Pro chip, and professional-grade camera system. Features advanced AI capabilities and holographic display.",
       "variants": [
         {
@@ -410,6 +644,10 @@
             "Processor": "A19 Pro",
             "Camera": "64MP Main, 12MP Ultra Wide, 12MP Telephoto 10x, LiDAR Scanner",
             "Battery": "Up to 40 hours video playback",
+            "Connectivity": "5G, USB-C 4.0",
+            "Water_Resistance": "IP68",
+            "Refresh_Rate_Hz": 120,
+            "Charging": "USB-C, MagSafe, Qi wireless",
             "warranty_months": 12,
             "is_replaceable": true
           },
@@ -420,7 +658,9 @@
               "rating": 5.0,
               "rating_count": 1800,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 14
             },
             {
               "seller_name": "Amazon",
@@ -428,7 +668,9 @@
               "rating": 4.9,
               "rating_count": 1500,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 1,
+              "return_policy_days": 10
             },
             {
               "seller_name": "Croma",
@@ -436,7 +678,29 @@
               "rating": 4.8,
               "rating_count": 1200,
               "delivery_in_days": 2,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 1,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 166500.0,
+              "rating": 4.7,
+              "rating_count": 900,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Vijay Sales",
+              "price": 168000.0,
+              "rating": 4.6,
+              "rating_count": 700,
+              "delivery_in_days": 3,
+              "is_trusted_seller": true,
+              "discount_percent": 1,
+              "return_policy_days": 7
             }
           ]
         }
@@ -447,7 +711,7 @@
       "product_name": "Samsung Galaxy S24",
       "category": "phones",
       "brand": "Samsung",
-      "base_image_url": "https://images.samsung.com/is/image/samsung/p6pim/in/2401/gallery/in-galaxy-s24-s928-471360-sm-s928bzghins-thumb-534866717",
+      "base_image_url": "https://images.samsung.com/is/image/samsung/p6pim/in/2401/gallery/in-galaxy-s24-s928",
       "description": "Next-level AI phone with Galaxy AI features, powerful camera system, and stunning Dynamic AMOLED 2X display.",
       "variants": [
         {
@@ -458,6 +722,14 @@
             "Configuration": "8GB|256GB",
             "RAM_GB": 8,
             "Storage_GB": 256,
+            "Display": "6.2-inch Dynamic AMOLED 2X",
+            "Processor": "Snapdragon 8 Gen 3",
+            "Camera": "50MP Main, 12MP Ultra Wide, 10MP Telephoto",
+            "Battery": "Up to 26 hours video playback",
+            "Connectivity": "5G, WiFi 6E",
+            "Water_Resistance": "IP68",
+            "Refresh_Rate_Hz": 120,
+            "Charging": "Fast Wireless Charging 2.0",
             "warranty_months": 12,
             "is_replaceable": true
           },
@@ -468,7 +740,9 @@
               "rating": 4.9,
               "rating_count": 6200,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 14
             },
             {
               "seller_name": "Amazon",
@@ -476,7 +750,9 @@
               "rating": 4.8,
               "rating_count": 8500,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 1,
+              "return_policy_days": 10
             },
             {
               "seller_name": "Flipkart",
@@ -484,7 +760,275 @@
               "rating": 4.7,
               "rating_count": 7200,
               "delivery_in_days": 2,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 7
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 78499.0,
+              "rating": 4.7,
+              "rating_count": 3800,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 78200.0,
+              "rating": 4.6,
+              "rating_count": 3200,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": "samsung_galaxy_s24_ultra",
+      "product_name": "Samsung Galaxy S24 Ultra",
+      "category": "phones",
+      "brand": "Samsung",
+      "base_image_url": "https://images.samsung.com/is/image/samsung/p6pim/in/2401/gallery/in-galaxy-s24-ultra",
+      "description": "The ultimate Galaxy with titanium frame, S Pen, and advanced AI features. Features 200MP camera and Snapdragon 8 Gen 3 processor.",
+      "variants": [
+        {
+          "variant_id": "s24_ultra_256",
+          "specifications": {
+            "Storage": "256GB",
+            "Color": "Titanium Gray",
+            "Configuration": "12GB|256GB",
+            "RAM_GB": 12,
+            "Storage_GB": 256,
+            "Display": "6.8-inch Dynamic AMOLED 2X",
+            "Processor": "Snapdragon 8 Gen 3",
+            "Camera": "200MP Main, 12MP Ultra Wide, 50MP Telephoto 5x, 10MP Telephoto 3x",
+            "Battery": "Up to 30 hours video playback",
+            "Connectivity": "5G, WiFi 7",
+            "Water_Resistance": "IP68",
+            "Refresh_Rate_Hz": 120,
+            "Charging": "45W Fast Charging, Wireless",
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "Samsung Store",
+              "price": 129999.0,
+              "rating": 4.9,
+              "rating_count": 4500,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 14
+            },
+            {
+              "seller_name": "Amazon",
+              "price": 127999.0,
+              "rating": 4.8,
+              "rating_count": 6200,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Flipkart",
+              "price": 125999.0,
+              "rating": 4.7,
+              "rating_count": 4800,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 7
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 126499.0,
+              "rating": 4.7,
+              "rating_count": 2900,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 126800.0,
+              "rating": 4.6,
+              "rating_count": 2500,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": "google_pixel_8_pro",
+      "product_name": "Google Pixel 8 Pro",
+      "category": "phones",
+      "brand": "Google",
+      "base_image_url": "https://store.google.com/pixel8pro.jpg",
+      "description": "Powered by Google Tensor G3 with advanced AI features, pro-level camera system, and smooth 120Hz display. Features Magic Editor, Best Take, and 7 years of OS updates.",
+      "variants": [
+        {
+          "variant_id": "pixel_8_pro_256",
+          "specifications": {
+            "Storage": "256GB",
+            "Color": "Obsidian",
+            "Configuration": "12GB|256GB",
+            "RAM_GB": 12,
+            "Storage_GB": 256,
+            "Display": "6.7-inch Super Actua Display",
+            "Processor": "Google Tensor G3",
+            "Camera": "50MP Main, 48MP Ultra Wide, 48MP Telephoto",
+            "Battery": "Up to 31 hours video playback",
+            "Connectivity": "5G, WiFi 7",
+            "Water_Resistance": "IP68",
+            "Refresh_Rate_Hz": 120,
+            "Charging": "30W Fast Charging, Wireless",
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "Google Store",
+              "price": 106999.0,
+              "rating": 4.8,
+              "rating_count": 3200,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 15
+            },
+            {
+              "seller_name": "Amazon",
+              "price": 104999.0,
+              "rating": 4.7,
+              "rating_count": 4800,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Flipkart",
+              "price": 102999.0,
+              "rating": 4.6,
+              "rating_count": 3500,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 4,
+              "return_policy_days": 7
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 103499.0,
+              "rating": 4.7,
+              "rating_count": 2200,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 104200.0,
+              "rating": 4.6,
+              "rating_count": 1800,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": "oneplus_12",
+      "product_name": "OnePlus 12",
+      "category": "phones",
+      "brand": "OnePlus",
+      "base_image_url": "https://image01.oneplus.net/oneplus12.jpg",
+      "description": "Flagship killer with Hasselblad camera, Snapdragon 8 Gen 3, and 100W fast charging. Never Settle.",
+      "variants": [
+        {
+          "variant_id": "oneplus_12_256",
+          "specifications": {
+            "Storage": "256GB",
+            "Color": "Silky Black",
+            "Configuration": "12GB|256GB",
+            "RAM_GB": 12,
+            "Storage_GB": 256,
+            "Display": "6.82-inch Fluid AMOLED",
+            "Processor": "Snapdragon 8 Gen 3",
+            "Camera": "50MP Main, 48MP Ultra Wide, 64MP Periscope Telephoto",
+            "Battery": "Up to 28 hours video playback",
+            "Connectivity": "5G, WiFi 7",
+            "Water_Resistance": "IP65",
+            "Refresh_Rate_Hz": 120,
+            "Charging": "100W SuperVOOC, 50W Wireless",
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "OnePlus Store",
+              "price": 69999.0,
+              "rating": 4.8,
+              "rating_count": 5800,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 15
+            },
+            {
+              "seller_name": "Amazon",
+              "price": 67999.0,
+              "rating": 4.7,
+              "rating_count": 7200,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Flipkart",
+              "price": 66999.0,
+              "rating": 4.6,
+              "rating_count": 6200,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 4,
+              "return_policy_days": 7
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 68499.0,
+              "rating": 4.7,
+              "rating_count": 3200,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 67700.0,
+              "rating": 4.6,
+              "rating_count": 2800,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 10
             }
           ]
         }
@@ -495,7 +1039,7 @@
       "product_name": "MacBook Pro 14-inch",
       "category": "laptops",
       "brand": "Apple",
-      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/macbook-pro-14-202310?wid=2000&hei=1536&fmt=jpeg&qlt=90&.v=1697318393662",
+      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/macbook-pro-14-202310",
       "description": "Supercharged by M3 Pro or M3 Max chips, MacBook Pro takes its power and efficiency further than ever.",
       "variants": [
         {
@@ -507,6 +1051,10 @@
             "Color": "Space Black",
             "Display": "14.2-inch Liquid Retina XDR",
             "Processor": "Apple M3",
+            "Graphics": "10-core GPU",
+            "Battery_Life": "Up to 22 hours",
+            "Ports": "Thunderbolt 4, HDMI, SDXC",
+            "Weight_kg": 1.55,
             "warranty_months": 12,
             "is_replaceable": true
           },
@@ -517,7 +1065,9 @@
               "rating": 5.0,
               "rating_count": 3200,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 14
             },
             {
               "seller_name": "Amazon",
@@ -525,7 +1075,9 @@
               "rating": 4.8,
               "rating_count": 1800,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 10
             },
             {
               "seller_name": "Reliance Digital",
@@ -533,7 +1085,108 @@
               "rating": 4.9,
               "rating_count": 1200,
               "delivery_in_days": 2,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 195200.0,
+              "rating": 4.7,
+              "rating_count": 900,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Vijay Sales",
+              "price": 197000.0,
+              "rating": 4.6,
+              "rating_count": 700,
+              "delivery_in_days": 3,
+              "is_trusted_seller": true,
+              "discount_percent": 1,
+              "return_policy_days": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": "macbook_air_m3",
+      "product_name": "MacBook Air M3",
+      "category": "laptops",
+      "brand": "Apple",
+      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/macbook-air-m3-202403",
+      "description": "The world's best consumer laptop for AI. Supercharged by M3 chip with all-day battery life.",
+      "variants": [
+        {
+          "variant_id": "mba_m3_256",
+          "specifications": {
+            "Configuration": "8GB|256GB SSD",
+            "RAM_GB": 8,
+            "Storage_GB": 256,
+            "Color": "Midnight",
+            "Display": "13.6-inch Liquid Retina",
+            "Processor": "Apple M3",
+            "Graphics": "8-core GPU",
+            "Battery_Life": "Up to 18 hours",
+            "Ports": "Thunderbolt 4, MagSafe",
+            "Weight_kg": 1.24,
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "Apple Store",
+              "price": 114900.0,
+              "rating": 4.9,
+              "rating_count": 4200,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 14
+            },
+            {
+              "seller_name": "Amazon",
+              "price": 109900.0,
+              "rating": 4.8,
+              "rating_count": 3500,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 4,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Flipkart",
+              "price": 107900.0,
+              "rating": 4.7,
+              "rating_count": 2800,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 6,
+              "return_policy_days": 7
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 108500.0,
+              "rating": 4.7,
+              "rating_count": 1900,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 6,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 109200.0,
+              "rating": 4.6,
+              "rating_count": 1600,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 5,
+              "return_policy_days": 10
             }
           ]
         }
@@ -544,7 +1197,7 @@
       "product_name": "Dell XPS 15",
       "category": "laptops",
       "brand": "Dell",
-      "base_image_url": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-15-9530/media-gallery/notebook-xps-15-9530-nt-blue-gallery-1.psd?fmt=pjpg&pscan=auto&scl=1&wid=2000&hei=2000&qlt=100%2C0&resMode=sharp2&size=2000%2C2000",
+      "base_image_url": "https://i.dell.com/is/image/DellContent/dell-xps-15",
       "description": "The world's most powerful 15-inch laptop with stunning OLED display, latest processors, and premium design.",
       "variants": [
         {
@@ -556,6 +1209,10 @@
             "Color": "Platinum Silver",
             "Display": "15.6-inch 3.5K OLED",
             "Processor": "Intel Core i7-13700H",
+            "Graphics": "NVIDIA RTX 4050",
+            "Battery_Life": "Up to 14 hours",
+            "Ports": "Thunderbolt 4, USB-C, SD card",
+            "Weight_kg": 1.86,
             "warranty_months": 12,
             "is_replaceable": true
           },
@@ -566,7 +1223,9 @@
               "rating": 4.9,
               "rating_count": 2800,
               "delivery_in_days": 2,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 15
             },
             {
               "seller_name": "Amazon",
@@ -574,7 +1233,9 @@
               "rating": 4.8,
               "rating_count": 1500,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 10
             },
             {
               "seller_name": "Flipkart",
@@ -582,7 +1243,29 @@
               "rating": 4.7,
               "rating_count": 1100,
               "delivery_in_days": 2,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 4,
+              "return_policy_days": 7
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 183500.0,
+              "rating": 4.7,
+              "rating_count": 800,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 184200.0,
+              "rating": 4.6,
+              "rating_count": 600,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 10
             }
           ]
         }
@@ -593,7 +1276,7 @@
       "product_name": "HP Spectre x360",
       "category": "laptops",
       "brand": "HP",
-      "base_image_url": "https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c08586650.png",
+      "base_image_url": "https://ssl-product-images.www8-hp.com/hp-spectre-x360",
       "description": "Premium 2-in-1 laptop with stunning design, powerful performance, and all-day battery life. Perfect for work and creativity.",
       "variants": [
         {
@@ -605,6 +1288,10 @@
             "Color": "Nightfall Black",
             "Display": "13.5-inch OLED Touch",
             "Processor": "Intel Core i7-1355U",
+            "Graphics": "Intel Iris Xe",
+            "Battery_Life": "Up to 17 hours",
+            "Ports": "Thunderbolt 4, USB-C, HDMI",
+            "Weight_kg": 1.34,
             "warranty_months": 12,
             "is_replaceable": true
           },
@@ -615,7 +1302,9 @@
               "rating": 4.8,
               "rating_count": 1900,
               "delivery_in_days": 2,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 15
             },
             {
               "seller_name": "Amazon",
@@ -623,7 +1312,9 @@
               "rating": 4.7,
               "rating_count": 2200,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 10
             },
             {
               "seller_name": "Reliance Digital",
@@ -631,7 +1322,187 @@
               "rating": 4.8,
               "rating_count": 1400,
               "delivery_in_days": 2,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 150500.0,
+              "rating": 4.7,
+              "rating_count": 1100,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Vijay Sales",
+              "price": 152500.0,
+              "rating": 4.6,
+              "rating_count": 800,
+              "delivery_in_days": 3,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": "lenovo_thinkpad_x1",
+      "product_name": "Lenovo ThinkPad X1 Carbon",
+      "category": "laptops",
+      "brand": "Lenovo",
+      "base_image_url": "https://example.com/images/lenovo-thinkpad-x1-carbon.jpg",
+      "description": "Ultra-light business laptop with military-grade durability and exceptional battery life.",
+      "variants": [
+        {
+          "variant_id": "thinkpad_x1_i7",
+          "specifications": {
+            "Configuration": "16GB|512GB SSD",
+            "RAM_GB": 16,
+            "Storage_GB": 512,
+            "Color": "Black",
+            "Display": "14-inch WUXGA IPS",
+            "Processor": "Intel Core i7-1365U",
+            "Graphics": "Intel Iris Xe",
+            "Battery_Life": "Up to 15 hours",
+            "Ports": "Thunderbolt 4, USB-C, HDMI",
+            "Weight_kg": 1.12,
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "Lenovo Store",
+              "price": 159990.0,
+              "rating": 4.8,
+              "rating_count": 2100,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 15
+            },
+            {
+              "seller_name": "Amazon",
+              "price": 154990.0,
+              "rating": 4.7,
+              "rating_count": 1800,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Flipkart",
+              "price": 152999.0,
+              "rating": 4.6,
+              "rating_count": 1200,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 4,
+              "return_policy_days": 7
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 153500.0,
+              "rating": 4.7,
+              "rating_count": 900,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 4,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 154200.0,
+              "rating": 4.6,
+              "rating_count": 700,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 4,
+              "return_policy_days": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": "asus_rog_zephyrus",
+      "product_name": "ASUS ROG Zephyrus G14",
+      "category": "laptops",
+      "brand": "ASUS",
+      "base_image_url": "https://images.asus.com/rog-zephyrus-g14",
+      "description": "Powerful gaming laptop with AMD Ryzen 9 and NVIDIA RTX graphics in a compact 14-inch form factor.",
+      "variants": [
+        {
+          "variant_id": "zephyrus_g14",
+          "specifications": {
+            "Configuration": "16GB|1TB SSD",
+            "RAM_GB": 16,
+            "Storage_GB": 1024,
+            "Color": "Moonlight White",
+            "Display": "14-inch QHD+ 165Hz",
+            "Processor": "AMD Ryzen 9 7940HS",
+            "Graphics": "NVIDIA RTX 4060",
+            "Battery_Life": "Up to 10 hours",
+            "Ports": "USB-C, HDMI, USB-A",
+            "Weight_kg": 1.72,
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "ASUS Store",
+              "price": 169990.0,
+              "rating": 4.9,
+              "rating_count": 1500,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 15
+            },
+            {
+              "seller_name": "Amazon",
+              "price": 164990.0,
+              "rating": 4.8,
+              "rating_count": 2200,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 166500.0,
+              "rating": 4.7,
+              "rating_count": 900,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 165800.0,
+              "rating": 4.7,
+              "rating_count": 600,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Vijay Sales",
+              "price": 167200.0,
+              "rating": 4.6,
+              "rating_count": 500,
+              "delivery_in_days": 3,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 7
             }
           ]
         }
@@ -642,7 +1513,7 @@
       "product_name": "Sony WH-1000XM5 Headphones",
       "category": "headphones",
       "brand": "Sony",
-      "base_image_url": "https://www.sony.co.in/image/5d6f6e9a8a0d3b1e8e0b0c0d0e0f0a0?fmt=pjpeg&wid=600&hei=600",
+      "base_image_url": "https://www.sony.co.in/wh-1000xm5",
       "description": "Industry-leading noise-canceling headphones with exceptional sound quality, a lightweight design, and crystal-clear hands-free calling.",
       "variants": [
         {
@@ -650,9 +1521,11 @@
           "specifications": {
             "Type": "Over-Ear",
             "Configuration": "Wireless",
-            "Battery Life": "30 hours",
-            "Noise Cancellation": "Industry Leading",
+            "Battery_Life": "30 hours",
+            "Noise_Cancellation": "Industry Leading",
             "Color": "Black",
+            "Connectivity": "Bluetooth 5.2",
+            "Weight_grams": 250,
             "warranty_months": 12,
             "is_replaceable": true
           },
@@ -663,7 +1536,9 @@
               "rating": 4.9,
               "rating_count": 4500,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 14
             },
             {
               "seller_name": "Amazon",
@@ -671,7 +1546,9 @@
               "rating": 4.8,
               "rating_count": 8500,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 10
             },
             {
               "seller_name": "Headphone Zone",
@@ -679,7 +1556,29 @@
               "rating": 4.9,
               "rating_count": 3200,
               "delivery_in_days": 2,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 29200.0,
+              "rating": 4.7,
+              "rating_count": 2800,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 29350.0,
+              "rating": 4.8,
+              "rating_count": 1900,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
             }
           ]
         }
@@ -688,9 +1587,9 @@
     {
       "product_id": "airpods_pro_2",
       "product_name": "AirPods Pro (2nd Generation)",
-      "category": "headphones",
+      "category": "earbuds",
       "brand": "Apple",
-      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MQD83?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1660803972361",
+      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/airpods-pro-2",
       "description": "Active Noise Cancellation, Adaptive Transparency, and Personalised Spatial Audio for immersive sound experience.",
       "variants": [
         {
@@ -698,9 +1597,11 @@
           "specifications": {
             "Type": "In-Ear",
             "Configuration": "Wireless",
-            "Battery Life": "6 hours (ANC on)",
-            "Noise Cancellation": "Active",
+            "Battery_Life": "6 hours (ANC on)",
+            "Noise_Cancellation": "Active",
             "Color": "White",
+            "Connectivity": "Bluetooth 5.3",
+            "Weight_grams": 5.3,
             "warranty_months": 12,
             "is_replaceable": true
           },
@@ -711,7 +1612,9 @@
               "rating": 4.9,
               "rating_count": 12800,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 14
             },
             {
               "seller_name": "Amazon",
@@ -719,7 +1622,9 @@
               "rating": 4.8,
               "rating_count": 9500,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 4,
+              "return_policy_days": 10
             },
             {
               "seller_name": "Flipkart",
@@ -727,7 +1632,105 @@
               "rating": 4.7,
               "rating_count": 8200,
               "delivery_in_days": 2,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 6,
+              "return_policy_days": 7
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 23700.0,
+              "rating": 4.7,
+              "rating_count": 5200,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 5,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 23650.0,
+              "rating": 4.8,
+              "rating_count": 3800,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 5,
+              "return_policy_days": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": "airpods_max",
+      "product_name": "AirPods Max",
+      "category": "headphones",
+      "brand": "Apple",
+      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/airpods-max",
+      "description": "Premium over-ear headphones with high-fidelity audio, Active Noise Cancellation, and spatial audio.",
+      "variants": [
+        {
+          "variant_id": "airpods_max_spacegray",
+          "specifications": {
+            "Type": "Over-Ear",
+            "Configuration": "Wireless",
+            "Battery_Life": "20 hours",
+            "Noise_Cancellation": "Active",
+            "Color": "Space Gray",
+            "Connectivity": "Bluetooth 5.0",
+            "Weight_grams": 384,
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "Apple Store",
+              "price": 59900.0,
+              "rating": 4.8,
+              "rating_count": 6800,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 14
+            },
+            {
+              "seller_name": "Amazon",
+              "price": 57900.0,
+              "rating": 4.7,
+              "rating_count": 5200,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 58900.0,
+              "rating": 4.7,
+              "rating_count": 3200,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 58400.0,
+              "rating": 4.6,
+              "rating_count": 2500,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Vijay Sales",
+              "price": 59100.0,
+              "rating": 4.6,
+              "rating_count": 1800,
+              "delivery_in_days": 3,
+              "is_trusted_seller": true,
+              "discount_percent": 1,
+              "return_policy_days": 7
             }
           ]
         }
@@ -738,7 +1741,7 @@
       "product_name": "Bose QuietComfort 45",
       "category": "headphones",
       "brand": "Bose",
-      "base_image_url": "https://assets.bose.com/content/dam/Bose_DAM/Web/consumer_electronics/global/products/headphones/qc45/product_silo_images/qc45_black_EC_01.psd/jcr:content/renditions/cq5dam.web.1000.1000.png",
+      "base_image_url": "https://assets.bose.com/bose-qc45",
       "description": "World-class noise cancellation, balanced audio performance, and all-day comfort with up to 24 hours of battery life.",
       "variants": [
         {
@@ -746,9 +1749,11 @@
           "specifications": {
             "Type": "Over-Ear",
             "Configuration": "Wireless",
-            "Battery Life": "24 hours",
-            "Noise Cancellation": "World-class",
+            "Battery_Life": "24 hours",
+            "Noise_Cancellation": "World-class",
             "Color": "Black",
+            "Connectivity": "Bluetooth 5.1",
+            "Weight_grams": 238,
             "warranty_months": 12,
             "is_replaceable": true
           },
@@ -759,7 +1764,9 @@
               "rating": 4.8,
               "rating_count": 3800,
               "delivery_in_days": 2,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 14
             },
             {
               "seller_name": "Amazon",
@@ -767,7 +1774,9 @@
               "rating": 4.7,
               "rating_count": 5200,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 4,
+              "return_policy_days": 10
             },
             {
               "seller_name": "Reliance Digital",
@@ -775,7 +1784,105 @@
               "rating": 4.8,
               "rating_count": 2900,
               "delivery_in_days": 2,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Headphone Zone",
+              "price": 26200.0,
+              "rating": 4.7,
+              "rating_count": 2100,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 26350.0,
+              "rating": 4.6,
+              "rating_count": 1700,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": "samsung_galaxy_buds3",
+      "product_name": "Samsung Galaxy Buds 3 Pro",
+      "category": "earbuds",
+      "brand": "Samsung",
+      "base_image_url": "https://images.samsung.com/galaxy-buds3-pro",
+      "description": "Advanced wireless earbuds with intelligent ANC, 360 audio, and seamless Galaxy ecosystem integration.",
+      "variants": [
+        {
+          "variant_id": "galaxy_buds3_pro",
+          "specifications": {
+            "Type": "In-Ear",
+            "Configuration": "Wireless",
+            "Battery_Life": "8 hours (ANC on)",
+            "Noise_Cancellation": "Intelligent ANC",
+            "Color": "Graphite",
+            "Connectivity": "Bluetooth 5.3",
+            "Weight_grams": 5.5,
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "Samsung Store",
+              "price": 19999.0,
+              "rating": 4.7,
+              "rating_count": 3800,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 14
+            },
+            {
+              "seller_name": "Amazon",
+              "price": 18999.0,
+              "rating": 4.6,
+              "rating_count": 5200,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 5,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Flipkart",
+              "price": 18499.0,
+              "rating": 4.5,
+              "rating_count": 4200,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 8,
+              "return_policy_days": 7
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 18700.0,
+              "rating": 4.6,
+              "rating_count": 2500,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 6,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 18850.0,
+              "rating": 4.5,
+              "rating_count": 1900,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 6,
+              "return_policy_days": 10
             }
           ]
         }
@@ -786,7 +1893,7 @@
       "product_name": "Apple Watch Series 9",
       "category": "watches",
       "brand": "Apple",
-      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MU653ref?wid=572&hei=572&fmt=jpeg&qlt=95&.v=1692846359318",
+      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/apple-watch-series9",
       "description": "The most powerful Apple Watch yet with new Double Tap gesture, brighter display, and on-device Siri.",
       "variants": [
         {
@@ -796,7 +1903,9 @@
             "Configuration": "GPS + Cellular",
             "Color": "Midnight",
             "Display": "Always-On Retina",
-            "Battery Life": "18 hours",
+            "Battery_Life": "18 hours",
+            "Water_Resistance": "WR50",
+            "Weight_grams": 52,
             "warranty_months": 12,
             "is_replaceable": true
           },
@@ -807,7 +1916,9 @@
               "rating": 4.9,
               "rating_count": 9200,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 14
             },
             {
               "seller_name": "Amazon",
@@ -815,7 +1926,9 @@
               "rating": 4.8,
               "rating_count": 7500,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 4,
+              "return_policy_days": 10
             },
             {
               "seller_name": "Flipkart",
@@ -823,7 +1936,105 @@
               "rating": 4.7,
               "rating_count": 6200,
               "delivery_in_days": 2,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 6,
+              "return_policy_days": 7
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 47400.0,
+              "rating": 4.8,
+              "rating_count": 3800,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 5,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 47250.0,
+              "rating": 4.7,
+              "rating_count": 2900,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 5,
+              "return_policy_days": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": "apple_watch_ultra_2",
+      "product_name": "Apple Watch Ultra 2",
+      "category": "watches",
+      "brand": "Apple",
+      "base_image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/apple-watch-ultra2",
+      "description": "The most rugged and capable Apple Watch with advanced fitness features, dive computer, and action button.",
+      "variants": [
+        {
+          "variant_id": "apple_watch_ultra2",
+          "specifications": {
+            "Size": "49mm",
+            "Configuration": "GPS + Cellular",
+            "Color": "Titanium",
+            "Display": "Always-On Retina",
+            "Battery_Life": "36 hours",
+            "Water_Resistance": "WR100",
+            "Weight_grams": 61,
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "Apple Store",
+              "price": 89900.0,
+              "rating": 4.9,
+              "rating_count": 5200,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 14
+            },
+            {
+              "seller_name": "Amazon",
+              "price": 86900.0,
+              "rating": 4.8,
+              "rating_count": 3800,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 87900.0,
+              "rating": 4.7,
+              "rating_count": 2500,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 87400.0,
+              "rating": 4.8,
+              "rating_count": 1800,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Vijay Sales",
+              "price": 88400.0,
+              "rating": 4.6,
+              "rating_count": 1200,
+              "delivery_in_days": 3,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 7
             }
           ]
         }
@@ -834,7 +2045,7 @@
       "product_name": "Samsung Galaxy Watch 6",
       "category": "watches",
       "brand": "Samsung",
-      "base_image_url": "https://images.samsung.com/is/image/samsung/p6pim/in/2307/gallery/in-galaxy-watch6-468854-sm-r930fzkains-thumb-534866717",
+      "base_image_url": "https://images.samsung.com/galaxy-watch6",
       "description": "Advanced health monitoring, premium design, and seamless connectivity with enhanced fitness tracking features.",
       "variants": [
         {
@@ -844,7 +2055,9 @@
             "Configuration": "Bluetooth",
             "Color": "Graphite",
             "Display": "Super AMOLED",
-            "Battery Life": "40 hours",
+            "Battery_Life": "40 hours",
+            "Water_Resistance": "5ATM + IP68",
+            "Weight_grams": 59,
             "warranty_months": 12,
             "is_replaceable": true
           },
@@ -855,7 +2068,9 @@
               "rating": 4.8,
               "rating_count": 5800,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 14
             },
             {
               "seller_name": "Amazon",
@@ -863,7 +2078,9 @@
               "rating": 4.7,
               "rating_count": 4200,
               "delivery_in_days": 1,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 7,
+              "return_policy_days": 10
             },
             {
               "seller_name": "Flipkart",
@@ -871,7 +2088,551 @@
               "rating": 4.6,
               "rating_count": 3800,
               "delivery_in_days": 2,
-              "is_trusted_seller": true
+              "is_trusted_seller": true,
+              "discount_percent": 10,
+              "return_policy_days": 7
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 27400.0,
+              "rating": 4.7,
+              "rating_count": 2200,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 9,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 27250.0,
+              "rating": 4.6,
+              "rating_count": 1700,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 9,
+              "return_policy_days": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": "samsung_galaxy_watch6_classic",
+      "product_name": "Samsung Galaxy Watch 6 Classic",
+      "category": "watches",
+      "brand": "Samsung",
+      "base_image_url": "https://images.samsung.com/galaxy-watch6-classic",
+      "description": "Premium smartwatch with rotating bezel, advanced health monitoring, and comprehensive fitness tracking.",
+      "variants": [
+        {
+          "variant_id": "galaxy_watch6_classic_47",
+          "specifications": {
+            "Size": "47mm",
+            "Configuration": "LTE",
+            "Color": "Black",
+            "Display": "Super AMOLED",
+            "Battery_Life": "40 hours",
+            "Water_Resistance": "5ATM + IP68",
+            "Weight_grams": 59,
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "Samsung Store",
+              "price": 42999.0,
+              "rating": 4.8,
+              "rating_count": 3200,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 14
+            },
+            {
+              "seller_name": "Amazon",
+              "price": 40999.0,
+              "rating": 4.7,
+              "rating_count": 2800,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 5,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Flipkart",
+              "price": 39999.0,
+              "rating": 4.6,
+              "rating_count": 2200,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 7,
+              "return_policy_days": 7
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 40400.0,
+              "rating": 4.7,
+              "rating_count": 1500,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 6,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 40250.0,
+              "rating": 4.6,
+              "rating_count": 1200,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 6,
+              "return_policy_days": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": "samsung_qled_55",
+      "product_name": "Samsung 55-inch QLED 4K TV",
+      "category": "smart_tv",
+      "brand": "Samsung",
+      "base_image_url": "https://images.samsung.com/samsung-qled-55",
+      "description": "Quantum Dot technology with 4K resolution, HDR10+, and smart TV features with Bixby voice assistant.",
+      "variants": [
+        {
+          "variant_id": "samsung_qled_55_4k",
+          "specifications": {
+            "Screen_Size": "55-inch",
+            "Resolution": "4K UHD",
+            "Display_Technology": "QLED",
+            "Smart_Platform": "Tizen",
+            "Refresh_Rate": "120Hz",
+            "HDR": "HDR10+",
+            "Audio": "40W Dolby Atmos",
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "Samsung Store",
+              "price": 84999.0,
+              "rating": 4.7,
+              "rating_count": 1800,
+              "delivery_in_days": 3,
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 14
+            },
+            {
+              "seller_name": "Amazon",
+              "price": 79999.0,
+              "rating": 4.6,
+              "rating_count": 2500,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 6,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 81999.0,
+              "rating": 4.7,
+              "rating_count": 1500,
+              "delivery_in_days": 3,
+              "is_trusted_seller": true,
+              "discount_percent": 4,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 80900.0,
+              "rating": 4.6,
+              "rating_count": 1100,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 5,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Vijay Sales",
+              "price": 82400.0,
+              "rating": 4.5,
+              "rating_count": 800,
+              "delivery_in_days": 3,
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": "lg_oled_65",
+      "product_name": "LG 65-inch OLED 4K TV",
+      "category": "smart_tv",
+      "brand": "LG",
+      "base_image_url": "https://images.lg.com/lg-oled-65",
+      "description": "Perfect black OLED display with α9 AI Processor, Dolby Vision IQ, and webOS smart platform.",
+      "variants": [
+        {
+          "variant_id": "lg_oled_65_4k",
+          "specifications": {
+            "Screen_Size": "65-inch",
+            "Resolution": "4K UHD",
+            "Display_Technology": "OLED",
+            "Smart_Platform": "webOS",
+            "Refresh_Rate": "120Hz",
+            "HDR": "Dolby Vision IQ",
+            "Audio": "50W AI Sound Pro",
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "LG Store",
+              "price": 189999.0,
+              "rating": 4.8,
+              "rating_count": 1200,
+              "delivery_in_days": 3,
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 14
+            },
+            {
+              "seller_name": "Amazon",
+              "price": 179999.0,
+              "rating": 4.7,
+              "rating_count": 1800,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 5,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 184999.0,
+              "rating": 4.7,
+              "rating_count": 900,
+              "delivery_in_days": 3,
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 182500.0,
+              "rating": 4.6,
+              "rating_count": 700,
+              "delivery_in_days": 3,
+              "is_trusted_seller": true,
+              "discount_percent": 4,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Vijay Sales",
+              "price": 186000.0,
+              "rating": 4.5,
+              "rating_count": 500,
+              "delivery_in_days": 4,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": "playstation_5",
+      "product_name": "PlayStation 5",
+      "category": "gaming_consoles",
+      "brand": "Sony",
+      "base_image_url": "https://images.sony.com/playstation-5",
+      "description": "Next-gen gaming console with ultra-high-speed SSD, haptic feedback, and 3D Audio.",
+      "variants": [
+        {
+          "variant_id": "ps5_disc",
+          "specifications": {
+            "Type": "Gaming Console",
+            "Storage": "825GB SSD",
+            "Resolution": "8K/4K",
+            "Controller": "DualSense",
+            "Backward_Compatibility": "PS4",
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "Sony Center",
+              "price": 54990.0,
+              "rating": 4.9,
+              "rating_count": 8500,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 14
+            },
+            {
+              "seller_name": "Amazon",
+              "price": 52990.0,
+              "rating": 4.8,
+              "rating_count": 12000,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 4,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Flipkart",
+              "price": 51990.0,
+              "rating": 4.7,
+              "rating_count": 9500,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 5,
+              "return_policy_days": 7
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 53400.0,
+              "rating": 4.8,
+              "rating_count": 6200,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 53250.0,
+              "rating": 4.7,
+              "rating_count": 4800,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": "xbox_series_x",
+      "product_name": "Xbox Series X",
+      "category": "gaming_consoles",
+      "brand": "Microsoft",
+      "base_image_url": "https://images.microsoft.com/xbox-series-x",
+      "description": "The fastest, most powerful Xbox ever with 4K gaming, 120 FPS, and Xbox Game Pass.",
+      "variants": [
+        {
+          "variant_id": "xbox_series_x",
+          "specifications": {
+            "Type": "Gaming Console",
+            "Storage": "1TB SSD",
+            "Resolution": "8K/4K",
+            "Controller": "Xbox Wireless",
+            "Backward_Compatibility": "Xbox One",
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "Microsoft Store",
+              "price": 49990.0,
+              "rating": 4.8,
+              "rating_count": 6200,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 14
+            },
+            {
+              "seller_name": "Amazon",
+              "price": 47990.0,
+              "rating": 4.7,
+              "rating_count": 7800,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 4,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 48990.0,
+              "rating": 4.7,
+              "rating_count": 4500,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 48400.0,
+              "rating": 4.6,
+              "rating_count": 3200,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 3,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Vijay Sales",
+              "price": 49100.0,
+              "rating": 4.5,
+              "rating_count": 2500,
+              "delivery_in_days": 3,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": "google_nest_hub",
+      "product_name": "Google Nest Hub (2nd Gen)",
+      "category": "smart_home",
+      "brand": "Google",
+      "base_image_url": "https://store.google.com/nest-hub-2",
+      "description": "Smart display with Google Assistant, sleep sensing, and hands-free control for your smart home.",
+      "variants": [
+        {
+          "variant_id": "nest_hub_2",
+          "specifications": {
+            "Screen_Size": "7-inch",
+            "Voice_Assistant": "Google Assistant",
+            "Connectivity": "WiFi, Bluetooth",
+            "Color": "Chalk",
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "Google Store",
+              "price": 7999.0,
+              "rating": 4.6,
+              "rating_count": 3200,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 14
+            },
+            {
+              "seller_name": "Amazon",
+              "price": 7499.0,
+              "rating": 4.5,
+              "rating_count": 4800,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 6,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Flipkart",
+              "price": 7299.0,
+              "rating": 4.4,
+              "rating_count": 3500,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 9,
+              "return_policy_days": 7
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 7390.0,
+              "rating": 4.5,
+              "rating_count": 1800,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 8,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 7420.0,
+              "rating": 4.4,
+              "rating_count": 1400,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 7,
+              "return_policy_days": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "product_id": "amazon_echo_show_15",
+      "product_name": "Amazon Echo Show 15",
+      "category": "smart_home",
+      "brand": "Amazon",
+      "base_image_url": "https://images.amazon.com/echo-show-15",
+      "description": "15-inch smart display with Alexa, family organization features, and full HD video calling.",
+      "variants": [
+        {
+          "variant_id": "echo_show_15",
+          "specifications": {
+            "Screen_Size": "15.6-inch",
+            "Voice_Assistant": "Alexa",
+            "Connectivity": "WiFi, Bluetooth",
+            "Color": "White",
+            "warranty_months": 12,
+            "is_replaceable": true
+          },
+          "offers": [
+            {
+              "seller_name": "Amazon",
+              "price": 24999.0,
+              "rating": 4.5,
+              "rating_count": 2800,
+              "delivery_in_days": 1,
+              "is_trusted_seller": true,
+              "discount_percent": 0,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Reliance Digital",
+              "price": 23999.0,
+              "rating": 4.4,
+              "rating_count": 1500,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 4,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Croma",
+              "price": 24499.0,
+              "rating": 4.4,
+              "rating_count": 1200,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 2,
+              "return_policy_days": 10
+            },
+            {
+              "seller_name": "Vijay Sales",
+              "price": 24100.0,
+              "rating": 4.3,
+              "rating_count": 800,
+              "delivery_in_days": 3,
+              "is_trusted_seller": true,
+              "discount_percent": 4,
+              "return_policy_days": 7
+            },
+            {
+              "seller_name": "Flipkart",
+              "price": 23600.0,
+              "rating": 4.3,
+              "rating_count": 1900,
+              "delivery_in_days": 2,
+              "is_trusted_seller": true,
+              "discount_percent": 6,
+              "return_policy_days": 7
             }
           ]
         }

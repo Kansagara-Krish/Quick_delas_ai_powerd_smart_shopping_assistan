@@ -18,11 +18,22 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
 DATA_FILE = os.path.join(BASE_DIR, "data", "products.json")
 MODEL_FILE = os.path.join(BASE_DIR, "xgb_ranking_pipeline.joblib")
 
-# Mount static files (e.g., css, js)
-if os.path.exists(STATIC_DIR):
-    app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
-else:
-    print(f"⚠️ Warning: 'static' directory not found at {STATIC_DIR}")
+# Ensure static directory exists
+os.makedirs(STATIC_DIR, exist_ok=True)
+os.makedirs(os.path.join(STATIC_DIR, "image"), exist_ok=True)
+
+# Add CORS middleware
+from fastapi.middleware.cors import CORSMiddleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Mount static files with explicit configuration
+app.mount("/static", StaticFiles(directory=STATIC_DIR, html=True, check_dir=False), name="static")
 
 # Mount templates (e.g., index.html)
 if os.path.exists(TEMPLATES_DIR):
@@ -117,12 +128,23 @@ def compare_page(request: Request):
         return templates.TemplateResponse("compare.html", {"request": request})
     return HTMLResponse("<h1>Error: 'templates' directory not found.</h1>", status_code=500)
 
+@app.get("/cart.html", response_class=HTMLResponse)
+def cart_page(request: Request):
+    if templates:
+        return templates.TemplateResponse("cart.html", {"request": request})
+    return HTMLResponse("<h1>Error: 'templates' directory not found.</h1>", status_code=500)
+
 @app.get("/index.html", response_class=HTMLResponse)
 def index_page(request: Request):
     if templates:
         return templates.TemplateResponse("index.html", {"request": request})
     return HTMLResponse("<h1>Error: 'templates' directory not found.</h1>", status_code=500)
 
+@app.get("/predict.html", response_class=HTMLResponse)  # ✅ Correct method and response type
+def predict_page(request: Request):
+    if templates:
+        return templates.TemplateResponse("predict.html", {"request": request})
+    return HTMLResponse("<h1>Error: 'templates' directory not found.</h1>", status_code=500)
 @app.post("/chat", response_class=JSONResponse)
 async def chat(request: Request):
     data = await request.json()
