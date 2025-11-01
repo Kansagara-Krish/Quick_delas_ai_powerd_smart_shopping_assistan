@@ -1,51 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Favicon configuration -->
-    <link rel="icon" type="image/png" href="/static/image/system_logo.png">
+<head>
+        <link rel="icon" type="image/png" href="/static/image/system_logo.png">
     <link rel="shortcut icon" type="image/png" href="/static/image/system_logo.png">
     <link rel="icon" type="image/x-icon" href="/static/image/system_logo.png">
     <link rel="apple-touch-icon" href="/static/image/system_logo.png">
     <!-- Cache busting query parameter -->
     <link rel="icon" type="image/png" href="/static/image/system_logo.png?v=2">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Quick Deals – Smart Shopping Assistant</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Deals - Electronics Marketplace</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-      :root {
-        --primary: #6a11cb;
-        --secondary: #2575fc;
-        --accent: #ff9800;
-        --success: #4caf50;
-        --warning: #ff5722;
-        --light-bg: #f8f9fa;
-        --dark-text: #333;
-        --light-text: #fff;
-        --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
-        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        --bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      }
+        :root {
+  --primary: #6a11cb;
+  --secondary: #2575fc;
+  --accent: #ff9800;
+  --success: #4caf50;
+  --warning: #ff5722;
+  --light-bg: #f8f9fa;
+  --dark-text: #333;
+  --light-text: #fff;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
 
-      body {
-        background: linear-gradient(135deg, var(--primary), var(--secondary));
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        min-height: 100vh;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: var(--dark-text);
-        overflow-x: hidden;
-      }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: 80px;
+            padding: 0 20px;
+        }
 
-      .header {
+        /* Header Styles */
+         .header {
         position: fixed;
         top: 0;
         left: 0;
@@ -61,18 +63,13 @@
         transition: var(--transition);
       }
 
-      .header.small {
-        padding: 8px 20px;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-      }
-
-      .logo {
-        display: flex;
+  .logo {
+ display: flex;
         align-items: center;
         gap: 12px;
       }
 
-      .logo-img {
+          .logo-img {
         width: 65px;
         height: 35px;
         border-radius: 8px;
@@ -87,7 +84,8 @@
         -webkit-text-fill-color: transparent;
         background-clip: text;
       }
-  .nav-links {
+
+      .nav-links {
         display: flex;
         align-items: center;
       }
@@ -95,7 +93,7 @@
       .nav-links a {
         color: #444;
         text-decoration: none;
-        margin-left: 15px;
+        margin-left: 20px;
         font-weight: 500;
         transition: var(--transition);
         position: relative;
@@ -124,41 +122,6 @@
         width: 100%;
       }
 
-
-      .compare-notification {
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 6px 10px;
-        border-radius: 15px;
-        font-size: 11px;
-        font-weight: 600;
-        white-space: nowrap;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        margin-top: 5px;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-      }
-
-      .compare-link.has-products .compare-notification {
-        opacity: 1;
-        visibility: visible;
-        animation: pulse-gentle 2s infinite;
-      }
-
-      @keyframes pulse-gentle {
-        0%, 100% {
-          transform: translateX(-50%) scale(1);
-        }
-        50% {
-          transform: translateX(-50%) scale(1.05);
-        }
-      }
-
       .cart-count {
         background: var(--accent);
         color: white;
@@ -170,8 +133,8 @@
         align-items: center;
         justify-content: center;
         position: absolute;
-        top: -5px;
-        right: -5px;
+        top: -8px;
+        right: -8px;
       }
 
       /* Mobile Navigation */
@@ -230,7 +193,6 @@
         gap: 12px;
         background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(10px);
-        position: relative;
       }
 
       .mobile-nav-slider a:hover {
@@ -254,1167 +216,498 @@
         cursor: pointer;
         font-size: 20px;
         transition: var(--transition);
-        z-index: 2001;
       }
 
-      .close-slider:hover {
-        background: rgba(255, 255, 255, 0.3);
-        transform: rotate(90deg);
+      /* Cart Page Styles */
+      .cart-page {
+        width: 100%;
+        max-width: 1400px;
+        margin: 100px auto 40px;
+        padding: 0 20px;
       }
 
-      /* Offers Container - Fixed Positioning */
-      .offers-container {
-        position: fixed;
-        top: 50%;
-        right: 20px;
-        transform: translateY(-50%);
-        z-index: 1500;
-        transition: var(--transition);
+      .cart-header {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: var(--shadow);
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .cart-header h1 {
+        margin: 0;
+        color: var(--primary);
+        font-size: 2.2rem;
+      }
+
+      .cart-actions {
         display: flex;
-        flex-direction: column;
-        align-items: flex-end;
+        justify-content: space-between;
+        margin-top: 20px;
         gap: 15px;
       }
 
-      .offers-container.hidden {
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-50%) translateX(20px);
-      }
-
-      .offer-trigger {
-        background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+      .clear-cart-btn {
+        background: var(--warning);
         color: white;
         border: none;
-        padding: 15px 20px;
-        border-radius: 50px;
-        cursor: pointer;
-        font-weight: 600;
-        box-shadow: 
-          0 4px 15px rgba(255, 107, 107, 0.4),
-          0 8px 25px rgba(255, 107, 107, 0.3),
-          inset 0 1px 0 rgba(255, 255, 255, 0.2);
-        transition: var(--bounce);
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 14px;
-        position: relative;
-        z-index: 1501;
-      }
-
-      .offer-trigger:hover {
-        transform: translateX(-5px) scale(1.05);
-        box-shadow: 
-          0 6px 20px rgba(255, 107, 107, 0.5),
-          0 10px 30px rgba(255, 107, 107, 0.4),
-          inset 0 1px 0 rgba(255, 255, 255, 0.3);
-      }
-
-      .offer-trigger.hidden {
-        opacity: 0;
-        visibility: hidden;
-        transform: translateX(20px);
-      }
-
-      .offers-panel {
-        position: relative;
-        width: 320px;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(20px);
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        padding: 25px;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateX(20px);
-        transition: var(--transition);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        margin-top: 10px;
-        max-height: 70vh;
-        overflow-y: auto;
-        z-index: 1502;
-      }
-
-      .offers-panel.active {
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(0);
-        animation: slideInOffers 0.5s ease;
-      }
-
-      @keyframes slideInOffers {
-        from {
-          opacity: 0;
-          transform: translateX(50px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-
-      .offers-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-        padding-bottom: 15px;
-        border-bottom: 2px solid rgba(255, 107, 107, 0.2);
-        position: relative;
-        z-index: 1503;
-      }
-
-      .offers-header h3 {
-        margin: 0;
-        color: #ff6b6b;
-        font-size: 1.4rem;
-        font-weight: 700;
-        background: linear-gradient(135deg, #ff6b6b, #ffa726);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-
-      .close-offers {
-        background: rgba(255, 255, 255, 0.95);
-        border: none;
-        font-size: 24px;
-        color: #ff6b6b;
-        cursor: pointer;
-        transition: var(--transition);
-        padding: 8px;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1504;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-        position: relative;
-      }
-
-      .close-offers:hover {
-        background: white;
-        color: #ff0000;
-        transform: rotate(90deg) scale(1.1);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      }
-
-      .offer-item {
-        background: white;
-        padding: 15px;
-        border-radius: 12px;
-        margin-bottom: 15px;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-        transition: var(--transition);
-        border-left: 4px solid #ffa726;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .offer-item::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 167, 38, 0.1),
-          transparent
-        );
-        transition: var(--transition);
-      }
-
-      .offer-item:hover::before {
-        left: 100%;
-      }
-
-      .offer-item:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
-      }
-
-      .offer-item h4 {
-        margin: 0 0 8px 0;
-        color: var(--dark-text);
-        font-size: 1.1rem;
-        font-weight: 600;
-      }
-
-      .offer-item p {
-        margin: 0;
-        color: #666;
-        font-size: 0.9rem;
-        line-height: 1.4;
-      }
-
-      .offer-badge {
-        background: linear-gradient(135deg, #ff6b6b, #ffa726);
-        color: white;
-        padding: 3px 8px;
-        border-radius: 12px;
-        font-size: 0.7rem;
-        font-weight: 600;
-        margin-left: 8px;
-      }
-
-      /* Intro Section */
-      .intro {
-        text-align: center;
-        color: var(--light-text);
-        margin: 120px 20px 40px;
-        animation: fadeIn 1.2s ease-in-out;
-        max-width: 800px;
-        transition: var(--transition);
-      }
-
-      .intro.hidden {
-        opacity: 0;
-        transform: translateY(-20px);
-        display: none;
-      }
-
-      .intro h1 {
-        font-size: 2.8rem;
-        margin-bottom: 20px;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-      }
-
-      .intro p {
-        font-size: 1.2rem;
-        line-height: 1.6;
-        margin-bottom: 30px;
-        opacity: 0.9;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(-20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .cta-button {
-        background: var(--accent);
-        border: none;
-        color: var(--light-text);
-        padding: 14px 35px;
-        border-radius: 30px;
-        font-size: 16px;
+        padding: 10px 20px;
+        border-radius: 8px;
         font-weight: 600;
         cursor: pointer;
         transition: var(--transition);
-        box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
-        display: inline-flex;
+        display: flex;
         align-items: center;
         gap: 8px;
       }
 
-      .cta-button:hover {
-        background: #f57c00;
-        transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
+      .clear-cart-btn:hover {
+        background: #e64a19;
       }
 
-      /* COMPACT CHAT WRAPPER - TAKES FULL PAGE */
-      .chat-wrapper {
-        width: 100%;
-        height: 100vh;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        padding: 0;
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 999;
-        animation: slideUpFull 0.5s ease;
-      }
-
-      @keyframes slideUpFull {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .chat-container {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        background: white;
-        border-radius: 0;
-        box-shadow: none;
-        overflow: hidden;
-      }
-
-      .chat-header {
-        background: linear-gradient(135deg, var(--primary), var(--secondary));
-        color: white;
-        padding: 15px 20px;
-        text-align: center;
-        position: relative;
-      }
-
-      .chat-header h2 {
-        margin: 0;
-        font-size: 1.3rem;
-        font-weight: 600;
-      }
-
-      .close-chat {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        background: rgba(255, 255, 255, 0.2);
-        border: none;
-        color: white;
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: var(--transition);
-        font-size: 18px;
-        z-index: 1001;
-      }
-
-      .close-chat:hover {
-        background: rgba(255, 255, 255, 0.3);
-        transform: rotate(90deg);
-      }
-
-      .chat-main {
-        flex: 1;
-        display: flex;
-        overflow: hidden;
-        max-width: 100%;
-      }
-
-      .chat-box {
-        flex: 1;
-        overflow-y: auto;
-        padding: 15px;
-        display: flex;
-        flex-direction: column;
-        background: #f8f9fa;
-      }
-
-      .bot-message,
-      .user-message {
-        border-radius: 18px;
-        padding: 12px 16px;
-        margin: 8px 0;
-        max-width: 80%;
-        line-height: 1.4;
-        animation: fadeIn 0.3s ease;
-        position: relative;
-        font-size: 15px;
-        word-wrap: break-word;
-      }
-
-      .bot-message {
-        background: white;
-        align-self: flex-start;
-        border-bottom-left-radius: 5px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        border-left: 4px solid var(--primary);
-      }
-
-      .user-message {
+      .back-to-shopping-btn {
         background: var(--primary);
-        color: var(--light-text);
-        align-self: flex-end;
-        border-bottom-right-radius: 5px;
-        box-shadow: 0 2px 8px rgba(106, 17, 203, 0.3);
-      }
-
-      /* Enhanced Products Container - More Compact */
-      .products-container {
- display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px 0;
-  justify-content: space-between;
-      }
-
-      .product-card {
-        background: white;
-        padding: 15px;
-        border-radius: 12px;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-        transition: var(--transition);
-        border: 1px solid #eee;
-        position: relative;
-        overflow: hidden;
-        opacity: 0;
-        flex:1;
-        min-width: 280px;
-        max-width:32%;
-        transform: translateY(20px);
-        animation: slideUpProduct 0.5s ease forwards;
-      }
-
-      .product-card:nth-child(1) {
-        animation-delay: 0.1s;
-      }
-
-      .product-card:nth-child(2) {
-        animation-delay: 0.2s;
-      }
-
-      .product-card:nth-child(3) {
-        animation-delay: 0.3s;
-      }
-
-      @keyframes slideUpProduct {
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .product-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(106, 17, 203, 0.05),
-          transparent
-        );
-        transition: var(--transition);
-      }
-
-      .product-card:hover::before {
-        left: 100%;
-      }
-
-      .product-card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
-      }
-
-      .product-card strong {
-        color: var(--primary);
-        font-size: 1.1rem;
-        display: block;
-        margin-bottom: 10px;
-      }
-
-      .product-feature {
-        display: flex;
-        justify-content: space-between;
-        margin: 8px 0;
-        padding: 5px 0;
-        border-bottom: 1px solid #f0f0f0;
-      }
-
-      .feature-name {
-        color: #666;
-        font-size: 0.9rem;
-      }
-
-      .feature-value {
-        color: var(--dark-text);
-        font-weight: 600;
-        font-size: 0.9rem;
-      }
-
-      .price-inr {
-        color: #2e7d32;
-        font-weight: 700;
-        font-size: 0.95rem;
-      }
-
-      .price-inr::before {
-        content: "₹";
-        margin-right: 2px;
-      }
-
-      .show-more-btn {
-        background: linear-gradient(135deg, #21b4f3ff, #1976d2);
         color: white;
         border: none;
-        padding: 10px 12px;
+        padding: 10px 20px;
         border-radius: 8px;
         font-weight: 600;
         cursor: pointer;
         transition: var(--transition);
-        margin-top: 15px;
-        width: 100%;
         display: flex;
         align-items: center;
-        justify-content: center;
         gap: 8px;
-        box-shadow: 0 3px 10px rgba(33, 150, 243, 0.3);
-        position: relative;
-        overflow: hidden;
-        font-size: 0.9rem;
       }
 
-      .show-more-btn::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.2),
-          transparent
-        );
-        transition: var(--transition);
-      }
 
-      .show-more-btn:hover::before {
-        left: 100%;
-      }
-
-      .show-more-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 12px rgba(33, 150, 243, 0.4);
-      }
-
-      .add-to-cart-btn {
-        background: linear-gradient(135deg, #ec4899, #8b5cf6);
-        color: white;
-        border: none;
-        padding: 12px 15px;
-        border-radius: 8px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: var(--transition);
-        margin-top: 15px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        box-shadow: 0 3px 10px rgba(76, 175, 80, 0.3);
-        position: relative;
-        overflow: hidden;
-        font-size: 0.9rem;
-      }
-
-      .add-to-cart-btn::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.2),
-          transparent
-        );
-        transition: var(--transition);
-      }
-
-      .add-to-cart-btn:hover::before {
-        left: 100%;
-      }
-
-      .add-to-cart-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 12px rgba(76, 175, 80, 0.4);
-      }
-
-      /* Product Details Panel - More Compact */
-      .product-details-panel {
-        background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-        border-radius: 10px;
-        padding: 15px;
-        margin-top: 15px;
-        box-shadow: 0 3px 10px rgba(33, 150, 243, 0.15);
-        border-left: 4px solid #2196f3;
-        display: none;
-        animation: fadeInDetails 0.4s ease;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .product-details-panel::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          135deg,
-          rgba(33, 150, 243, 0.05),
-          transparent
-        );
-        z-index: 0;
-      }
-
-      @keyframes fadeInDetails {
-        from {
-          opacity: 0;
-          transform: translateY(-10px);
+        .top-bar {
+            background-color: #2c3e50;
+            color: white;
+            padding: 8px 0;
+            font-size: 14px;
         }
-        to {
-          opacity: 1;
-          transform: translateY(0);
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-      }
 
-      .details-content {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 12px;
-        position: relative;
-        z-index: 1;
-      }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #e74c3c;
+        }
 
-      .detail-item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: rgba(255, 255, 255, 0.7);
-        padding: 10px;
-        border-radius: 6px;
-        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
-        transition: var(--transition);
-      }
+        .search-container {
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 4px;
+            overflow: hidden;
+            width: 500px;
+            margin: 20px auto;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
 
-      .detail-item:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-        background: rgba(255, 255, 255, 0.9);
-      }
+        .search-container input {
+            flex: 1;
+            border: none;
+            padding: 10px 15px;
+            outline: none;
+            font-size: 16px;
+        }
 
-      .detail-label {
-        font-weight: 600;
-        color: #1565c0;
-        font-size: 0.85rem;
-        margin-bottom: 0;
-        flex-shrink: 0;
-        min-width: 90px;
-      }
+        .search-container button {
+            background: #3498db;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
 
-      .detail-value {
-        color: #333;
-        font-size: 0.85rem;
-        line-height: 1.4;
-        text-align: right;
-        word-wrap: break-word;
-        white-space: normal;
-        max-width: 60%;
-      }
+        .search-container button:hover {
+            background: #2980b9;
+        }
 
-      .highlight-detail {
-        flex-direction: column;
-        align-items: flex-start;
-        background: rgba(33, 150, 243, 0.1);
-        border: 1px solid rgba(33, 150, 243, 0.2);
-      }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            padding: 15px 0;
+        }
 
-      .highlight-detail .detail-label {
-        color: #0d47a1;
-        margin-bottom: 8px;
-      }
+        .nav-menu li {
+            margin-right: 25px;
+        }
 
-      .highlight-detail .detail-value {
-        text-align: left;
-        max-width: 100%;
-        width: 100%;
-      }
+        .nav-menu a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
 
-      .specs-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 8px;
-        width: 100%;
-      }
+        .nav-menu a:hover {
+            color: #3498db;
+        }
 
-      .spec-line {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 6px 0;
-        border-bottom: 1px solid rgba(33, 150, 243, 0.1);
-      }
-
-      .spec-name {
-        font-weight: 600;
-        color: #1565c0;
-        font-size: 0.85rem;
-        min-width: 80px;
-        flex-shrink: 0;
-      }
-
-      .spec-value {
-        color: #333;
-        font-size: 0.85rem;
-        font-weight: 500;
-        text-align: right;
-        flex: 1;
-        margin-left: 10px;
-        word-wrap: break-word;
-        white-space: normal;
-        line-height: 1.3;
-      }
-
-      .description-text {
-        text-align: left !important;
-        line-height: 1.4;
-        max-width: 100% !important;
-      }
-.input-label {
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #9e9e9e;
-  font-size: 14px;
-  pointer-events: none;
-  transition: var(--transition);
-  background: white;
-  padding: 0 8px;
+        .nav-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #3498db;
+    transition: width 0.3s ease;
 }
 
-#user-input:focus ~ .input-label,
-#user-input:not(:placeholder-shown) ~ .input-label {
-  top: 0;
-  font-size: 11px;
-  color: var(--primary);
-  font-weight: 600;
-  transform: translateY(-50%);
+.nav-menu a:hover::after {
+    width: 100%;
 }
-      /* Chat Form - More Compact */
-      .chat-form {
-        display: flex;
-        padding: 10px 15px;
-        background: white;
-        border-top: 1px solid #eee;
-        gap: 10px;
-        align-items: center;
-        position: relative;
-      }
 
-      .input-container {
-        position: relative;
-        flex: 1;
-        display: flex;
-      }
-
-      #user-input {
-        width: 100%;
-        padding: 12px 45px 12px 20px;
-        border: 2px solid #e0e0e0;
-        border-radius: 25px;
-        font-size: 14px;
-        transition: var(--bounce);
-        background: linear-gradient(135deg, #f8f9fa, #ffffff);
-        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05),
-          0 2px 8px rgba(0, 0, 0, 0.05);
-        outline: none;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
-
-      #user-input:focus {
-        border-color: var(--primary);
-        background: linear-gradient(135deg, #ffffff, #f8f9fa);
-        box-shadow: inset 0 2px 8px rgba(106, 17, 203, 0.1),
-          0 4px 15px rgba(106, 17, 203, 0.15);
-        transform: translateY(-2px);
-      }
-
-      #user-input::placeholder {
-        color: #9e9e9e;
-        transition: var(--transition);
-      }
-
-      #user-input:focus::placeholder {
-        color: #bdbdbd;
-      }
-
-      .input-icon {
-        position: absolute;
-        right: 15px;
-        top: 50%;
-        transform: translateY(-50%);
-        color: #9e9e9e;
-        transition: var(--transition);
-        pointer-events: none;
-      }
-
-      #user-input:focus ~ .input-icon {
-        color: var(--primary);
-        transform: translateY(-50%) scale(1.1);
-      }
-
-      .send-button {
-        background: linear-gradient(135deg, var(--secondary), var(--primary));
-        color: var(--light-text);
-        border: none;
-        padding: 12px 20px;
-        border-radius: 25px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: var(--bounce);
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 14px;
-        box-shadow: 0 3px 12px rgba(37, 117, 252, 0.3),
-          inset 0 1px 0 rgba(255, 255, 255, 0.2);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .send-button::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.2),
-          transparent
-        );
-        transition: var(--transition);
-      }
-
-      .send-button:hover::before {
-        left: 100%;
-      }
-
-      .send-button:hover {
-        transform: translateY(-2px) scale(1.05);
-        box-shadow: 0 5px 15px rgba(37, 117, 252, 0.4),
-          inset 0 1px 0 rgba(255, 255, 255, 0.2);
-      }
-
-      .send-button:active {
-        transform: translateY(-1px) scale(1.02);
-        transition: all 0.1s ease;
-      }
-
-      .send-button .send-text {
-        display: block;
-        transition: var(--transition);
-      }
-
-      .send-button .send-icon {
-        font-size: 1.2rem;
-        display: block;
-        transition: var(--transition);
-      }
-
-      .send-button:hover .send-icon {
-        transform: translateX(2px) scale(1.1);
-      }
-
-      .send-button:disabled {
-        opacity: 0.6;
-        transform: none;
-        cursor: not-allowed;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .send-button:disabled:hover {
-        transform: none;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      /* Loading animation */
-      .send-button.loading {
-        pointer-events: none;
-      }
-
-      .send-button.loading .send-text {
-        opacity: 0;
-      }
-
-      .send-button.loading::after {
-        content: "";
-        position: absolute;
-        width: 18px;
-        height: 18px;
-        border: 2px solid transparent;
-        border-top: 2px solid white;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-      }
-
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-
-      /* Cart Notification */
-      .cart-notification {
-        position: fixed;
-        top: 100px;
-        right: 30px;
-        background: var(--success);
-        color: white;
-        padding: 12px 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        z-index: 2000;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        opacity: 0;
-        transform: translateX(100px);
-        transition: var(--transition);
-      }
-
-      .cart-notification.show {
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      /* Coming Soon Message */
-      .coming-soon-message {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: rgba(0, 0, 0, 0.8);
-        color: white;
-        padding: 20px 30px;
-        border-radius: 10px;
-        z-index: 3000;
-        text-align: center;
-        opacity: 0;
-        visibility: hidden;
-        transition: var(--transition);
-      }
-
-      .coming-soon-message.show {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      /* Scrollbar styling */
-      .chat-box::-webkit-scrollbar {
-        width: 6px;
-      }
-
-      .chat-box::-webkit-scrollbar-track {
-        background: #f1f1f1;
-        border-radius: 10px;
-      }
-
-      .chat-box::-webkit-scrollbar-thumb {
-        background: var(--primary);
-        border-radius: 10px;
-      }
-
-      .chat-box::-webkit-scrollbar-thumb:hover {
-        background: var(--secondary);
-      }
-
-      .offers-panel::-webkit-scrollbar {
-        width: 6px;
-      }
-
-      .offers-panel::-webkit-scrollbar-track {
-        background: #f1f1f1;
-        border-radius: 10px;
-      }
-
-      .offers-panel::-webkit-scrollbar-thumb {
-        background: var(--primary);
-        border-radius: 10px;
-      }
-
-      /* Responsive adjustments */
-      @media (max-width: 768px) {
-        .nav-links {
-          display: none;
+.nav-menu a.active::after {
+    width: 100%;
+}
+        .nav-menu a.active {
+            color: #3498db;
+            font-weight: 600;
         }
 
-        .mobile-nav {
-          display: flex;
+        .add-to-cart {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s;
+    flex: 1;
+    margin-right: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.add-to-cart::after {
+    content: '✓ Added!';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #27ae60;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.add-to-cart.added::after {
+    transform: translateY(0);
+}
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
         }
 
-        .hamburger {
-          display: flex;
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
-        .intro h1 {
-          font-size: 2.2rem;
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 25px;
         }
 
-        .intro p {
-          font-size: 1rem;
+        /* Category Section */
+        .category-section {
+            margin-bottom: 50px;
         }
 
-        .header {
-          padding: 10px 15px;
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
         }
 
-        .chat-wrapper {
-          padding: 0;
+        .section-header h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
         }
 
-        .chat-container {
-          border-radius: 0;
+        .view-all {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
         }
 
-        .bot-message,
-        .user-message {
-          max-width: 90%;
-          padding: 10px 14px;
-          font-size: 14px;
+        .view-all:hover {
+            text-decoration: underline;
         }
 
-        .products-container {
-          grid-template-columns: 1fr;
-          gap: 12px;
-          padding: 12px 0;
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
         }
 
         .product-card {
-          padding: 12px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .chat-form {
-          padding: 8px 12px;
-          gap: 8px;
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
 
-        #user-input {
-          padding: 10px 40px 10px 15px;
-          font-size: 14px;
+        .product-image {
+            height: 180px;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            cursor: pointer;
+            transition: transform 0.3s;
         }
 
-        .send-button {
-          padding: 10px 15px;
-          font-size: 14px;
+        .product-image img {
+            max-width: 100%;
+            max-height: 150px;
+            object-fit: contain;
         }
 
-        .send-button .send-text {
-          display: none;
+        .product-info {
+            padding: 15px;
         }
 
-        .offers-container {
-          right: 10px;
+        .product-category {
+            color: #7f8c8d;
+            font-size: 0.85rem;
+            margin-bottom: 5px;
         }
 
-        .offers-panel {
-          width: 280px;
-          max-height: 60vh;
+        .product-name {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            cursor: pointer;
+            transition: color 0.3s;
         }
 
-        .offer-trigger {
-          padding: 12px 16px;
-          font-size: 12px;
+        .product-name:hover {
+        color: #3498db;
         }
-      }
 
-      @media (min-width: 1200px) {
-        .products-container {
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 20px;
+        .product-price {
+            font-weight: 700;
+            color: #e74c3c;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
         }
-      }
+
+        .product-specs {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+            margin-bottom: 15px;
+            height: 40px;
+            overflow: hidden;
+        }
+
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .add-to-cart {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.3s;
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .add-to-cart:hover {
+            background: #2980b9;
+        }
+
+        .wishlist {
+            background: transparent;
+            border: 1px solid #ddd;
+            color: #7f8c8d;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .wishlist:hover {
+            color: #e74c3c;
+            border-color: #e74c3c;
+        }
+
+        /* Search Results */
+        .search-results {
+            display: none;
+            margin-bottom: 40px;
+        }
+
+        .search-results.active {
+            display: block;
+        }
+
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .results-count {
+            color: #7f8c8d;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background: #3498db;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: #3498db;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .search-container {
+                width: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .search-container {
+                width: 250px;
+            }
+            
+            .top-bar .container {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .search-container {
+                width: 100%;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
-  </head>
-  <body>
-    <!-- Coming Soon Message -->
-    <div class="coming-soon-message" id="comingSoonMessage">
-      <h3>🚀 Feature Coming Soon!</h3>
-      <p>Price prediction will be available in the next update</p>
-    </div>
-
-    <!-- Offers Container -->
-    <div class="offers-container" id="offersContainer">
-      <button class="offer-trigger" id="offerTrigger" onclick="toggleOffers()">
-        🔥 Hot Offers
-      </button>
-      <div class="offers-panel" id="offersPanel">
-        <div class="offers-header">
-          <h3>Latest Offers</h3> <h1>🎁</h1>
-          <button class="close-offers" onclick="closeOffers()">×</button>
-        </div>
-        <div class="offers-content">
-          <div class="offer-item">
-            <h4>Smartphones <span class="offer-badge">60% OFF</span></h4>
-            <p>Flagship phones with massive discounts. Limited time offer!</p>
-          </div>
-          <div class="offer-item">
-            <h4>Laptops <span class="offer-badge">45% OFF</span></h4>
-            <p>Gaming & Business laptops at unbelievable prices</p>
-          </div>
-          <div class="offer-item">
-            <h4>Headphones <span class="offer-badge">70% OFF</span></h4>
-            <p>Premium audio with noise cancellation features</p>
-          </div>
-          <div class="offer-item">
-            <h4>Electronics <span class="offer-badge">55% OFF</span></h4>
-            <p>All electronic gadgets with extended warranty</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Header -->
-    <div class="header" id="header">
-      <div class="logo">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="header">
+            <div class="logo">
         <img src="/static/image/system_logo.png" alt="Quick Deals Logo" class="logo-img">
         <span class="logo-text">Quick Deals</span>
       </div>
-    <div class="nav-links">
-    <a href="/" class="nav-link">
-        <span>Home</span>
-    </a>
-    <a href="#" class="nav-link">
-        <span>Offers</span>
-    </a>
-    <a href="/compare.html" class="nav-link compare-link" id="compareLink">
-        <span>Compare</span>
-        <div class="compare-notification">⚡ Find best one</div>
-    </a>
-    <a href="/predict.html" class="nav-link">
-        <span>Predict</span>
-    </a>
-    <a href="#" class="nav-link">
-        <span>About</span>
-    </a>
-    <a href="/cart.html" class="nav-link" id="cartLink">
-        <span>🛒 Cart</span>
-        <span class="cart-count" id="cartCount">0</span>
-    </a>
-</div>
+      <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/compare.html">Compare</a>
+        <a href="/predict.html">Predict</a>
+        <a href="#">About</a>
+        <a href="/cart.html" style="color: var(--primary); font-weight: 700;">
+          🛒 Cart
+          <span class="cart-count" id="cartCount">0</span>
+        </a>
+      </div>
       <div class="mobile-nav">
         <div class="hamburger" onclick="toggleMobileNav()">
           <span></span>
@@ -1423,1165 +716,682 @@
         </div>
         <div class="mobile-nav-slider" id="mobileNavSlider">
           <button class="close-slider" onclick="toggleMobileNav()">×</button>
-          <a href="#"><span>🎁</span> Offers</a>
-          <a href="#" class="nav-link compare-link" id="mobileCompareLink">
-            <span class="nav-icon"></span>
-            Compare
-            <div class="compare-notification">⚡ Find best one</div>
-          </a>
-          <a href="/cart.html">
+          <a href="/"><span>🏠</span> Home</a>
+          <a href="/compare.html"><span>⚡</span> Compare</a>
+          <a href="/predict.html"><span>🔮</span> Predict</a>
+          <a href="#"><span>ℹ️</span> About</a>
+          <a href="/cart.html" style="background: rgba(255,255,255,0.3);">
             <span>🛒</span> Cart
             <span class="cart-count" id="mobileCartCount">0</span>
           </a>
-          <a href="/predict.html"><span>🔮</span> Predict</a>
-          <a href="#"><span>ℹ️</span> About</a>
         </div>
       </div>
     </div>
 
-    <!-- Cart Notification -->
-    <div class="cart-notification" id="cartNotification">
-      <span>✅</span>
-      <span>Product added to cart!</span>
-    </div>
+    <!-- Hero Section -->
 
-    <!-- Intro Section -->
-    <div class="intro" id="intro">
-      <h1>AI-Powered Smart Shopping Assistant</h1>
-      <p>
-        Type what you're looking for and let Quick Deals find the best offers,
-        discounts, and products for you anytime.
-      </p>
-      <button class="cta-button" onclick="showChat()">Start Now</button>
-    </div>
-
-    <!-- Chat Wrapper -->
-    <div class="chat-wrapper" id="chat">
-      <div class="chat-container">
-        <div class="chat-header">
-          <h2>Product Comparison Assistant</h2>
-          <button class="close-chat" onclick="hideChat()">✕</button>
-        </div>
-        <div class="chat-main">
-          <div id="chat-box" class="chat-box">
-            <div class="bot-message">
-              🔍 <strong>Product Discovery Assistant</strong><br /><br />
-
-              I help you discover different products in each category. Tell me
-              what type of product you're interested in!<br /><br />
-
-              <strong>How it works:</strong><br />
-              1. Tell me a category (phones, laptops, headphones, Smart-Watches)<br />
-              2. I'll show you 3 different products in that category<br />
-              3. Choose any product to see detailed price comparison<br /><br />
-
-              <em>What type of product are you looking for?</em>
+    <!-- Main Content -->
+    <main class="container">
+        <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search for laptops, phones, headphones, smartwatches...">
+                <button id="search-button"><i class="fas fa-search"></i></button>
             </div>
-          </div>
+        <!-- Search Results Section -->
+        <section class="search-results" id="search-results">
+            <div class="results-header">
+                <h2 id="results-title">Search Results</h2>
+                <div class="results-count" id="results-count">0 products found</div>
+            </div>
+            <div class="products-grid" id="results-grid">
+                <!-- Search results will appear here -->
+            </div>
+        </section>
+
+        <!-- Laptops Section -->
+        <section class="category-section" id="laptops-section">
+            <div class="section-header">
+                <h2>Laptops & Computers</h2>
+                <a href="#" class="view-all">View All</a>
+            </div>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card" data-category="laptops">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="MacBook Pro">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Laptop</div>
+                        <h3 class="product-name">Apple MacBook Pro 16"</h3>
+                        <div class="product-price">₹1,99,999</div>
+                        <div class="product-specs">M2 Pro chip, 16GB RAM, 1TB SSD, 16-core GPU</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card" data-category="laptops">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Dell XPS 15">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Laptop</div>
+                        <h3 class="product-name">Dell XPS 15</h3>
+                        <div class="product-price">₹1,59,999</div>
+                        <div class="product-specs">Intel i7, 16GB RAM, 512GB SSD, 15.6" 4K Display</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card" data-category="laptops">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="HP Spectre x360">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">2-in-1 Laptop</div>
+                        <h3 class="product-name">HP Spectre x360</h3>
+                        <div class="product-price"> ₹1,29,999</div>
+                        <div class="product-specs">Intel i7, 16GB RAM, 1TB SSD, 13.5" OLED Touch</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card" data-category="laptops">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Lenovo ThinkPad X1">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Business Laptop</div>
+                        <h3 class="product-name">Lenovo ThinkPad X1 Carbon</h3>
+                        <div class="product-price"> ₹1,39,999</div>
+                        <div class="product-specs">Intel i7, 16GB RAM, 512GB SSD, 14" WQXGA</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phones Section -->
+        <section class="category-section" id="phones-section">
+            <div class="section-header">
+                <h2>Smartphones</h2>
+                <a href="#" class="view-all">View All</a>
+            </div>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card" data-category="phones">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="iPhone 15 Pro">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Smartphone</div>
+                        <h3 class="product-name">iPhone 15 Pro</h3>
+                        <div class="product-price">₹89,999</div>
+                        <div class="product-specs">A17 Pro chip, 128GB, Titanium design, 48MP camera</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card" data-category="phones">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Samsung Galaxy S23 Ultra">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Smartphone</div>
+                        <h3 class="product-name">Samsung Galaxy S23 Ultra</h3>
+                        <div class="product-price"> ₹99,999</div>
+                        <div class="product-specs">Snapdragon 8 Gen 2, 256GB, S Pen, 200MP camera</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card" data-category="phones">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Google Pixel 8 Pro">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Smartphone</div>
+                        <h3 class="product-name">Google Pixel 8 Pro</h3>
+                        <div class="product-price"> ₹79,999</div>
+                        <div class="product-specs">Google Tensor G3, 128GB, Super Actua display</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card" data-category="phones">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="OnePlus 11">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Smartphone</div>
+                        <h3 class="product-name">OnePlus 11 5G</h3>
+                        <div class="product-price">₹59,999</div>
+                        <div class="product-specs">Snapdragon 8 Gen 2, 128GB, Hasselblad camera</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Headphones Section -->
+        <section class="category-section" id="headphones-section">
+            <div class="section-header">
+                <h2>Headphones & Audio</h2>
+                <a href="#" class="view-all">View All</a>
+            </div>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card" data-category="headphones">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Sony WH-1000XM5">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Wireless Headphones</div>
+                        <h3 class="product-name">Sony WH-1000XM5</h3>
+                        <div class="product-price">₹32,999</div>
+                        <div class="product-specs">Industry-leading noise cancellation, 30hr battery</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card" data-category="headphones">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Apple AirPods Max">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Wireless Headphones</div>
+                        <h3 class="product-name">Apple AirPods Max</h3>
+                        <div class="product-price"> ₹44,999</div>
+                        <div class="product-specs">High-fidelity audio, Active Noise Cancellation</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card" data-category="headphones">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Bose QuietComfort 45">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Wireless Headphones</div>
+                        <h3 class="product-name">Bose QuietComfort 45</h3>
+                        <div class="product-price">₹26,999</div>
+                        <div class="product-specs">Noise cancelling, 24hr battery, comfortable fit</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card" data-category="headphones">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Sennheiser HD 660S">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Audiophile Headphones</div>
+                        <h3 class="product-name">Sennheiser HD 660S</h3>
+                        <div class="product-price"> ₹40,999</div>
+                        <div class="product-specs">Open-back, reference class sound, comfortable</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Smartwatches Section -->
+        <section class="category-section" id="smartwatches-section">
+            <div class="section-header">
+                <h2>Smartwatches</h2>
+                <a href="#" class="view-all">View All</a>
+            </div>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card" data-category="smartwatches">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1551816230-ef5deaed4a26?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Apple Watch Series 9">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Smartwatch</div>
+                        <h3 class="product-name">Apple Watch Series 9</h3>
+                        <div class="product-price">₹32,999</div>
+                        <div class="product-specs">45mm, GPS + Cellular, Always-On Retina display</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card" data-category="smartwatches">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1551816230-ef5deaed4a26?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Samsung Galaxy Watch6">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Smartwatch</div>
+                        <h3 class="product-name">Samsung Galaxy Watch6</h3>
+                        <div class="product-price"> ₹24,999</div>
+                        <div class="product-specs">44mm, LTE, Advanced health monitoring</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card" data-category="smartwatches">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1551816230-ef5deaed4a26?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Fitbit Versa 4">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Fitness Smartwatch</div>
+                        <h3 class="product-name">Fitbit Versa 4</h3>
+                        <div class="product-price">₹18,999</div>
+                        <div class="product-specs">Built-in GPS, 6+ day battery, 40+ exercise modes</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card" data-category="smartwatches">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1551816230-ef5deaed4a26?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Garmin Venu 3">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Fitness Smartwatch</div>
+                        <h3 class="product-name">Garmin Venu 3</h3>
+                        <div class="product-price">₹36,999</div>
+                        <div class="product-specs">AMOLED display, Advanced health features, GPS</div>
+                        <div class="product-actions">
+                            <button class="add-to-cart">Add to Cart</button>
+                            <button class="wishlist"><i class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Shop</h3>
+                    <ul>
+                        <li><a href="#">Laptops & Computers</a></li>
+                        <li><a href="#">Smartphones</a></li>
+                        <li><a href="#">Headphones & Audio</a></li>
+                        <li><a href="#">Smartwatches</a></li>
+                        <li><a href="#">Tablets</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Refunds</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Warranty</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Stay Connected</h3>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                        <li><a href="#"><i class="fab fa-tiktok"></i> TikTok</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Quick Deals. All rights reserved.
+            </div>
         </div>
-        <form id="chat-form" class="chat-form">
-          <div class="input-container">
-            <input
-              type="text"
-              id="user-input"
-              placeholder=" "
-              autocomplete="off"
-            />
-            <span class="input-label">Type your message...</span>
-            <div class="input-icon">💬</div>
-          </div>
-          <button type="submit" class="send-button">
-            <span class="send-text">Send</span>
-          </button>
-        </form>
-      </div>
-    </div>
+    </footer>
 
-    <script>
-      // --- CART FUNCTIONALITY ---
+<script>
+    // Cart functionality
+    let cart = JSON.parse(localStorage.getItem("quickDealsCart")) || [];
 
-      // Initialize cart from localStorage or create empty array
-      let cart = JSON.parse(localStorage.getItem("quickDealsCart")) || [];
-
-      // Function to update cart count in UI
-      function updateCartCount() {
+    // Update cart count
+    function updateCartCount() {
         const cartCount = document.getElementById("cartCount");
         const mobileCartCount = document.getElementById("mobileCartCount");
-
+        
         if (cartCount) cartCount.textContent = cart.length;
         if (mobileCartCount) mobileCartCount.textContent = cart.length;
-      }
+    }
 
-      // Function to show cart notification
-      function showCartNotification() {
-        const notification = document.getElementById("cartNotification");
-        notification.classList.add("show");
+    // Function to attach event listeners to product cards
+    function attachEventListeners() {
+        // Add to cart functionality
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const productCard = this.closest('.product-card');
+                const productName = productCard.querySelector('.product-name').textContent;
+                const productPrice = productCard.querySelector('.product-price').textContent;
+                const productImage = productCard.querySelector('.product-image img').src;
+                const productCategory = productCard.querySelector('.product-category').textContent;
+                const productSpecs = productCard.querySelector('.product-specs').textContent;
+                
+                // Create product object
+                const product = {
+                    id: generateProductId(productName),
+                    name: productName,
+                    price: productPrice,
+                    image: productImage,
+                    category: productCategory,
+                    specs: productSpecs,
+                    platform: "Quick Deals",
+                    quantity: 1,
+                    rating: "4.5",
+                    score: 8.2,
+                    link: window.location.href + "#" + generateProductId(productName)
+                };
+                
+                // Add to cart
+                addToCart(product);
+                
+                // Show green notification
+                this.classList.add('added');
+                setTimeout(() => {
+                    this.classList.remove('added');
+                }, 2000);
+            });
+        });
 
-        setTimeout(() => {
-          notification.classList.remove("show");
-        }, 2000);
-      }
+        // Wishlist functionality
+        document.querySelectorAll('.wishlist').forEach(button => {
+            button.addEventListener('click', function() {
+                const icon = this.querySelector('i');
+                if (icon.classList.contains('far')) {
+                    icon.classList.remove('far');
+                    icon.classList.add('fas');
+                    this.style.color = '#e74c3c';
+                    this.style.borderColor = '#e74c3c';
+                } else {
+                    icon.classList.remove('fas');
+                    icon.classList.add('far');
+                    this.style.color = '#7f8c8d';
+                    this.style.borderColor = '#ddd';
+                }
+            });
+        });
 
-      // Function to add product to cart
-      function addToCart(product) {
+        // Product name and image click functionality
+        document.querySelectorAll('.product-name, .product-image').forEach(element => {
+            element.addEventListener('click', function() {
+                const productCard = this.closest('.product-card');
+                const productName = productCard.querySelector('.product-name').textContent;
+                const productId = generateProductId(productName);
+                
+                // Store product details in localStorage for product page
+                const product = {
+                    id: productId,
+                    name: productName,
+                    price: productCard.querySelector('.product-price').textContent,
+                    image: productCard.querySelector('.product-image img').src,
+                    category: productCard.querySelector('.product-category').textContent,
+                    specs: productCard.querySelector('.product-specs').textContent
+                };
+                
+                localStorage.setItem("currentProduct", JSON.stringify(product));
+                
+                // Show product details
+                showProductDetails(product);
+            });
+        });
+    }
+
+    // Generate unique product ID
+    function generateProductId(productName) {
+        return productName.toLowerCase().replace(/[^a-z0-9]/g, '-');
+    }
+
+    // Add product to cart
+    function addToCart(product) {
         // Check if product already exists in cart
-        const existingProductIndex = cart.findIndex(
-          (item) =>
-            item.platform === product.platform && item.name === product.name
-        );
-
-        if (existingProductIndex === -1) {
-          // Add product to cart with quantity 1 and image
-          cart.push({
-            ...product,
-            image: product.image || product.base_image_url, // Store image URL
-            quantity: 1,
-            addedAt: new Date().toISOString(),
-          });
-
-          // Save to localStorage
-          localStorage.setItem("quickDealsCart", JSON.stringify(cart));
-
-          // Update UI
-          updateCartCount();
-          showCartNotification();
-
-          console.log("Product added to cart:", product);
+        const existingProductIndex = cart.findIndex(item => item.id === product.id);
+        
+        if (existingProductIndex > -1) {
+            // Update quantity if product exists
+            cart[existingProductIndex].quantity += 1;
         } else {
-          // If product already exists, increase quantity
-          cart[existingProductIndex].quantity += 1;
-          localStorage.setItem("quickDealsCart", JSON.stringify(cart));
-          updateCartCount();
-          showCartNotification();
+            // Add new product to cart
+            cart.push(product);
         }
-      }
-
-      // Initialize cart count on page load
-      document.addEventListener("DOMContentLoaded", function () {
+        
+        // Save to localStorage
+        localStorage.setItem("quickDealsCart", JSON.stringify(cart));
+        
+        // Update cart count
         updateCartCount();
-      });
+        
+        // Show success message
+        showNotification(`${product.name} added to cart!`);
+    }
 
-      // --- PART 1: UI FUNCTIONS ---
+    // Show notification
+    function showNotification(message) {
+        // Create notification element
+        const notification = document.createElement('div');
+        notification.style.cssText = `
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: #27ae60;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        `;
+        notification.textContent = message;
+        
+        document.body.appendChild(notification);
+        
+        // Animate in
+        setTimeout(() => {
+            notification.style.transform = 'translateX(0)';
+        }, 100);
+        
+        // Remove after 3 seconds
+        setTimeout(() => {
+            notification.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 300);
+        }, 3000);
+    }
 
-      // Mobile Navigation
-      function toggleMobileNav() {
+    // Show product details
+    function showProductDetails(product) {
+        // Create product details modal
+        const modal = document.createElement('div');
+        modal.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 20px;
+        `;
+        
+        modal.innerHTML = `
+            <div style="background: white; padding: 30px; border-radius: 10px; max-width: 500px; width: 100%; position: relative;">
+                <button onclick="this.parentElement.parentElement.remove()" style="position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 20px; cursor: pointer;">×</button>
+                <img src="${product.image}" alt="${product.name}" style="width: 100%; max-height: 300px; object-fit: contain; margin-bottom: 20px;">
+                <h2>${product.name}</h2>
+                <p style="color: #7f8c8d; margin-bottom: 10px;">${product.category}</p>
+                <p style="font-size: 1.5rem; font-weight: bold; color: #e74c3c; margin-bottom: 15px;">${product.price}</p>
+                <p style="margin-bottom: 20px;">${product.specs}</p>
+                <button onclick="addToCartFromModal(${JSON.stringify(product).replace(/"/g, '&quot;')})" style="background: #3498db; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; width: 100%;">Add to Cart</button>
+            </div>
+        `;
+        
+        document.body.appendChild(modal);
+    }
+
+    // Add to cart from modal
+    function addToCartFromModal(product) {
+        // Convert string back to object if needed
+        const productObj = typeof product === 'string' ? JSON.parse(product) : product;
+        addToCart(productObj);
+        // Close modal
+        document.querySelector('div[style*="position: fixed; top: 0; left: 0"]').remove();
+    }
+
+    // Search functionality
+    document.getElementById('search-button').addEventListener('click', performSearch);
+    document.getElementById('search-input').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            performSearch();
+        }
+    });
+
+    function performSearch() {
+        const searchTerm = document.getElementById('search-input').value.toLowerCase().trim();
+        const searchResults = document.getElementById('search-results');
+        const resultsGrid = document.getElementById('results-grid');
+        const resultsTitle = document.getElementById('results-title');
+        const resultsCount = document.getElementById('results-count');
+        
+        // Hide all category sections
+        document.querySelectorAll('.category-section').forEach(section => {
+            section.style.display = 'none';
+        });
+        
+        // Clear previous results
+        resultsGrid.innerHTML = '';
+        
+        // Show search results section
+        searchResults.classList.add('active');
+        
+        // Determine which category to show based on search term
+        let category = '';
+        let categoryName = '';
+        
+        if (searchTerm.includes('laptop') || searchTerm.includes('computer') || searchTerm.includes('macbook') || searchTerm.includes('notebook')) {
+            category = 'laptops';
+            categoryName = 'Laptops & Computers';
+        } else if (searchTerm.includes('phone') || searchTerm.includes('iphone') || searchTerm.includes('samsung') || searchTerm.includes('pixel')) {
+            category = 'phones';
+            categoryName = 'Smartphones';
+        } else if (searchTerm.includes('headphone') || searchTerm.includes('airpod') || searchTerm.includes('earbud') || searchTerm.includes('audio')) {
+            category = 'headphones';
+            categoryName = 'Headphones & Audio';
+        } else if (searchTerm.includes('watch') || searchTerm.includes('smartwatch') || searchTerm.includes('fitbit') || searchTerm.includes('garmin')) {
+            category = 'smartwatches';
+            categoryName = 'Smartwatches';
+        } else {
+            // If no specific category is found, show all products
+            category = 'all';
+            categoryName = 'All Products';
+        }
+        
+        // Get products to display
+        let productsToShow = [];
+        if (category === 'all') {
+            productsToShow = document.querySelectorAll('.product-card');
+        } else {
+            productsToShow = document.querySelectorAll(`.product-card[data-category="${category}"]`);
+        }
+        
+        // Update results title and count
+        resultsTitle.textContent = `Search Results: ${categoryName}`;
+        resultsCount.textContent = `${productsToShow.length} products found`;
+        
+        // Add products to results grid
+        productsToShow.forEach(product => {
+            const productClone = product.cloneNode(true);
+            resultsGrid.appendChild(productClone);
+        });
+        
+        // If no results found
+        if (productsToShow.length === 0) {
+            resultsGrid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #7f8c8d;">No products found matching your search.</p>';
+        }
+        
+        // Reattach event listeners to the new elements
+        attachEventListeners();
+    }
+
+    // Mobile Navigation
+    function toggleMobileNav() {
         const slider = document.getElementById("mobileNavSlider");
         slider.classList.toggle("active");
-      }
-
-      // Offers Panel
-      function toggleOffers() {
-        const panel = document.getElementById("offersPanel");
-        const trigger = document.getElementById("offerTrigger");
-
-        if (panel.classList.contains("active")) {
-          panel.classList.remove("active");
-          trigger.classList.remove("hidden");
-        } else {
-          panel.classList.add("active");
-          trigger.classList.add("hidden");
-        }
-      }
-
-      function closeOffers() {
-        const panel = document.getElementById("offersPanel");
-        const trigger = document.getElementById("offerTrigger");
-
-        panel.classList.remove("active");
-        trigger.classList.remove("hidden");
-      }
-
-      // Auto-show offers on page load
-      document.addEventListener("DOMContentLoaded", function () {
-        // Show offers panel automatically after 2 seconds
-        setTimeout(() => {
-          const panel = document.getElementById("offersPanel");
-          const trigger = document.getElementById("offerTrigger");
-
-          panel.classList.add("active");
-          trigger.classList.add("hidden");
-
-          // Auto-hide after 8 seconds
-          setTimeout(() => {
-            panel.classList.remove("active");
-            trigger.classList.remove("hidden");
-          }, 8000);
-        }, 2000);
-      });
-
-      // Close offers when clicking outside
-      document.addEventListener("click", function (event) {
-        const panel = document.getElementById("offersPanel");
-        const trigger = document.getElementById("offerTrigger");
-        const container = document.getElementById("offersContainer");
-
-        // Check if the click is outside the offers container
-        if (container && !container.contains(event.target)) {
-          panel.classList.remove("active");
-          trigger.classList.remove("hidden");
-        }
-      });
-
-      // Chat Visibility Functions
-      function showChat() {
-        const chatWrapper = document.getElementById("chat");
-        const intro = document.getElementById("intro");
-        const header = document.getElementById("header");
-        const offersContainer = document.getElementById("offersContainer");
-
-        // Hide intro section with animation
-        intro.classList.add("hidden");
-
-        // Hide offers container
-        offersContainer.classList.add("hidden");
-
-        // Make header smaller
-        header.classList.add("small");
-
-        // Show full-screen chat
-        chatWrapper.style.display = "flex";
-
-        // Focus on input field with slight delay for smooth animation
-        setTimeout(() => {
-          document.getElementById("user-input").focus();
-        }, 300);
-      }
-
-      function hideChat() {
-        const chatWrapper = document.getElementById("chat");
-        const intro = document.getElementById("intro");
-        const header = document.getElementById("header");
-        const offersContainer = document.getElementById("offersContainer");
-
-        // Hide chat
-        chatWrapper.style.display = "none";
-
-        // Show intro section
-        intro.classList.remove("hidden");
-
-        // Show offers container
-        offersContainer.classList.remove("hidden");
-
-        // Restore header size
-        header.classList.remove("small");
-
-        // Scroll to top
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      }
-
-      // Function to highlight compare button in navigation (show notification)
-      function highlightCompareButton() {
-        const compareLink = document.getElementById("compareLink");
-        const mobileCompareLink = document.getElementById("mobileCompareLink");
-
-        if (compareLink) {
-          compareLink.classList.add("has-products");
-        }
-        if (mobileCompareLink) {
-          mobileCompareLink.classList.add("has-products");
-        }
-
-        // Remove highlight after 8 seconds (keep it visible longer)
-        setTimeout(() => {
-          if (compareLink) {
-            compareLink.classList.remove("has-products");
-          }
-          if (mobileCompareLink) {
-            mobileCompareLink.classList.remove("has-products");
-          }
-        }, 8000);
-      }
-
-      // Function to hide compare notification
-      function hideCompareNotification() {
-        const compareLink = document.getElementById("compareLink");
-        const mobileCompareLink = document.getElementById("mobileCompareLink");
-
-        if (compareLink) {
-          compareLink.classList.remove("has-products");
-        }
-        if (mobileCompareLink) {
-          mobileCompareLink.classList.remove("has-products");
-        }
-      }
-
-      // Function to show coming soon message
-      function showComingSoon() {
-        const message = document.getElementById("comingSoonMessage");
-        message.classList.add("show");
-
-        setTimeout(() => {
-          message.classList.remove("show");
-        }, 3000);
-      }
-
-      // --- PART 2: ENHANCED CHATBOT LOGIC WITH 4 CATEGORIES ---
-
-      // Get all chat elements
-      const chatBox = document.getElementById("chat-box");
-      const chatForm = document.getElementById("chat-form");
-      const userInput = document.getElementById("user-input");
-      const sendButton = document.querySelector(".send-button");
-
-      /**
-       * Enhanced product database for all 4 categories
-       */
-      const productDatabase = {
-laptops: {
-  name: "Laptops",
-  image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wfGVufDB8fDB8fHww&w=1000&q=80",
-  description: "Premium Laptops - Find the perfect laptop for your needs",
-  products: [
-    {
-      platform: "Apple Store",
-      name: "MacBook Pro 16-inch",
-      price: "₹2,39,900",
-      specs: {
-        RAM: "16GB",
-        Storage: "1TB SSD",
-        Color: "Space Gray",
-        Warranty: "1 Year",
-        Display: "16.2-inch Retina",
-        Processor: "Apple M2 Pro",
-        Graphics: "19-core GPU",
-        Battery: "Up to 22 hours",
-      },
-      rating: "4.9",
-      is_trusted: true,
-      description: "The most powerful MacBook Pro ever with the M2 Pro chip for extreme performance.",
-      warranty_info: "1-year limited warranty and up to 90 days of complimentary technical support.",
-      delivery_info: "Free delivery within 3-5 business days",
-      return_policy: "14-day return policy",
-    },
-    {
-      platform: "Amazon",
-      name: "Dell XPS 15",
-      price: "₹1,89,990",
-      specs: {
-        RAM: "32GB",
-        Storage: "1TB SSD",
-        Color: "Platinum Silver",
-        Warranty: "2 Years",
-        Display: "15.6-inch 4K UHD+",
-        Processor: "Intel Core i9-13900H",
-        Graphics: "NVIDIA GeForce RTX 4070",
-        Battery: "Up to 14 hours",
-      },
-      rating: "4.7",
-      is_trusted: true,
-      description: "Dell XPS 15 with stunning 4K display and powerful performance for creative professionals.",
-      warranty_info: "2-year premium support with onsite service after remote diagnosis",
-      delivery_info: "Free delivery within 2-4 business days",
-      return_policy: "30-day return policy",
-    },
-    {
-      platform: "Flipkart",
-      name: "HP Spectre x360",
-      price: "₹1,54,999",
-      specs: {
-        RAM: "16GB",
-        Storage: "512GB SSD",
-        Color: "Nightfall Black",
-        Warranty: "1 Year",
-        Display: "13.5-inch OLED Touch",
-        Processor: "Intel Core i7-1355U",
-        Graphics: "Intel Iris Xe",
-        Battery: "Up to 17 hours",
-      },
-      rating: "4.6",
-      is_trusted: true,
-      description: "HP Spectre x360 2-in-1 laptop with stunning OLED display and versatile design.",
-      warranty_info: "1-year limited hardware warranty",
-      delivery_info: "Free delivery within 3-6 business days",
-      return_policy: "15-day return policy",
-    },
-    {
-      platform: "Amazon",
-      name: "Lenovo ThinkPad X1 Carbon",
-      price: "₹1,67,999",
-      specs: {
-        RAM: "16GB",
-        Storage: "512GB SSD",
-        Color: "Black",
-        Warranty: "3 Years",
-        Display: "14-inch WQXGA",
-        Processor: "Intel Core i7-1365U",
-        Graphics: "Intel Iris Xe",
-        Battery: "Up to 15 hours",
-      },
-      rating: "4.5",
-      is_trusted: true,
-      description: "Lenovo ThinkPad X1 Carbon with legendary durability and business features.",
-      warranty_info: "3-year onsite warranty",
-      delivery_info: "Free delivery within 2-5 business days",
-      return_policy: "30-day return policy",
-    },
-    {
-      platform: "Flipkart",
-      name: "ASUS ROG Zephyrus G14",
-      price: "₹1,45,999",
-      specs: {
-        RAM: "16GB",
-        Storage: "1TB SSD",
-        Color: "Moonlight White",
-        Warranty: "2 Years",
-        Display: "14-inch QHD+",
-        Processor: "AMD Ryzen 9 7940HS",
-        Graphics: "NVIDIA GeForce RTX 4060",
-        Battery: "Up to 10 hours",
-      },
-      rating: "4.4",
-      is_trusted: true,
-      description: "ASUS ROG Zephyrus G14 gaming laptop with powerful performance and portable design.",
-      warranty_info: "2-year international warranty",
-      delivery_info: "Free delivery within 3-7 business days",
-      return_policy: "15-day return policy",
-    },
-    {
-      platform: "Amazon",
-      name: "Microsoft Surface Laptop 5",
-      price: "₹1,32,999",
-      specs: {
-        RAM: "16GB",
-        Storage: "512GB SSD",
-        Color: "Platinum",
-        Warranty: "1 Year",
-        Display: "13.5-inch PixelSense",
-        Processor: "Intel Core i7-1255U",
-        Graphics: "Intel Iris Xe",
-        Battery: "Up to 18 hours",
-      },
-      rating: "4.3",
-      is_trusted: true,
-      description: "Microsoft Surface Laptop 5 with premium design and Windows optimization.",
-      warranty_info: "1-year limited hardware warranty",
-      delivery_info: "Free delivery within 2-4 business days",
-      return_policy: "30-day return policy",
     }
-  ],
-},
 
-phones: {
-  name: "Smartphones",
-  image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGhvbmV8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
-  description: "Latest Smartphones - Find the perfect phone for your needs",
-  products: [
-    {
-      platform: "Apple Store",
-      name: "iPhone 15 Pro",
-      price: "₹1,34,900",
-      specs: {
-        RAM: "8GB",
-        Storage: "128GB",
-        Color: "Natural Titanium",
-        Warranty: "1 Year",
-        Display: "6.1-inch Super Retina XDR",
-        Processor: "A17 Pro",
-        Camera: "48MP Main, 12MP Ultra Wide, 12MP Telephoto",
-        Battery: "Up to 23 hours video playback",
-      },
-      rating: "4.8",
-      is_trusted: true,
-      description: "iPhone 15 Pro with titanium design and advanced camera system.",
-      warranty_info: "1-year limited warranty",
-      delivery_info: "Free delivery within 2-4 business days",
-      return_policy: "14-day return policy",
-    },
-    {
-      platform: "Amazon",
-      name: "Samsung Galaxy S24 Ultra",
-      price: "₹1,29,999",
-      specs: {
-        RAM: "12GB",
-        Storage: "256GB",
-        Color: "Titanium Gray",
-        Warranty: "1 Year",
-        Display: "6.8-inch Dynamic AMOLED 2X",
-        Processor: "Snapdragon 8 Gen 3",
-        Camera: "200MP Main, 12MP Ultra Wide, 50MP Telephoto",
-        Battery: "Up to 26 hours video playback",
-      },
-      rating: "4.7",
-      is_trusted: true,
-      description: "Samsung Galaxy S24 Ultra with AI features and powerful camera.",
-      warranty_info: "1-year manufacturer warranty",
-      delivery_info: "Free delivery within 1-3 business days",
-      return_policy: "10-day return policy",
-    },
-    {
-      platform: "Flipkart",
-      name: "Google Pixel 8 Pro",
-      price: "₹1,06,999",
-      specs: {
-        RAM: "12GB",
-        Storage: "128GB",
-        Color: "Obsidian",
-        Warranty: "2 Years",
-        Display: "6.7-inch LTPO OLED",
-        Processor: "Google Tensor G3",
-        Camera: "50MP Main, 48MP Ultra Wide, 48MP Telephoto",
-        Battery: "Up to 24 hours video playback",
-      },
-      rating: "4.6",
-      is_trusted: true,
-      description: "Google Pixel 8 Pro with advanced AI and camera capabilities.",
-      warranty_info: "2-year limited warranty",
-      delivery_info: "Free delivery within 3-5 business days",
-      return_policy: "15-day return policy",
-    },
-    {
-      platform: "Amazon",
-      name: "OnePlus 12",
-      price: "₹69,999",
-      specs: {
-        RAM: "12GB",
-        Storage: "256GB",
-        Color: "Silky Black",
-        Warranty: "1 Year",
-        Display: "6.82-inch Fluid AMOLED",
-        Processor: "Snapdragon 8 Gen 3",
-        Camera: "50MP Main, 48MP Ultra Wide, 64MP Telephoto",
-        Battery: "Up to 28 hours video playback",
-      },
-      rating: "4.5",
-      is_trusted: true,
-      description: "OnePlus 12 with flagship performance and fast charging.",
-      warranty_info: "1-year manufacturer warranty",
-      delivery_info: "Free delivery within 2-4 business days",
-      return_policy: "7-day return policy",
-    },
-    {
-      platform: "Flipkart",
-      name: "Xiaomi 14 Pro",
-      price: "₹79,999",
-      specs: {
-        RAM: "12GB",
-        Storage: "256GB",
-        Color: "Black",
-        Warranty: "1 Year",
-        Display: "6.73-inch LTPO AMOLED",
-        Processor: "Snapdragon 8 Gen 3",
-        Camera: "50MP Main, 50MP Ultra Wide, 50MP Telephoto",
-        Battery: "Up to 22 hours video playback",
-      },
-      rating: "4.4",
-      is_trusted: true,
-      description: "Xiaomi 14 Pro with Leica camera and premium design.",
-      warranty_info: "1-year limited warranty",
-      delivery_info: "Free delivery within 3-6 business days",
-      return_policy: "10-day return policy",
-    }
-  ],
-},
-
-headphones: {
-  name: "Headphones",
-  image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGVhZHBob25lc3xlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80",
-  description: "Premium Headphones - Find the perfect audio experience",
-  products: [
-    {
-      platform: "Amazon",
-      name: "Sony WH-1000XM5",
-      price: "₹29,990",
-      specs: {
-        Type: "Over-ear",
-        Color: "Black",
-        Warranty: "1 Year",
-        "Noise Cancellation": "Industry-leading",
-        "Battery Life": "Up to 30 hours",
-        Connectivity: "Bluetooth 5.2",
-        "Charging Time": "3 hours",
-      },
-      rating: "4.8",
-      is_trusted: true,
-      description: "Sony WH-1000XM5 with industry-leading noise cancellation and exceptional sound quality.",
-      warranty_info: "1-year manufacturer warranty",
-      delivery_info: "Free delivery within 2-4 business days",
-      return_policy: "10-day return policy",
-    },
-    {
-      platform: "Flipkart",
-      name: "Bose QuietComfort 45",
-      price: "₹24,999",
-      specs: {
-        Type: "Over-ear",
-        Color: "White",
-        Warranty: "1 Year",
-        "Noise Cancellation": "Advanced",
-        "Battery Life": "Up to 24 hours",
-        Connectivity: "Bluetooth 5.1",
-        "Charging Time": "2.5 hours",
-      },
-      rating: "4.7",
-      is_trusted: true,
-      description: "Bose QuietComfort 45 with advanced noise cancellation and balanced audio performance.",
-      warranty_info: "1-year limited warranty",
-      delivery_info: "Free delivery within 3-5 business days",
-      return_policy: "15-day return policy",
-    },
-    {
-      platform: "Apple Store",
-      name: "AirPods Max",
-      price: "₹59,900",
-      specs: {
-        Type: "Over-ear",
-        Color: "Space Gray",
-        Warranty: "1 Year",
-        "Noise Cancellation": "Active",
-        "Battery Life": "Up to 20 hours",
-        Connectivity: "Bluetooth 5.0",
-        "Charging Time": "2 hours",
-      },
-      rating: "4.6",
-      is_trusted: true,
-      description: "AirPods Max with high-fidelity audio and seamless Apple ecosystem integration.",
-      warranty_info: "1-year limited warranty",
-      delivery_info: "Free delivery within 1-3 business days",
-      return_policy: "14-day return policy",
-    },
-    {
-      platform: "Amazon",
-      name: "Sennheiser Momentum 4",
-      price: "₹27,999",
-      specs: {
-        Type: "Over-ear",
-        Color: "Black",
-        Warranty: "2 Years",
-        "Noise Cancellation": "Hybrid Adaptive",
-        "Battery Life": "Up to 60 hours",
-        Connectivity: "Bluetooth 5.2",
-        "Charging Time": "2 hours",
-      },
-      rating: "4.5",
-      is_trusted: true,
-      description: "Sennheiser Momentum 4 with exceptional sound quality and marathon battery life.",
-      warranty_info: "2-year international warranty",
-      delivery_info: "Free delivery within 2-5 business days",
-      return_policy: "30-day return policy",
-    },
-    {
-      platform: "Flipkart",
-      name: "JBL Tour One M2",
-      price: "₹22,999",
-      specs: {
-        Type: "Over-ear",
-        Color: "Black",
-        Warranty: "1 Year",
-        "Noise Cancellation": "Adaptive",
-        "Battery Life": "Up to 50 hours",
-        Connectivity: "Bluetooth 5.3",
-        "Charging Time": "2 hours",
-      },
-      rating: "4.4",
-      is_trusted: true,
-      description: "JBL Tour One M2 with powerful bass and smart ambient aware features.",
-      warranty_info: "1-year manufacturer warranty",
-      delivery_info: "Free delivery within 3-6 business days",
-      return_policy: "15-day return policy",
-    },
-    {
-      platform: "Amazon",
-      name: "Bowers & Wilkins PX7 S2",
-      price: "₹39,999",
-      specs: {
-        Type: "Over-ear",
-        Color: "Space Grey",
-        Warranty: "2 Years",
-        "Noise Cancellation": "Adaptive",
-        "Battery Life": "Up to 30 hours",
-        Connectivity: "Bluetooth 5.2",
-        "Charging Time": "2 hours",
-      },
-      rating: "4.6",
-      is_trusted: true,
-      description: "Bowers & Wilkins PX7 S2 with premium materials and reference-quality sound.",
-      warranty_info: "2-year international warranty",
-      delivery_info: "Free delivery within 3-5 business days",
-      return_policy: "14-day return policy",
-    }
-  ],
-},
-
-        smartwatches: {
-          name: "Smart Watches",
-          image:
-            "https://images.unsplash.com/photo-1544117519-31a4b719223d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c21hcnR3YXRjaHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80",
-          description: "Smart Watches - Stay connected and track your fitness",
-          products: [
-            {
-              platform: "Apple Store",
-              name: "Apple Watch Series 9",
-              price: "₹41,900",
-              specs: {
-                Display: "Always-On Retina",
-                Size: "45mm",
-                Color: "Midnight",
-                Warranty: "1 Year",
-                "Battery Life": "Up to 18 hours",
-                Connectivity: "GPS + Cellular",
-                "Water Resistance": "50 meters",
-                Features: "ECG, Blood Oxygen, Fall Detection",
-              },
-              rating: "4.8",
-              is_trusted: true,
-              description:
-                "Apple Watch Series 9 with advanced health features and seamless iPhone integration.",
-              warranty_info: "1-year limited warranty",
-              delivery_info: "Free delivery within 1-3 business days",
-              return_policy: "14-day return policy",
-            },
-            {
-              platform: "Amazon",
-              name: "Samsung Galaxy Watch 6",
-              price: "₹29,999",
-              specs: {
-                Display: "Super AMOLED",
-                Size: "44mm",
-                Color: "Graphite",
-                Warranty: "2 Years",
-                "Battery Life": "Up to 40 hours",
-                Connectivity: "Bluetooth",
-                "Water Resistance": "5ATM + IP68",
-                Features: "Sleep Coaching, Body Composition",
-              },
-              rating: "4.6",
-              is_trusted: true,
-              description:
-                "Samsung Galaxy Watch 6 with advanced health monitoring and stylish design.",
-              warranty_info: "2-year manufacturer warranty",
-              delivery_info: "Free delivery within 2-4 business days",
-              return_policy: "10-day return policy",
-            },
-            {
-              platform: "Flipkart",
-              name: "Fitbit Versa 4",
-              price: "₹22,999",
-              specs: {
-                Display: "AMOLED",
-                Size: "40mm",
-                Color: "Black",
-                Warranty: "1 Year",
-                "Battery Life": "Up to 6 days",
-                Connectivity: "Bluetooth",
-                "Water Resistance": "50 meters",
-                Features: "Active Zone Minutes, Sleep Score",
-              },
-              rating: "4.4",
-              is_trusted: true,
-              description:
-                "Fitbit Versa 4 with comprehensive fitness tracking and long battery life.",
-              warranty_info: "1-year limited warranty",
-              delivery_info: "Free delivery within 3-5 business days",
-              return_policy: "7-day return policy",
-            },
-          ],
-        },
-      };
-
-      /**
-       * Enhanced search function to detect product categories with exact matching
-       */
-      function detectProductCategory(message) {
-        const lowerMessage = message.toLowerCase();
-
-        // Define exact match patterns for each category
-        const categoryPatterns = {
-          laptops:
-            /\b(laptop|macbook|notebook|ultrabook|dell xps|hp spectre|lenovo thinkpad)\b/,
-          phones:
-            /\b(phone|smartphone|mobile|iphone|android phone|samsung galaxy)\b/,
-          headphones:
-            /\b(headphone|headset|earphone|earbud|airpod|airpods|sony wh|bose qc|noise cancellation)\b/,
-          smartwatches:
-            /\b(smartwatch|smart watch|watch|apple watch|galaxy watch|fitbit|wearable|fitness tracker)\b/,
-        };
-
-        // Check for exact matches in order of priority
-        if (categoryPatterns.headphones.test(lowerMessage)) {
-          return "headphones";
-        }
-        if (categoryPatterns.phones.test(lowerMessage)) {
-          return "phones";
-        }
-        if (categoryPatterns.laptops.test(lowerMessage)) {
-          return "laptops";
-        }
-        if (categoryPatterns.smartwatches.test(lowerMessage)) {
-          return "smartwatches";
-        }
-
-        // Additional keyword-based fallback with better logic
-        const categoryKeywords = {
-          laptops: [
-            "laptop",
-            "macbook",
-            "notebook",
-            "ultrabook",
-            "dell",
-            "hp",
-            "lenovo",
-          ],
-phones: [
-  "iphone", "samsung", "google pixel", "oneplus", "xiaomi", 
-  "smartphone", "mobile", "android", "phone", "galaxy"
-],
-          headphones: [
-            "headphone",
-            "headset",
-            "earphone",
-            "earbud",
-            "airpod",
-            "sony",
-            "bose",
-            "audio",
-          ],
-          smartwatches: [
-            "smartwatch",
-            "apple watch",
-            "galaxy watch",
-            "fitbit",
-            "wearable",
-          ],
-        };
-
-        // Count matches for each category with word boundary awareness
-        const categoryScores = {};
-
-        for (const [category, keywords] of Object.entries(categoryKeywords)) {
-          categoryScores[category] = keywords.reduce((score, keyword) => {
-            // Use word boundaries to avoid partial matches
-            const pattern = new RegExp(`\\b${keyword}\\b`, "i");
-            return score + (pattern.test(lowerMessage) ? 1 : 0);
-          }, 0);
-        }
-
-        // Find the category with highest score
-        const bestMatch = Object.entries(categoryScores).reduce(
-          (best, [category, score]) => {
-            return score > best.score ? { category, score } : best;
-          },
-          { category: null, score: 0 }
-        );
-
-        // Return the best matching category if score is at least 1
-        return bestMatch.score > 0 ? bestMatch.category : null;
-      }
-
-      /**
-       * Function to toggle product details
-       */
-      function toggleProductDetails(button) {
-        const productCard = button.closest(".product-card");
-        const detailsPanel = productCard.querySelector(
-          ".product-details-panel"
-        );
-        const buttonText = button.querySelector(".btn-text");
-
-        if (detailsPanel.style.display === "block") {
-          // Hide details
-          detailsPanel.style.display = "none";
-          buttonText.textContent = "Show More";
-          button.classList.remove("active");
-        } else {
-          // Show details
-          detailsPanel.style.display = "block";
-          buttonText.textContent = "Show Less";
-          button.classList.add("active");
-
-          // Scroll to the details panel if needed
-          detailsPanel.scrollIntoView({ behavior: "smooth", block: "nearest" });
-        }
-      }
-
-      /**
-       * Function to create detailed product information HTML
-       */
-      function createProductDetailsHTML(product) {
-        return `
-          <div class="product-details-panel">
-            <div class="details-content">
-              <div class="detail-item">
-                <div class="detail-label">Platform</div>
-                <div class="detail-value">${product.platform}</div>
-              </div>
-              <div class="detail-item">
-                <div class="detail-label">Price</div>
-                <div class="detail-value">${product.price}</div>
-              </div>
-              <div class="detail-item">
-                <div class="detail-label">Rating</div>
-                <div class="detail-value">${product.rating} ★</div>
-              </div>
-              <div class="detail-item">
-                <div class="detail-label">Trusted Seller</div>
-                <div class="detail-value">${
-                  product.is_trusted ? "✅ Yes" : "❌ No"
-                }</div>
-              </div>
-              
-              <div class="detail-item highlight-detail">
-                <div class="detail-label">Specifications</div>
-                <div class="detail-value">
-                  <div class="specs-grid">
-                    ${Object.entries(product.specs || {})
-                      .map(
-                        ([key, value]) =>
-                          `<div class="spec-line">
-                         <span class="spec-name">${key}</span>
-                         <span class="spec-value">${value}</span>
-                       </div>`
-                      )
-                      .join("")}
-                  </div>
-                </div>
-              </div>
-              
-              ${
-                product.description
-                  ? `
-              <div class="detail-item">
-                <div class="detail-label">Description</div>
-                <div class="detail-value description-text">${product.description}</div>
-              </div>
-              `
-                  : ""
-              }
-              
-              ${
-                product.warranty_info
-                  ? `
-              <div class="detail-item">
-                <div class="detail-label">Warranty</div>
-                <div class="detail-value">${product.warranty_info}</div>
-              </div>
-              `
-                  : ""
-              }
-              
-              ${
-                product.delivery_info
-                  ? `
-              <div class="detail-item">
-                <div class="detail-label">Delivery</div>
-                <div class="detail-value">${product.delivery_info}</div>
-              </div>
-              `
-                  : ""
-              }
-              
-              ${
-                product.return_policy
-                  ? `
-              <div class="detail-item">
-                <div class="detail-label">Returns</div>
-                <div class="detail-value">${product.return_policy}</div>
-              </div>
-              `
-                  : ""
-              }
-            </div>
-          </div>
-        `;
-      }
-
-      /**
-       * Main function to handle form submission
-       */
-      chatForm.addEventListener("submit", async function (e) {
-        e.preventDefault();
-        const message = userInput.value.trim().toLowerCase();
-        if (!message) return;
-
-        hideCompareNotification();
-
-        // Add user's message to chat
-        addMessage("user", message);
-        userInput.value = "";
-        sendButton.classList.add("pulse");
-        addTypingIndicator();
-
-        try {
-          // Detect product category from user message
-          const detectedCategory = detectProductCategory(message);
-
-          if (detectedCategory && productDatabase[detectedCategory]) {
-            removeTypingIndicator();
-
-            const categoryData = productDatabase[detectedCategory];
-
-            addMessage(
-              "bot",
-              `Here are the best ${categoryData.name.toLowerCase()} options I found for you:`
-            );
-            renderProductComparison(categoryData);
-            highlightCompareButton();
-            return;
-          }
-
-          // If no specific category detected, send to backend
-          const response = await fetch("/chat", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              message: message,
-            }),
-          });
-
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-
-          const data = await response.json();
-
-          removeTypingIndicator();
-          addMessage("bot", data.bot);
-
-          // Check if the server sent back product data
-          if (data.products && data.products.length > 0) {
-            renderProductComparison(data);
-            highlightCompareButton();
-          }
-        } catch (error) {
-          removeTypingIndicator();
-          console.error("Error fetching chat response:", error);
-          addMessage("bot", "❌ Sorry, I hit an error. Please try again.");
-        }
-      });
-
-      /**
-       * Generic function to add a message to the chat box
-       */
-      function addMessage(sender, text) {
-        const messageDiv = document.createElement("div");
-        messageDiv.className = `${sender}-message`;
-        if (sender === "bot") {
-          text = text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
-        }
-        messageDiv.innerHTML = text;
-        chatBox.appendChild(messageDiv);
-        chatBox.scrollTop = chatBox.scrollHeight;
-      }
-
-      /**
-       * Adds the "..." typing indicator
-       */
-      function addTypingIndicator() {
-        if (document.getElementById("typing-indicator")) return;
-        const typingDiv = document.createElement("div");
-        typingDiv.className = "bot-message";
-        typingDiv.id = "typing-indicator";
-        typingDiv.innerHTML =
-          '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
-        chatBox.appendChild(typingDiv);
-        chatBox.scrollTop = chatBox.scrollHeight;
-      }
-
-      /**
-       * Removes the "..." typing indicator
-       */
-      function removeTypingIndicator() {
-        const indicator = document.getElementById("typing-indicator");
-        if (indicator) {
-          indicator.remove();
-        }
-      }
-
-      /**
-       * Renders the main product image, description,
-       * and side-by-side comparison cards.
-       */
-      function renderProductComparison(data) {
-        const chatBox = document.getElementById("chat-box");
-
-        const container = document.createElement("div");
-        container.className = "bot-message";
-
-        let headerHtml = "";
-
-        if (data.image) {
-          headerHtml += `<img src="${data.image}" alt="Product" class="product-main-image" style="width: 100%; max-width: 200px; border-radius: 10px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;">`;
-        }
-
-        if (data.description) {
-          headerHtml += `<p style="margin-bottom: 20px; text-align: center; line-height: 1.5;">${data.description}</p>`;
-        }
-
-    // Get 3 random products from the array
-const randomProducts = data.products
-  .sort(() => 0.5 - Math.random())
-  .slice(0, 3);
-
-let productsHtml = randomProducts
-  .map((p) => {
-    const cartProductData = {
-      ...p,
-      image: data.image,
-      name: p.name || data.description || p.platform + " Product",
-    };
-    
-    const detailsPanelHTML = createProductDetailsHTML(p);
-
-    return `
-<div class="product-card">
-  <strong>${p.name || p.platform}</strong>
-  <div class="product-feature">
-    <span class="feature-name">Platform</span>
-    <span class="feature-value">${p.platform}</span>
-  </div>
-  <div class="product-feature">
-    <span class="feature-name">Price</span>
-    <span class="feature-value price-inr">${p.price.replace(/[₹,]/g, "")}</span>
-  </div>
-  <button class="show-more-btn" onclick="toggleProductDetails(this)">
-    <span class="btn-text">Show More</span>
-    <span>🔍</span>
-  </button>
-  ${detailsPanelHTML}
-  <button class="add-to-cart-btn" onclick="addToCart(${JSON.stringify(cartProductData).replace(/"/g, "&quot;")})">
-    + Add to Cart
-  </button>
-</div>
-`;
-  })
-  .join("");
-
-        container.innerHTML = `
-      ${headerHtml}
-      <div class="products-container">
-        ${productsHtml}
-      </div>
-    `;
-        chatBox.appendChild(container);
-        chatBox.scrollTop = chatBox.scrollHeight;
-      }
-
-      /**
-       * Enhanced input interactions
-       */
-      userInput.addEventListener("focus", function () {
-        sendButton.classList.remove("pulse");
-      });
-
-      userInput.addEventListener("input", function () {
-        if (this.value.trim()) {
-          sendButton.classList.remove("pulse");
-        } else {
-          sendButton.classList.add("pulse");
-        }
-      });
-
-      // Allow Enter key to submit form
-      userInput.addEventListener("keypress", function (e) {
-        if (e.key === "Enter") {
-          e.preventDefault();
-          chatForm.dispatchEvent(new Event("submit"));
-        }
-      });
-    </script>
-  </body>
+    // Initialize cart count on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        updateCartCount();
+        attachEventListeners();
+    });
+</script>
+</body>
 </html>

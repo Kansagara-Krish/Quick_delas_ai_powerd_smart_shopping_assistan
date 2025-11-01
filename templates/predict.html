@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+        <link rel="icon" type="image/png" href="/static/image/system_logo.png">
+    <link rel="shortcut icon" type="image/png" href="/static/image/system_logo.png">
+    <link rel="icon" type="image/x-icon" href="/static/image/system_logo.png">
+    <link rel="apple-touch-icon" href="/static/image/system_logo.png">
+    <!-- Cache busting query parameter -->
+    <link rel="icon" type="image/png" href="/static/image/system_logo.png?v=2">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quick Deals – Price Prediction</title>
@@ -164,7 +170,7 @@
         .prediction-header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 25px 30px;
+            padding: 5px 10px;
             text-align: center;
         }
 
@@ -185,7 +191,7 @@
         .search-container {
             display: flex;
             gap: 15px;
-            margin-bottom: 30px;
+            margin-bottom: 0px;
         }
 
         .search-input {
@@ -329,28 +335,36 @@
         }
 
         .history-chart {
-            height: 200px;
+            height: 250px;
             background: #f8f9fa;
             border-radius: 10px;
-            padding: 15px;
+            padding: 20px 15px;
             position: relative;
-            overflow: hidden;
+            overflow: visible;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
         }
 
         .chart-bars {
             display: flex;
             align-items: flex-end;
             justify-content: space-between;
-            height: 100%;
-            padding: 0 10px;
+            height: calc(100% - 40px);
+            width: 100%;
+            position: relative;
+            padding: 0px;
+            margin-bottom: 20px;
         }
 
         .chart-bar {
-            width: 30px;
+            width: 45px;
             background: linear-gradient(to top, var(--primary), var(--secondary));
             border-radius: 5px 5px 0 0;
             position: relative;
             transition: var(--transition);
+            margin: 0 5px;
+            min-height: 20px;
         }
 
         .chart-bar:hover {
@@ -363,7 +377,7 @@
 
         .chart-label {
             position: absolute;
-            bottom: -25px;
+            bottom: -30px;
             left: 0;
             width: 100%;
             text-align: center;
@@ -519,6 +533,14 @@
             }
         }
 
+        @keyframes bounce {
+            0%, 80%, 100% { 
+                transform: scale(0);
+            } 40% { 
+                transform: scale(1.0);
+            }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
@@ -564,9 +586,7 @@
 
     <!-- Main Content -->
     <div class="main-content">
-        <h1 class="page-title">🔮 AI Price Prediction</h1>
-        <p class="page-subtitle">Our advanced AI analyzes historical price data to predict the best time to buy and the lowest expected price</p>
-
+     
         <!-- Prediction Container -->
         <div class="prediction-container">
             <div class="prediction-header">
@@ -577,7 +597,7 @@
                 <div class="search-container">
                     <input type="text" class="search-input" id="productSearch" placeholder="e.g., iPhone 16, MacBook Pro, Sony WH-1000XM5">
                     <button class="search-button" id="predictButton">
-                        🔮 Predict Price
+                        Predict Price
                     </button>
                 </div>
 
@@ -715,6 +735,7 @@
         const predictButton = document.getElementById('predictButton');
         const predictionResults = document.getElementById('predictionResults');
         const popularProductsContainer = document.getElementById('popularProducts');
+        const cartCount = document.getElementById('cartCount');
 
         // Format currency in Indian Rupees
         function formatINR(amount) {
@@ -775,84 +796,128 @@
         }
 
         // Render prediction results
-        function renderPrediction(product) {
-            const lowestPriceIndex = product.priceHistory.reduce((minIndex, item, index, arr) => 
-                item.price < arr[minIndex].price ? index : minIndex, 0);
-            
-            const chartHTML = product.priceHistory.map((item, index) => {
-                const maxPrice = Math.max(...product.priceHistory.map(p => p.price));
-                const minPrice = Math.min(...product.priceHistory.map(p => p.price));
-                const height = ((item.price - minPrice) / (maxPrice - minPrice)) * 100;
-                
-                return `
-                    <div class="chart-bar ${index === lowestPriceIndex ? 'lowest' : ''}" style="height: ${height}%">
-                        <div class="chart-value">${formatINR(item.price)}</div>
-                        <div class="chart-label">${item.month}</div>
-                    </div>
-                `;
-            }).join('');
+// Render prediction results
+// Render prediction results
+// Render prediction results
+function renderPrediction(product) {
+    const lowestPriceIndex = product.priceHistory.reduce((minIndex, item, index, arr) => 
+        item.price < arr[minIndex].price ? index : minIndex, 0);
+    
+    // Calculate chart bar heights - SIMPLIFIED VERSION
+    const prices = product.priceHistory.map(p => p.price);
+    const maxPrice = Math.max(...prices);
+    const minPrice = Math.min(...prices);
+    
+    const chartHTML = product.priceHistory.map((item, index) => {
+        // Simple height calculation - ensure bars are always visible
+        const heightPercentage = Math.max(30, ((item.price - minPrice) / (maxPrice - minPrice || 1)) * 70);
+        
+        return `
+            <div class="chart-bar ${index === lowestPriceIndex ? 'lowest' : ''}" style="height: ${heightPercentage}%">
+                <div class="chart-value">${formatINR(item.price)}</div>
+                <div class="chart-label">${item.month}</div>
+            </div>
+        `;
+    }).join('');
 
-            predictionResults.innerHTML = `
-                <div class="prediction-card">
-                    <div class="product-header">
-                        <img src="${product.image}" alt="${product.name}" class="product-image">
-                        <div class="product-info">
-                            <div class="product-name">${product.name}</div>
-                            <div class="product-category">${product.category}</div>
-                        </div>
-                    </div>
-                    
-                    <div class="prediction-details">
-                        <div class="detail-card">
-                            <div class="detail-value">${formatINR(product.currentPrice)}</div>
-                            <div class="detail-label">Current Price</div>
-                        </div>
-                        <div class="detail-card highlight">
-                            <div class="detail-value">${formatINR(product.prediction.lowestPrice)}</div>
-                            <div class="detail-label">Predicted Lowest</div>
-                        </div>
-                        <div class="detail-card">
-                            <div class="detail-value">${product.prediction.bestTime}</div>
-                            <div class="detail-label">Best Time to Buy</div>
-                        </div>
-                        <div class="detail-card">
-                            <div class="detail-value">${product.prediction.confidence}%</div>
-                            <div class="detail-label">AI Confidence</div>
-                        </div>
-                    </div>
-                    
-                    <div class="price-history">
-                        <h3>Price History (Last 6 Months)</h3>
-                        <div class="history-chart">
-                            <div class="chart-bars">
-                                ${chartHTML}
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="prediction-actions">
-                        <button class="action-button primary" onclick="setPriceAlert('${product.name}')">
-                            🔔 Set Price Alert
-                        </button>
-                        <button class="action-button secondary" onclick="addToWishlist('${product.name}')">
-                            💖 Add to Wishlist
-                        </button>
+    predictionResults.innerHTML = `
+        <div class="prediction-card">
+            <div class="product-header">
+                <img src="${product.image}" alt="${product.name}" class="product-image">
+                <div class="product-info">
+                    <div class="product-name">${product.name}</div>
+                    <div class="product-category">${product.category}</div>
+                </div>
+            </div>
+            
+            <div class="prediction-details">
+                <div class="detail-card">
+                    <div class="detail-value">${formatINR(product.currentPrice)}</div>
+                    <div class="detail-label">Current Price</div>
+                </div>
+                <div class="detail-card highlight">
+                    <div class="detail-value">${formatINR(product.prediction.lowestPrice)}</div>
+                    <div class="detail-label">Predicted Lowest</div>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-value">${product.prediction.bestTime}</div>
+                    <div class="detail-label">Best Time to Buy</div>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-value">${product.prediction.confidence}%</div>
+                    <div class="detail-label">AI Confidence</div>
+                </div>
+            </div>
+            
+            <div class="price-history">
+                <h3>Price History (Last 6 Months)</h3>
+                <div class="history-chart">
+                    <div class="chart-bars">
+                        ${chartHTML}
                     </div>
                 </div>
-            `;
+            </div>
             
-            predictionResults.style.display = 'block';
-        }
-
+            <div class="prediction-actions">
+                <button class="action-button primary" onclick="setPriceAlert('${product.name}')">
+                    🔔 Set Price Alert
+                </button>
+                <button class="action-button secondary" onclick="addToCart('${product.name}', '${product.image}', ${product.currentPrice}, '${product.category}', ${product.prediction.lowestPrice})">
+                    🛒 Add to Cart
+                </button>
+            </div>
+        </div>
+    `;
+    
+    predictionResults.style.display = 'block';
+}
         // Set price alert
         function setPriceAlert(productName) {
             alert(`Price alert set for ${productName}! We'll notify you when the price drops.`);
         }
 
-        // Add to wishlist
-        function addToWishlist(productName) {
-            alert(`${productName} added to your wishlist!`);
-        }
+        // Add to cart function
+// Add to cart function - stores in quickDealsCart
+function addToCart(productName, productImage, productPrice, productCategory, predictedPrice) {
+    // Get existing cart from localStorage with key 'quickDealsCart'
+    let cart = JSON.parse(localStorage.getItem('quickDealsCart')) || [];
+    
+    // Check if product already exists in cart
+    const existingItemIndex = cart.findIndex(item => item.name === productName);
+    
+    if (existingItemIndex !== -1) {
+        // Update quantity if already in cart
+        cart[existingItemIndex].quantity += 1;
+    } else {
+        // Add new item to cart with all required details
+        cart.push({
+            name: productName,
+            image: productImage,
+            price: productPrice,
+            category: productCategory,
+            predictedPrice: predictedPrice || productPrice, // Use predicted price if available
+            quantity: 1,
+            timestamp: new Date().toISOString()
+        });
+    }
+    
+    // Save updated cart to localStorage with key 'quickDealsCart'
+    localStorage.setItem('quickDealsCart', JSON.stringify(cart));
+    
+    // Update cart count
+    updateCartCount();
+    
+    // Show confirmation
+    alert(`${productName} added to your cart!`);
+}
+
+        // Update cart count in header
+// Update cart count in header - reads from quickDealsCart
+function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('quickDealsCart')) || [];
+    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+    cartCount.textContent = totalItems;
+}
 
         // Search for product and generate prediction
         function searchProduct() {
@@ -925,6 +990,7 @@
         // Initialize the page
         document.addEventListener('DOMContentLoaded', function() {
             renderPopularProducts();
+            updateCartCount();
             
             predictButton.addEventListener('click', searchProduct);
             
