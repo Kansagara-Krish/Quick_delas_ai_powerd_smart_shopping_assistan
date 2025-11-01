@@ -742,573 +742,698 @@
       </div>
     </div>
 
-    <script>
-      // Cart functionality
-      let cart = JSON.parse(localStorage.getItem("quickDealsCart")) || [];
+<script>
+  // Cart functionality
+  let cart = JSON.parse(localStorage.getItem("quickDealsCart")) || [];
 
-      function updateCartCount() {
-        const cartCount = document.getElementById("cartCount");
-        const mobileCartCount = document.getElementById("mobileCartCount");
-        if (cartCount) cartCount.textContent = cart.length;
-        if (mobileCartCount) mobileCartCount.textContent = cart.length;
+  function updateCartCount() {
+    const cartCount = document.getElementById("cartCount");
+    const mobileCartCount = document.getElementById("mobileCartCount");
+    if (cartCount) cartCount.textContent = cart.length;
+    if (mobileCartCount) mobileCartCount.textContent = cart.length;
+  }
+
+  function addToCart(product) {
+    const existingProductIndex = cart.findIndex(
+      (item) =>
+        item.platform === product.platform && item.name === product.name
+    );
+
+    if (existingProductIndex === -1) {
+      cart.push({
+        ...product,
+        image: product.image || product.base_image_url,
+        quantity: 1,
+        addedAt: new Date().toISOString(),
+      });
+      localStorage.setItem("quickDealsCart", JSON.stringify(cart));
+      updateCartCount();
+      showCartNotification();
+    } else {
+      cart[existingProductIndex].quantity += 1;
+      localStorage.setItem("quickDealsCart", JSON.stringify(cart));
+      updateCartCount();
+      showCartNotification();
+    }
+  }
+
+  function showCartNotification() {
+    // Simple notification implementation
+    alert("Product added to cart!");
+  }
+
+  function goToHome() {
+    window.location.href = "/";
+  }
+
+  // Mobile Navigation
+  function toggleMobileNav() {
+    const slider = document.getElementById("mobileNavSlider");
+    slider.classList.toggle("active");
+  }
+
+  // Chat functionality
+  const chatBox = document.getElementById("chat-box");
+  const chatForm = document.getElementById("chat-form");
+  const userInput = document.getElementById("user-input");
+
+  function addMessage(sender, text) {
+    const messageDiv = document.createElement("div");
+    messageDiv.className = `${sender}-message`;
+    if (sender === "bot") {
+      text = text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+    }
+    messageDiv.innerHTML = text;
+    chatBox.appendChild(messageDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+
+  // Add typing indicator functions
+  function addTypingIndicator() {
+    if (document.getElementById("typing-indicator")) return;
+    const typingDiv = document.createElement("div");
+    typingDiv.className = "bot-message";
+    typingDiv.id = "typing-indicator";
+    typingDiv.innerHTML =
+      '<div style="display: flex; gap: 5px; align-items: center;"><div style="width: 8px; height: 8px; background: #666; border-radius: 50%; animation: bounce 1.4s infinite ease-in-out both;"></div><div style="width: 8px; height: 8px; background: #666; border-radius: 50%; animation: bounce 1.4s infinite ease-in-out both; animation-delay: 0.16s;"></div><div style="width: 8px; height: 8px; background: #666; border-radius: 50%; animation: bounce 1.4s infinite ease-in-out both; animation-delay: 0.32s;"></div></div>';
+    chatBox.appendChild(typingDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+
+  function removeTypingIndicator() {
+    const indicator = document.getElementById("typing-indicator");
+    if (indicator) {
+      indicator.remove();
+    }
+  }
+
+  // Fixed product search function for your JSON structure
+  function findSpecificProducts(message, allProducts) {
+    const query = message.toLowerCase().trim();
+    const results = [];
+    
+    console.log('Searching for:', query);
+    console.log('Total products:', allProducts.length);
+
+    // Extract numbers from query for version matching
+    const queryNumbers = query.match(/\d+/g) || [];
+    const queryNumber = queryNumbers.length > 0 ? queryNumbers[0] : null;
+
+    // Check if we have products data
+    if (!allProducts || !Array.isArray(allProducts)) {
+      console.error('No products array found in data');
+      return [];
+    }
+
+    // Search through all products
+    allProducts.forEach(product => {
+      if (!product || !product.product_name) return;
+      
+      const productName = product.product_name.toLowerCase();
+      let score = 0;
+
+      console.log('Checking product:', productName);
+
+      // 1. Exact match (highest priority)
+      if (productName === query) {
+        score += 1000;
+        console.log('Exact match found:', productName);
       }
 
-      function addToCart(product) {
-        const existingProductIndex = cart.findIndex(
-          (item) =>
-            item.platform === product.platform && item.name === product.name
-        );
+      // 2. Contains exact query
+      if (productName.includes(query)) {
+        score += 500;
+        console.log('Partial match found:', productName);
+      }
 
-        if (existingProductIndex === -1) {
-          cart.push({
-            ...product,
-            image: product.image || product.base_image_url,
-            quantity: 1,
-            addedAt: new Date().toISOString(),
-          });
-          localStorage.setItem("quickDealsCart", JSON.stringify(cart));
-          updateCartCount();
-          showCartNotification();
-        } else {
-          cart[existingProductIndex].quantity += 1;
-          localStorage.setItem("quickDealsCart", JSON.stringify(cart));
-          updateCartCount();
-          showCartNotification();
+      // 3. Number matching for versions
+      if (queryNumber) {
+        const productNumbers = productName.match(/\d+/g) || [];
+        if (productNumbers.includes(queryNumber)) {
+          score += 400;
+          console.log('Number match found:', productName);
         }
       }
 
-      function showCartNotification() {
-        // Simple notification implementation
-        alert("Product added to cart!");
-      }
+      // 4. Word-by-word matching
+      const queryWords = query.split(/\s+/).filter(word => word.length > 2);
+      const productWords = productName.split(/\s+/);
 
-      function goToHome() {
-        window.location.href = "/";
-      }
-
-      // Mobile Navigation
-      function toggleMobileNav() {
-        const slider = document.getElementById("mobileNavSlider");
-        slider.classList.toggle("active");
-      }
-
-      // Chat functionality
-      const chatBox = document.getElementById("chat-box");
-      const chatForm = document.getElementById("chat-form");
-      const userInput = document.getElementById("user-input");
-
-      function addMessage(sender, text) {
-        const messageDiv = document.createElement("div");
-        messageDiv.className = `${sender}-message`;
-        if (sender === "bot") {
-          text = text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+      queryWords.forEach(word => {
+        if (productWords.includes(word)) {
+          score += 100;
+        } else if (productName.includes(word)) {
+          score += 50;
         }
-        messageDiv.innerHTML = text;
-        chatBox.appendChild(messageDiv);
-        chatBox.scrollTop = chatBox.scrollHeight;
+      });
+
+      // 5. Brand matching
+      const brands = ["iphone", "macbook", "samsung", "sony", "bose", "hp", "dell", "lenovo", "google", "oneplus", "apple", "asus", "lg", "microsoft", "amazon"];
+      brands.forEach(brand => {
+        if (query.includes(brand) && productName.includes(brand)) {
+          score += 80;
+        }
+      });
+
+      // 6. Category matching
+      if (product.category && query.includes(product.category)) {
+        score += 60;
       }
 
-      // Add typing indicator functions
-      function addTypingIndicator() {
-        if (document.getElementById("typing-indicator")) return;
-        const typingDiv = document.createElement("div");
-        typingDiv.className = "bot-message";
-        typingDiv.id = "typing-indicator";
-        typingDiv.innerHTML =
-          '<div style="display: flex; gap: 5px; align-items: center;"><div style="width: 8px; height: 8px; background: #666; border-radius: 50%; animation: bounce 1.4s infinite ease-in-out both;"></div><div style="width: 8px; height: 8px; background: #666; border-radius: 50%; animation: bounce 1.4s infinite ease-in-out both; animation-delay: 0.16s;"></div><div style="width: 8px; height: 8px; background: #666; border-radius: 50%; animation: bounce 1.4s infinite ease-in-out both; animation-delay: 0.32s;"></div></div>';
-        chatBox.appendChild(typingDiv);
-        chatBox.scrollTop = chatBox.scrollHeight;
-      }
+      // Add to results if score is above threshold
+      if (score > 100) {
+        console.log('Product matched with score:', score, productName);
+        
+        // Get the first variant and its offers
+        if (product.variants && product.variants.length > 0) {
+          const variant = product.variants[0];
+          const offers = variant.offers ? variant.offers.slice(0, 3) : []; // Take top 3 offers
+          
+          // Convert offers to product format for display
+          const productResults = offers.map(offer => ({
+            id: product.product_id,
+            name: product.product_name,
+            platform: offer.seller_name || 'Unknown Seller',
+            price: `₹${offer.price?.toLocaleString('en-IN') || 'N/A'}`,
+            rating: offer.rating || 0,
+            rating_count: offer.rating_count || 0,
+            delivery_in_days: offer.delivery_in_days || 0,
+            is_trusted: offer.is_trusted_seller || false,
+            discount_percent: offer.discount_percent || 0,
+            image: product.base_image_url,
+            category: product.category,
+            description: product.description || 'No description available',
+            specifications: variant.specifications || {},
+            searchScore: score
+          }));
 
-      function removeTypingIndicator() {
-        const indicator = document.getElementById("typing-indicator");
-        if (indicator) {
-          indicator.remove();
+          results.push(...productResults);
+          console.log('Added product results:', productResults.length);
         }
       }
+    });
 
-      // Enhanced product search function for specific product names
-      // Fixed product search function - removes close match bonus
-      function findSpecificProducts(message, allProducts) {
-        const query = message.toLowerCase().trim();
-        const results = [];
+    console.log('Total results found:', results.length);
+    
+    // Sort by score and return top results
+    return results
+      .sort((a, b) => b.searchScore - a.searchScore)
+      .slice(0, 9) // Return up to 9 results (3 products × 3 sellers)
+      .map(({ searchScore, ...product }) => product);
+  }
 
-        // Extract numbers from query for version matching (iPhone 16, etc.)
-        const queryNumbers = query.match(/\d+/g) || [];
-        const queryNumber = queryNumbers.length > 0 ? queryNumbers[0] : null;
+  // Modified to work with your data structure
+  function ensureThreeVariants(products) {
+    if (!products || products.length === 0) return [];
 
-        // Search across all categories and products
-        for (const [category, products] of Object.entries(allProducts)) {
-          for (const product of products) {
-            const productName = product.name.toLowerCase();
-            let score = 0;
-
-            // 1. Exact match (highest priority)
-            if (productName === query) {
-              score += 1000;
-            }
-
-            // 2. Contains exact query
-            if (productName.includes(query)) {
-              score += 500;
-            }
-
-            // 3. Number matching for versions (iPhone 16, MacBook Pro 16, etc.)
-            if (queryNumber) {
-              const productNumbers = productName.match(/\d+/g) || [];
-              if (productNumbers.includes(queryNumber)) {
-                score += 400; // High score for exact number match
-              }
-            }
-
-            // 4. Word-by-word matching (only for words longer than 2 characters)
-            const queryWords = query
-              .split(/\s+/)
-              .filter((word) => word.length > 2);
-            const productWords = productName.split(/\s+/);
-
-            queryWords.forEach((word) => {
-              if (productWords.includes(word)) {
-                score += 100;
-              } else if (productName.includes(word)) {
-                score += 50;
-              }
-            });
-
-            // 5. Brand matching (exact brand must match)
-            const brands = [
-              "iphone",
-              "macbook",
-              "samsung",
-              "sony",
-              "bose",
-              "hp",
-              "dell",
-              "lenovo",
-            ];
-            brands.forEach((brand) => {
-              if (query.includes(brand) && productName.includes(brand)) {
-                score += 80;
-              }
-            });
-
-            // Add to results if score is above threshold
-            if (score > 100) {
-              results.push({
-                ...product,
-                searchScore: score,
-                category: category,
-              });
-            }
-          }
-        }
-
-        // Sort by score and return top 3
-        return results
-          .sort((a, b) => b.searchScore - a.searchScore)
-          .slice(0, 3)
-          .map((item) => {
-            // Remove searchScore from final product object
-            const { searchScore, ...product } = item;
-            return product;
-          });
+    // Group products by name to get different sellers for same product
+    const productsByName = {};
+    
+    products.forEach(product => {
+      if (!productsByName[product.name]) {
+        productsByName[product.name] = [];
       }
-      // Price Drop Prediction Modal
-      function showPriceDropPrediction(product) {
-        // Create modal overlay
-        const modalOverlay = document.createElement("div");
-        modalOverlay.style.cssText = `
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0,0,0,0.5);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          z-index: 10000;
-        `;
+      productsByName[product.name].push(product);
+    });
 
-        // Create modal content
-        const modalContent = document.createElement("div");
-        modalContent.style.cssText = `
-          background: white;
-          padding: 30px;
-          border-radius: 15px;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-          max-width: 400px;
-          width: 90%;
-          text-align: center;
-        `;
-
-        modalContent.innerHTML = `
-          <h3 style="color: #6a11cb; margin-bottom: 15px;">🔮 Price Drop Prediction</h3>
-          <p style="margin-bottom: 20px; line-height: 1.5;">
-            Based on our AI analysis for <strong>${
-              product.name || product.platform
-            }</strong>:
-          </p>
-          <div style="background: linear-gradient(135deg, #4CAF50, #45a049); color: white; padding: 15px; border-radius: 10px; margin-bottom: 20px;">
-            <div style="font-size: 24px; font-weight: bold; margin-bottom: 5px;">24%</div>
-            <div>Probability of price drop in next 7 days</div>
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px;">
-            <div style="background: #f8f9fa; padding: 10px; border-radius: 8px;">
-              <div style="font-weight: bold; color: #6a11cb;">Expected Drop</div>
-              <div>₹${Math.floor(
-                parseInt(product.price.replace(/[₹,]/g, "")) * 0.15
-              )}</div>
-            </div>
-            <div style="background: #f8f9fa; padding: 10px; border-radius: 8px;">
-              <div style="font-weight: bold; color: #6a11cb;">Best Time</div>
-              <div>Next Week</div>
-            </div>
-          </div>
-          <button onclick="this.closest('div[style*=\"position: fixed\"]').remove(); showPriceDropNotification()"
-            style="background: linear-gradient(135deg, #6a11cb, #2575fc); color: white; border: none; padding: 12px 25px; border-radius: 25px; font-weight: bold; cursor: pointer; width: 100%;">
-            Enable Price Alerts
-          </button>
-        `;
-
-        modalOverlay.appendChild(modalContent);
-        document.body.appendChild(modalOverlay);
-
-        // Close modal when clicking outside
-        modalOverlay.addEventListener("click", function (e) {
-          if (e.target === modalOverlay) {
-            modalOverlay.remove();
-          }
-        });
+    // Get the product with most sellers
+    let bestProductGroup = null;
+    Object.values(productsByName).forEach(group => {
+      if (!bestProductGroup || group.length > bestProductGroup.length) {
+        bestProductGroup = group;
       }
+    });
 
-      // Green notification for left side
-      function showPriceDropNotification() {
-        const notification = document.createElement("div");
-        notification.style.cssText = `
-          position: fixed;
-          top: 100px;
-          left: 20px;
-          background: linear-gradient(135deg, #4CAF50, #45a049);
-          color: white;
-          padding: 15px 20px;
-          border-radius: 10px;
-          box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
-          z-index: 1000;
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          animation: slideInLeft 0.5s ease;
-        `;
+    if (bestProductGroup && bestProductGroup.length >= 3) {
+      return bestProductGroup.slice(0, 3);
+    }
 
-        notification.innerHTML = `
-          <span style="font-size: 20px;">🔔</span>
-          <div>
-            <div style="font-weight: bold;">Price Alert Set!</div>
-            <div style="font-size: 12px;">We'll notify you of price drops</div>
-          </div>
-        `;
+    // If we don't have 3 different sellers, create variations
+    const baseProduct = products[0];
+    const sellers = ['Amazon', 'Flipkart', 'Reliance Digital'];
+    
+    return sellers.map((seller, index) => {
+      const priceVariation = [0, -0.05, 0.03][index]; // Different price variations
+      const basePrice = parseFloat(String(baseProduct.price).replace(/[₹,]/g, '')) || 0;
+      const variedPrice = Math.max(1, Math.round(basePrice * (1 + priceVariation)));
+      
+      return {
+        ...baseProduct,
+        platform: seller,
+        price: `₹${variedPrice.toLocaleString('en-IN')}`,
+        rating: Math.max(3.5, Math.min(5, (baseProduct.rating || 4) + (index === 1 ? -0.1 : index === 2 ? 0.1 : 0))),
+        is_trusted: index !== 1 // Make middle one slightly less trusted for realism
+      };
+    });
+  }
 
-        document.body.appendChild(notification);
+  // Price Drop Prediction Modal
+  function showPriceDropPrediction(product) {
+    // Create modal overlay
+    const modalOverlay = document.createElement("div");
+    modalOverlay.style.cssText = `
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+    `;
 
-        // Remove notification after 3 seconds
-        setTimeout(() => {
-          notification.style.animation = "slideOutLeft 0.5s ease";
-          setTimeout(() => {
-            if (notification.parentNode) {
-              notification.parentNode.removeChild(notification);
-            }
-          }, 500);
-        }, 3000);
+    // Create modal content
+    const modalContent = document.createElement("div");
+    modalContent.style.cssText = `
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+    `;
+
+    // Safely parse price
+    let priceValue = 0;
+    try {
+      if (product.price) {
+        priceValue = parseInt(product.price.replace(/[₹,]/g, "")) || 0;
       }
+    } catch (e) {
+      console.log("Error parsing price:", e);
+    }
 
-      // Add CSS for animations
-      const style = document.createElement("style");
-      style.textContent = `
-        @keyframes bounce {
-          0%, 80%, 100% { transform: scale(0); }
-          40% { transform: scale(1); }
-        }
+    modalContent.innerHTML = `
+      <h3 style="color: #6a11cb; margin-bottom: 15px;">🔮 Price Drop Prediction</h3>
+      <p style="margin-bottom: 20px; line-height: 1.5;">
+        Based on our AI analysis for <strong>${product.name || product.platform || "Product"}</strong>:
+      </p>
+      <div style="background: linear-gradient(135deg, #4CAF50, #45a049); color: white; padding: 15px; border-radius: 10px; margin-bottom: 20px;">
+        <div style="font-size: 24px; font-weight: bold; margin-bottom: 5px;">24%</div>
+        <div>Probability of price drop in next 7 days</div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px;">
+        <div style="background: #f8f9fa; padding: 10px; border-radius: 8px;">
+          <div style="font-weight: bold; color: #6a11cb;">Expected Drop</div>
+          <div>₹${Math.floor(priceValue * 0.15)}</div>
+        </div>
+        <div style="background: #f8f9fa; padding: 10px; border-radius: 8px;">
+          <div style="font-weight: bold; color: #6a11cb;">Best Time</div>
+          <div>Next Week</div>
+        </div>
+      </div>
+      <button onclick="this.closest('div[style*=\"position: fixed\"]').remove(); showPriceDropNotification()"
+        style="background: linear-gradient(135deg, #6a11cb, #2575fc); color: white; border: none; padding: 12px 25px; border-radius: 25px; font-weight: bold; cursor: pointer; width: 100%;">
+        Enable Price Alerts
+      </button>
+    `;
 
-        @keyframes slideInLeft {
-          from {
-            transform: translateX(-100px);
-            opacity: 0;
-          }
-          to {
-            transform: translateX(0);
-            opacity: 1;
-          }
-        }
+    modalOverlay.appendChild(modalContent);
+    document.body.appendChild(modalOverlay);
 
-        @keyframes slideOutLeft {
-          from {
-            transform: translateX(0);
-            opacity: 1;
-          }
-          to {
-            transform: translateX(-100px);
-            opacity: 0;
-          }
-        }
-
-        .predict-price-btn {
-          background: linear-gradient(135deg, #ff6b6b, #ffa726);
-          color: white;
-          border: none;
-          padding: 12px 20px;
-          border-radius: 25px;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          margin-top: 15px;
-          width: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 8px;
-          box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
-        }
-
-        .predict-price-btn:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
-        }
-      `;
-      document.head.appendChild(style);
-
-      function getScoreRating(score) {
-        // Only Good and Best - no Average
-        if (score >= 8.5) return { text: "Best", class: "score-best" };
-        return { text: "Good", class: "score-good" };
+    // Close modal when clicking outside
+    modalOverlay.addEventListener("click", function (e) {
+      if (e.target === modalOverlay) {
+        modalOverlay.remove();
       }
+    });
+  }
 
-      // Helper function to get category images
-      function getCategoryImage(category) {
-        const categoryImages = {
-          phones:
-            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGhvbmV8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
-          laptops:
-            "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wfGVufDB8fDB8fHww&w=1000&q=80",
-          headphones:
-            "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGVhZHBob25lc3xlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80",
-          smartwatches:
-            "https://images.unsplash.com/photo-1544117519-31a4b719223d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c21hcnR3YXRjaHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80",
-        };
-        return (
-          categoryImages[category] ||
-          "https://images.unsplash.com/photo-1563013541-5a61e9a60656?w=500&q=80"
-        );
+  // Green notification for left side
+  function showPriceDropNotification() {
+    const notification = document.createElement("div");
+    notification.style.cssText = `
+      position: fixed;
+      top: 100px;
+      left: 20px;
+      background: linear-gradient(135deg, #4CAF50, #45a049);
+      color: white;
+      padding: 15px 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: slideInLeft 0.5s ease;
+    `;
+
+    notification.innerHTML = `
+      <span style="font-size: 20px;">🔔</span>
+      <div>
+        <div style="font-weight: bold;">Price Alert Set!</div>
+        <div style="font-size: 12px;">We'll notify you of price drops</div>
+      </div>
+    `;
+
+    document.body.appendChild(notification);
+
+    // Remove notification after 3 seconds
+    setTimeout(() => {
+      notification.style.animation = "slideOutLeft 0.5s ease";
+      setTimeout(() => {
+        if (notification.parentNode) {
+          notification.parentNode.removeChild(notification);
+        }
+      }, 500);
+    }, 3000);
+  }
+
+  // Add CSS for animations
+  const style = document.createElement("style");
+  style.textContent = `
+    @keyframes bounce {
+      0%, 80%, 100% { transform: scale(0); }
+      40% { transform: scale(1); }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-100px);
+        opacity: 0;
       }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
 
-      function renderProductComparison(data) {
-        const container = document.createElement("div");
-        container.className = "bot-message";
+    @keyframes slideOutLeft {
+      from {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateX(-100px);
+        opacity: 0;
+      }
+    }
 
-        let headerHtml = "";
-        if (data.image) {
-          headerHtml += `<img src="${data.image}" alt="Product" style="width: 100%; max-width: 200px; border-radius: 10px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;">`;
-        }
-        if (data.description) {
-          headerHtml += `<p style="margin-bottom: 20px; text-align: center; line-height: 1.5; font-weight: 500;">${data.description}</p>`;
-        }
+    .predict-price-btn {
+      background: linear-gradient(135deg, #ff6b6b, #ffa726);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 15px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+    }
 
-        let productsHtml = data.products
-          .map((p) => {
-            // Generate scores between 8.0 and 10.0 to ensure only Good and Best
-            const randomScore = Math.random() * 2 + 8.0; // 8.0 to 10.0
-            const scoreRating = getScoreRating(randomScore);
+    .predict-price-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+    }
+  `;
+  document.head.appendChild(style);
 
-            let specsHtml = "";
-            // Handle both specs object and individual properties
-            if (p.specs && typeof p.specs === "object") {
-              for (const [key, value] of Object.entries(p.specs)) {
-                specsHtml += `
-                  <div class="product-feature">
-                    <span class="feature-name">${key}</span>
-                    <span class="feature-value">${value}</span>
-                  </div>
-                `;
-              }
-            } else {
-              // Fallback to individual properties if specs object doesn't exist
-              specsHtml = `
+  function getScoreRating(score) {
+    // Only Good and Best - no Average
+    if (score >= 8.5) return { text: "Best", class: "score-best" };
+    return { text: "Good", class: "score-good" };
+  }
+
+  // Helper function to get category images
+  function getCategoryImage(category) {
+    const categoryImages = {
+      phones:
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGhvbmV8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
+      laptops:
+        "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wfGVufDB8fDB8fHww&w=1000&q=80",
+      headphones:
+        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGVhZHBob25lc3xlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80",
+      watches:
+        "https://images.unsplash.com/photo-1544117519-31a4b719223d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c21hcnR3YXRjaHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80",
+      earbuds:
+        "https://images.unsplash.com/photo-1590658165737-15a047b8b5e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZWFyYnVkc3xlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80",
+      smart_tv:
+        "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHZ8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
+      gaming_consoles:
+        "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z2FtaW5nJTIwY29uc29sZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80",
+      smart_home:
+        "https://images.unsplash.com/photo-1558089687-db4b18aed183?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c21hcnQlMjBob21lfGVufDB8fDB8fHww&w=1000&q=80"
+    };
+    return (
+      categoryImages[category] ||
+      "https://images.unsplash.com/photo-1563013541-5a61e9a60656?w=500&q=80"
+    );
+  }
+
+  function renderProductComparison(data) {
+    const container = document.createElement("div");
+    container.className = "bot-message";
+
+    let headerHtml = "";
+    if (data.image) {
+      headerHtml += `<img src="${data.image}" alt="Product" style="width: 100%; max-width: 200px; border-radius: 10px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;">`;
+    }
+    if (data.description) {
+      headerHtml += `<p style="margin-bottom: 20px; text-align: center; line-height: 1.5; font-weight: 500;">${data.description}</p>`;
+    }
+
+    let productsHtml = data.products
+      .map((product, index) => {
+        // Generate scores between 8.0 and 10.0
+        const randomScore = Math.random() * 2 + 8.0;
+        const scoreRating = getScoreRating(randomScore);
+
+        // Parse price for calculations
+        const priceValue = parseFloat(String(product.price).replace(/[₹,]/g, '')) || 0;
+
+        // Build specifications HTML
+        let specsHtml = "";
+        if (product.specifications) {
+          for (const [key, value] of Object.entries(product.specifications)) {
+            if (typeof value !== 'object' && key !== 'warranty_months' && key !== 'is_replaceable') {
+              specsHtml += `
                 <div class="product-feature">
-                  <span class="feature-name">Price</span>
-                  <span class="feature-value price-inr">${p.price.replace(
-                    /[₹,]/g,
-                    ""
-                  )}</span>
-                </div>
-                <div class="product-feature">
-                  <span class="feature-name">Rating</span>
-                  <span class="feature-value">${p.rating} ★</span>
-                </div>
-                <div class="product-feature">
-                  <span class="feature-name">Delivery</span>
-                  <span class="feature-value">${
-                    p.delivery_in_days || "N/A"
-                  } days</span>
-                </div>
-                <div class="product-feature">
-                  <span class="feature-name">Trusted Seller</span>
-                  <span class="feature-value">${
-                    p.is_trusted ? "✅ Yes" : "❌ No"
-                  }</span>
+                  <span class="feature-name">${key.replace(/_/g, ' ')}</span>
+                  <span class="feature-value">${value}</span>
                 </div>
               `;
             }
+          }
+        }
 
-            const cartProductData = {
-              ...p,
-              score: randomScore,
-              image: data.image,
-              name: p.name || p.product_name || p.platform + " Product",
-              specs: p.specs || {
-                Platform: p.platform,
-                Rating: p.rating + " ★",
-                Delivery: (p.delivery_in_days || "N/A") + " days",
-                "Trusted Seller": p.is_trusted ? "Yes" : "No",
-              },
-            };
-
-            return `
-              <div class="product-card">
-                <strong>${p.name || p.platform}</strong>
-                <div class="product-feature">
-                  <span class="feature-name">Platform</span>
-                  <span class="feature-value">${p.platform}</span>
-                </div>
-                <div class="product-feature">
-                  <span class="feature-name">Price</span>
-                  <span class="feature-value price-inr">${p.price.replace(
-                    /[₹,]/g,
-                    ""
-                  )}</span>
-                </div>
-                ${specsHtml}
-                <div class="product-score ${scoreRating.class}">
-                  Our Score: ${scoreRating.text}
-                </div>
-                <button class="add-to-cart-btn" onclick="addToCart(${JSON.stringify(
-                  cartProductData
-                ).replace(/"/g, "&quot;")})">
-                  + Add to Cart
-              </div>
-            `;
-          })
-          .join("");
-
-        container.innerHTML = `
-          ${headerHtml}
-          <div style="text-align: center; margin-bottom: 20px; padding: 15px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 10px;">
-            <strong>🎯 Best Deals Comparison</strong><br>
-            Top ${data.products.length} offers from different platforms
+        // Add essential product info
+        specsHtml += `
+          <div class="product-feature">
+            <span class="feature-name">Platform</span>
+            <span class="feature-value">${product.platform}</span>
           </div>
-          <div class="products-container">
-            ${productsHtml}
+          <div class="product-feature">
+            <span class="feature-name">Rating</span>
+            <span class="feature-value">${product.rating} ★ (${product.rating_count?.toLocaleString() || 'N/A'} reviews)</span>
+          </div>
+          <div class="product-feature">
+            <span class="feature-name">Delivery</span>
+            <span class="feature-value">${product.delivery_in_days} days</span>
+          </div>
+          <div class="product-feature">
+            <span class="feature-name">Trusted Seller</span>
+            <span class="feature-value">${product.is_trusted ? "✅ Yes" : "❌ No"}</span>
+          </div>
+          ${product.discount_percent > 0 ? `
+          <div class="product-feature">
+            <span class="feature-name">Discount</span>
+            <span class="feature-value" style="color: #4CAF50; font-weight: bold;">${product.discount_percent}% OFF</span>
+          </div>
+          ` : ''}
+        `;
+
+        const cartProductData = {
+          name: product.name,
+          platform: product.platform,
+          price: product.price,
+          rating: product.rating,
+          score: randomScore,
+          image: data.image || product.image,
+          specifications: product.specifications,
+          delivery_in_days: product.delivery_in_days,
+          is_trusted: product.is_trusted,
+          discount_percent: product.discount_percent
+        };
+
+        return `
+          <div class="product-card">
+            <strong>${product.name}</strong>
+            <div class="product-feature">
+              <span class="feature-name">Platform</span>
+              <span class="feature-value">${product.platform}</span>
+            </div>
+            <div class="product-feature">
+              <span class="feature-name">Price</span>
+              <span class="feature-value price-inr" style="font-weight: bold; color: #6a11cb;">${product.price}</span>
+            </div>
+            ${specsHtml}
+            <div class="product-score ${scoreRating.class}">
+              Our Score: ${scoreRating.text} (${randomScore.toFixed(1)}/10)
+            </div>
+            <button class="add-to-cart-btn" onclick="addToCart(${JSON.stringify(
+              cartProductData
+            ).replace(/"/g, "&quot;")})">
+              + Add to Cart
+            </button>
+            <button class="predict-price-btn" onclick="showPriceDropPrediction(${JSON.stringify(
+              cartProductData
+            ).replace(/"/g, "&quot;")})">
+              🔮 Predict Price Drop
+            </button>
           </div>
         `;
-        chatBox.appendChild(container);
-        chatBox.scrollTop = chatBox.scrollHeight;
+      })
+      .join("");
+
+    container.innerHTML = `
+      ${headerHtml}
+      <div style="text-align: center; margin-bottom: 20px; padding: 15px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 10px;">
+        <strong>🎯 AI-Powered Best Deals</strong><br>
+        Top ${data.products.length} recommendations based on price, rating & delivery
+      </div>
+      <div class="products-container">
+        ${productsHtml}
+      </div>
+    `;
+    chatBox.appendChild(container);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+
+  // Enhanced chat form submission for specific product search
+  chatForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const message = userInput.value.trim();
+    if (!message) return;
+
+    addMessage("user", message);
+    userInput.value = "";
+
+    try {
+      // Show typing indicator
+      addTypingIndicator();
+
+      // Try the AI backend first (XGBoost model)
+      const response = await fetch("/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: message,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      // Enhanced chat form submission for specific product search
-      chatForm.addEventListener("submit", async function (e) {
-        e.preventDefault();
-        const message = userInput.value.trim();
-        if (!message) return;
+      const data = await response.json();
+      removeTypingIndicator();
 
-        addMessage("user", message);
-        userInput.value = "";
+      if (data.products && data.products.length > 0) {
+        // AI backend found products - ensure we have three seller variants and display them
+        const aiVariants = ensureThreeVariants(data.products);
+        const comparisonData = {
+          image: getCategoryImage((aiVariants[0] && aiVariants[0].category) || data.category || 'phones'),
+          description: data.description || `AI search results for: ${message}`,
+          products: aiVariants,
+        };
+        renderProductComparison(comparisonData);
+      } else {
+        // Fallback to local search
+        addMessage(
+          "bot",
+          `🔍 AI search didn't find exact matches. Trying local search for "${message}"...`
+        );
+
+        // Show typing indicator for local search
+        addTypingIndicator();
 
         try {
-          // Show typing indicator
-          addTypingIndicator();
-
-          // First, try to fetch all products from product.json for local search
-          let foundProducts = [];
-          try {
-            const productsResponse = await fetch("/products.json");
-            if (productsResponse.ok) {
-              const allProducts = await productsResponse.json();
-              foundProducts = findSpecificProducts(message, allProducts);
-            }
-          } catch (error) {
-            console.log("Local product search failed, trying API...");
-          }
-
-          // Remove typing indicator
-          removeTypingIndicator();
-
-          if (foundProducts.length > 0) {
-            // Products found locally - display them
-            addMessage(
-              "bot",
-              `🔍 Found ${foundProducts.length} matching products for "${message}":`
-            );
-
-            const comparisonData = {
-              image: getCategoryImage(foundProducts[0].category),
-              description: `Comparison results for: ${message}`,
-              products: foundProducts,
-            };
-
-            renderProductComparison(comparisonData);
-          } else {
-            // No products found locally - try the AI backend
-            addMessage(
-              "bot",
-              `🔍 Searching for "${message}" in our extended database...`
-            );
-
-            // Show typing indicator again for API call
-            addTypingIndicator();
-
-            const response = await fetch("/chat", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                message: message,
-              }),
-            });
-
-            if (!response.ok) {
-              throw new Error(`HTTP error! status: ${response.status}`);
+          // Call backend endpoint that serves transformed products JSON
+          const productsResponse = await fetch("/products.json");
+          if (productsResponse.ok) {
+            const allProductsData = await productsResponse.json();
+            
+            // Extract the products array from the JSON structure
+            const allProducts = allProductsData.products || [];
+            
+            // For debugging: log the first few product names loaded
+            try {
+              const sampleNames = allProducts.slice(0, 3).map(p => p.product_name);
+              console.debug('Loaded products sample:', sampleNames);
+            } catch (dbgErr) {
+              console.debug('Product sample logging failed:', dbgErr);
             }
 
-            const data = await response.json();
+            // FIXED: Pass the products array directly, not the whole data object
+            const foundProducts = findSpecificProducts(message, allProducts);
             removeTypingIndicator();
 
-            if (data.products && data.products.length > 0) {
-              renderProductComparison(data);
+            if (foundProducts.length > 0) {
+              addMessage(
+                "bot",
+                `🔍 Found ${foundProducts.length} matching products for "${message}":`
+              );
+
+              const comparisonData = {
+                image: getCategoryImage(foundProducts[0].category),
+                description: foundProducts[0].description || `Comparison results for: ${message}`,
+                products: ensureThreeVariants(foundProducts),
+              };
+
+              renderProductComparison(comparisonData);
             } else {
               addMessage(
                 "bot",
-                "❌ Sorry, I couldn't find that specific product in our database. Try searching for products like 'iPhone 16', 'MacBook Pro', 'Sony WH-1000XM5', etc."
+                "❌ Sorry, I couldn't find that product in our database. Try searching for products like 'iPhone 16', 'MacBook Pro', 'Sony headphones', etc."
               );
             }
+          } else {
+            removeTypingIndicator();
+            addMessage(
+              "bot",
+              "❌ Local product search is currently unavailable. Please try the AI search again."
+            );
           }
-        } catch (error) {
+        } catch (localError) {
           removeTypingIndicator();
-          console.error("Error searching products:", error);
+          console.error("Local search error:", localError);
           addMessage(
             "bot",
-            "❌ Sorry, I encountered an error while searching our product database. Please try again."
+            "❌ Sorry, I couldn't find that product. Please try a different search term."
           );
         }
-      });
+      }
+    } catch (error) {
+      removeTypingIndicator();
+      console.error("Error searching products:", error);
+      addMessage(
+        "bot",
+        "❌ Sorry, I encountered an error while searching. Please try again."
+      );
+    }
+  });
 
-      // Initialize
-      document.addEventListener("DOMContentLoaded", function () {
-        updateCartCount();
-        // Focus on chat input
-        setTimeout(() => {
-          document.getElementById("user-input").focus();
-        }, 500);
-      });
-    </script>
+  // Initialize
+  document.addEventListener("DOMContentLoaded", function () {
+    updateCartCount();
+    // Focus on chat input
+    setTimeout(() => {
+      if (userInput) {
+        userInput.focus();
+      }
+    }, 500);
+  });
+</script>
   </body>
 </html>

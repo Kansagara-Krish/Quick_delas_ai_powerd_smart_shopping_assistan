@@ -42,6 +42,73 @@ else:
     print(f"❌ ERROR: 'templates' directory not found at {TEMPLATES_DIR}. UI will not load.")
     templates = None # App will fail, which is expected
 
+@app.get("/products.json")
+async def get_products_json():
+    """Serve products data in the format expected by the frontend"""
+    try:
+        # Check if file exists
+        if not os.path.exists(DATA_FILE):
+            print(f"❌ Products file not found at {DATA_FILE}")
+            return JSONResponse({"error": "Products data not available"}, status_code=404)
+        
+        with open(DATA_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        
+        # Check if data is empty
+        if not data or "products" not in data:
+            print("❌ No products found in data file")
+            return JSONResponse({"phones": [], "laptops": [], "headphones": [], "smartwatches": []})
+        
+        # Transform data to match frontend expectations
+        transformed_data = {
+            "phones": [],
+            "laptops": [], 
+            "headphones": [],
+            "smartwatches": []
+        }
+        
+        for product in data.get("products", []):
+            # Categorize products
+            product_name_lower = product.get("product_name", "").lower()
+            
+            # Simple categorization
+            if any(term in product_name_lower for term in ["iphone", "samsung", "phone", "mobile"]):
+                category = "phones"
+            elif any(term in product_name_lower for term in ["macbook", "laptop", "notebook"]):
+                category = "laptops"
+            elif any(term in product_name_lower for term in ["headphone", "earphone", "airpods"]):
+                category = "headphones"
+            elif any(term in product_name_lower for term in ["watch", "smartwatch"]):
+                category = "smartwatches"
+            else:
+                category = "phones"  # default
+            
+            # Get the first offer for basic info
+            first_offer = {}
+            if product.get("variants"):
+                for variant in product["variants"]:
+                    if variant.get("offers"):
+                        first_offer = variant["offers"][0]
+                        break
+            
+            transformed_product = {
+                "name": product.get("product_name", ""),
+                "platform": first_offer.get("seller_name", "Unknown"),
+                "price": f"₹{int(first_offer.get('price', 0)):,}",
+                "rating": first_offer.get("rating", 0),
+                "delivery_in_days": first_offer.get("delivery_in_days", 0),
+                "is_trusted": first_offer.get("is_trusted_seller", False),
+                "category": category
+            }
+            
+            transformed_data[category].append(transformed_product)
+        
+        print(f"✅ Served {sum(len(products) for products in transformed_data.values())} products via /products.json")
+        return JSONResponse(transformed_data)
+        
+    except Exception as e:
+        print(f"❌ Error serving products.json: {e}")
+        return JSONResponse({"error": "Could not load products"}, status_code=500)
 
 # --- Load Dataset ---
 def load_dataset():
@@ -58,7 +125,6 @@ def load_dataset():
 
 products_data = load_dataset()
 
-
 # --- Load ML Model ---
 try:
     obj = joblib.load(MODEL_FILE)
@@ -69,7 +135,6 @@ except Exception as e:
     print(f"⚠️ Warning: ML model not loaded. Using fallback ranking. Error: {e}")
     preproc = None
     model = None
-
 
 # --- Inference Function ---
 def infer_topk(df, k=3):
@@ -103,7 +168,6 @@ def infer_topk(df, k=3):
 
     return df.sort_values("_pred_score", ascending=False).head(k)
 
-
 # --- Utility to find product by name ---
 def find_product_by_name(query):
     all_names = [p["product_name"] for p in products_data]
@@ -113,7 +177,6 @@ def find_product_by_name(query):
     if not matches:
         return None
     return next((p for p in products_data if p["product_name"] == matches[0]), None)
-
 
 # --- API Routes ---
 @app.get("/", response_class=HTMLResponse)
@@ -140,11 +203,12 @@ def index_page(request: Request):
         return templates.TemplateResponse("index.html", {"request": request})
     return HTMLResponse("<h1>Error: 'templates' directory not found.</h1>", status_code=500)
 
-@app.get("/predict.html", response_class=HTMLResponse)  # ✅ Correct method and response type
+@app.get("/predict.html", response_class=HTMLResponse)
 def predict_page(request: Request):
     if templates:
         return templates.TemplateResponse("predict.html", {"request": request})
     return HTMLResponse("<h1>Error: 'templates' directory not found.</h1>", status_code=500)
+
 @app.post("/chat", response_class=JSONResponse)
 async def chat(request: Request):
     data = await request.json()
@@ -158,7 +222,6 @@ async def chat(request: Request):
     if not product:
         return JSONResponse({"bot": f"❌ Sorry, I couldn't find '{user_input}' in our catalog.", "products": []})
 
-    # --- CRITICAL CHANGE HERE ---
     # Flatten offers into a DataFrame WITH ALL MODEL FEATURES
     offers = []
     for variant in product.get("variants", []):
@@ -220,8 +283,15 @@ async def chat(request: Request):
         "description": product.get("description", "")
     })
 
+# Health check endpoint
+@app.get("/health")
+async def health_check():
+    return JSONResponse({
+        "status": "healthy",
+        "products_loaded": len(products_data),
+        "model_loaded": preproc is not None and model is not None
+    })
 
 if __name__ == "__main__":
     import uvicorn
-    # This will run the app on http://127.0.0.1:8000
     uvicorn.run("app:app", host="127.0.0.1", port=8000, reload=True)

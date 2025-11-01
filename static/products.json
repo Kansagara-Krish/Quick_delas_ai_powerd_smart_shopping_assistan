@@ -547,8 +547,7 @@
       "product_name": "iPhone 17",
       "category": "phones",
       "brand": "Apple",
-  "base_image_url": "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGlwaG9uZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80",
-  "description": "The future of iPhone with revolutionary AI features, foldable display technology, and breakthrough battery performance. Powered by A19 Bionic chip.",
+      "base_image_url": "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGlwaG9uZXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80"      "description": "The future of iPhone with revolutionary AI features, foldable display technology, and breakthrough battery performance. Powered by A19 Bionic chip.",
       "variants": [
         {
           "variant_id": "iphone_17_256",

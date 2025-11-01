@@ -1,1 +1,3 @@
 uvicorn app:app --reload   // to run the app
+
+https://quick-delas-ai-powerd-smart-shopping-ivks.onrender.com/
