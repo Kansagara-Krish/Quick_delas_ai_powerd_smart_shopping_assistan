@@ -207,41 +207,4 @@ FastAPI Backend
         ↓
 AI Deal Prediction Engine
 
-📂 Project Structure
 
-QuickDeals-AI/
-│
-├── app.py
-│   └── FastAPI backend application
-│
-├── xgb_ranking_pipeline.joblib
-│   └── Trained XGBoost ranking model
-│
-├── data/
-│   └── products.json
-│       └── Product catalog & seller data (JSON)
-│
-├── templates/
-│   ├── index.html
-│   │   └── Login page
-│   ├── register.html
-│   │   └── User registration page
-│   ├── home.html
-│   │   └── Dashboard / Home page
-│   ├── compare.html
-│   │   └── AI-based product comparison
-│   ├── predict.html
-│   │   └── Price prediction interface
-│   └── cart.html
-│       └── Shopping cart page
-│
-├── static/
-│   ├── css/
-│   │   └── Stylesheets
-│   ├── js/
-│   │   └── Frontend JavaScript
-│   └── image/
-│       └── Images & icons
-│
-└── README.md
-    └── Project documentation
