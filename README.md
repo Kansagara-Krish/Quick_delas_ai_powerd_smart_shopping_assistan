@@ -90,7 +90,7 @@ Seller trust score, rating, price & specs comparison
 📷 Screenshot:
 
 
-![AI Comparison](screenshots/compare.png)
+![AI Comparison](images/compare.png)
 
 📈 Price Prediction – predict.html
 
@@ -128,7 +128,7 @@ Simple and clean cart interface
 
 📷 Screenshot:
 
-![Shopping Cart](/cart.png)
+![Shopping Cart](images/cart.png)
 
 🔄 User Flow Overview
 Login / Register
