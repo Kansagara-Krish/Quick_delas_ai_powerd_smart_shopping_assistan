@@ -211,23 +211,37 @@ AI Deal Prediction Engine
 
 QuickDeals-AI/
 │
-├── app.py                         # FastAPI backend
-├── xgb_ranking_pipeline.joblib    # Trained XGBoost model
+├── app.py
+│   └── FastAPI backend application
+│
+├── xgb_ranking_pipeline.joblib
+│   └── Trained XGBoost ranking model
 │
 ├── data/
-│   └── products.json              # Product & seller dataset
+│   └── products.json
+│       └── Product catalog & seller data (JSON)
 │
 ├── templates/
-│   ├── index.html                 # Login page
-│   ├── register.html              # Sign-up page
-│   ├── home.html                  # Dashboard
-│   ├── compare.html               # AI comparison page
-│   ├── predict.html               # Price prediction
-│   └── cart.html                  # Shopping cart
+│   ├── index.html
+│   │   └── Login page
+│   ├── register.html
+│   │   └── User registration page
+│   ├── home.html
+│   │   └── Dashboard / Home page
+│   ├── compare.html
+│   │   └── AI-based product comparison
+│   ├── predict.html
+│   │   └── Price prediction interface
+│   └── cart.html
+│       └── Shopping cart page
 │
 ├── static/
 │   ├── css/
+│   │   └── Stylesheets
 │   ├── js/
+│   │   └── Frontend JavaScript
 │   └── image/
+│       └── Images & icons
 │
 └── README.md
+    └── Project documentation
